@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet : Maheswaran Ashana, Hammad Kahina, Avel Mélanie</title>
+    <link rel="stylesheet" type="text/css" href="test.css" />
+  </head>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .titre {
+      height: 90px;
+      background-color: #283518;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Sépare les éléments à gauche et à droite */
+      padding: 0 20px; /* Ajoute un peu d'espace sur les côtés */
+    }
+
+    .titre img {
+      color: blue;
+      width: 80px;
+      height: auto;
+    }
+
+    .espace-client {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: white; /* Texte en blanc pour contraster avec le fond */
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .espace-client img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .espace-client span {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .sous-titre {
+      height: 40px;
+      display: grid;
+      grid-template-columns: 33% 33% 34%;
+    }
+
+    .accueil {
+    }
+
+    .accueil button {
+      background: #5f6b38;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      border-color: #283518;
+      border-width: 3px;
+      color: #fefae0;
+    }
+
+    .accueil a {
+      color: #fefae0;
+      text-decoration: none;
+    }
+
+    .accueil a:visited {
+      color: #fefae0;
+    }
+
+    .destination button {
+      background: #5f6b38;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      border-color: #283518;
+      border-width: 3px;
+      color: #fefae0;
+    }
+
+    .sous-destination {
+      display: none;
+      position: absolute;
+      width: 33%;
+      height: 50px;
+    }
+
+    .sous-destination a {
+      background-color: #f2eed6;
+      color: #6e6e6e;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .sous-destination a:hover {
+      background-color: #5f6b38;
+      color: #fefae0;
+    }
+
+    .destination:hover .sous-destination {
+      display: block;
+    }
+
+    .film button {
+      background: #5f6b38;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      border-color: #283518;
+      border-width: 3px;
+      color: #fefae0;
+    }
+
+    .sous-film {
+      display: none;
+      position: absolute;
+      width: 33%;
+      height: 50px;
+    }
+
+    .sous-film a {
+      background-color: #f2eed6;
+      color: #6e6e6e;
+      padding: 10px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .sous-film a:hover {
+      background-color: #5f6b38;
+      color: #fefae0;
+    }
+
+    .film:hover .sous-film {
+      display: block;
+    }
+
+    .fin {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 300px;
+      background-color: #283518;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+    }
+
+    .fin h2 {
+      text-align: center;
+      color: #fefae0;
+      margin-top: 20px;
+    }
+  </style>
+
+  <body style="background: #fefae0">
+    <div class="titre">
+      <!-- Logo à gauche -->
+      <a href="test.html">
+        <img
+          src="https://previews.123rf.com/images/butenkow/butenkow1608/butenkow160800365/61218396-cam%C3%A9ra-vid%C3%A9o-de-mod%C3%A8le-de-conception-de-logo-vector-illustration.jpg"
+          alt="logo"
+        />
+      </a>
+
+      <!-- Espace client à droite -->
+      <a href="connexion.html" class="espace-client">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5087/5087592.png"
+          alt="espace client"
+        />
+        <span>Espace Client</span>
+      </a>
+      <a href="doc2.html" class="espace-client">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5087/5087592.png"
+          alt="espace client"
+        />
+        <span>Espace Client</span>
+      </a>
+    </div>
+    <div class="sous-titre">
+      <div class="accueil">
+        <button><a href="#top">Accueil</a></button>
+      </div>
+      <div class="destination">
+        <button>Destinations</button>
+        <div class="sous-destination">
+          <a>Angleterre</a>
+          <a>Etats-Unis</a>
+          <a>France</a>
+        </div>
+      </div>
+
+      <div class="film">
+        <button>Films</button>
+        <div class="sous-film">
+          <a>Harry Potter</a>
+          <a>Fast and Furious</a>
+          <a>La Belle et la Bête</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fin">
+      <div>
+        <h2>Contact</h2>
+      </div>
+    </div>
+  </body>
+</html>
