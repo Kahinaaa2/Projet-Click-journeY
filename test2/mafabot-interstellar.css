@@ -1,12 +1,3 @@
-body {
-  justify-content: center;
-  align-items: center;
-    
-    
-}
-
-
-
 .test img{
   position: fixed;
   top: 20px;
@@ -33,7 +24,9 @@ body {
 }
 
 .bloc{
- 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
 
 }
