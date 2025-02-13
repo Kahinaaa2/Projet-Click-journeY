@@ -1,0 +1,110 @@
+body {
+  background-color: #fefae0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.conteneur-profil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.carte-profil {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 400px;
+}
+
+.titre-profil {
+  font-size: 24px;
+  color: #0e0047;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.infos-profil {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.element-info {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin: 8px 0;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.element-info i {
+  color: #0e0047;
+  margin-right: 10px;
+  font-size: 18px;
+  width: 25px;
+  text-align: center;
+}
+
+.element-info span {
+  color: #2a1a78;
+  font-weight: bold;
+  flex: 1;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bouton-modifier {
+  background-color: #0e0047;
+  color: #fefae0;
+}
+
+.bouton-modifier:hover {
+  background-color: #2a1a78;
+}
+
+.bouton-mdp {
+  background-color: #6c757d;
+  color: #fefae0;
+}
+
+.bouton-mdp:hover {
+  background-color: #5a6268;
+}
+
+.bouton-deconnexion {
+  background-color: #d9534f;
+  color: white;
+}
+
+.bouton-deconnexion:hover {
+  background-color: #c9302c;
+}
+
+@media (max-width: 600px) {
+  .carte-profil {
+    width: 90%;
+  }
+}
