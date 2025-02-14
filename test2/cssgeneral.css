@@ -3,30 +3,32 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0vw;
+  padding: 0vw;
   display: flex;
   flex-direction: column;
-  max-width: 100%;
+  max-width: 100vw;
+  
 }
 
 .titre {
-  height: 90px;
+  width: 100vw;
+  height: 7vw;
   background-color: #0e0047;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Sépare les éléments à gauche et à droite */
-  padding: 0 20px; /* Ajoute un peu d'espace sur les côtés */
+  justify-content: space-between; 
+  padding: 0vw 2vw; 
 } 
 
 .titre img {
   color: blue;
-  width: 80px; 
+  width: 10vw; 
   height: auto; 
 }
 
 .titre span{
-  font-size: 18px;
+  font-size: 1vw;
 }  
 
 .espace-client {
@@ -34,39 +36,39 @@ body {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: white; /* Texte en blanc pour contraster avec le fond */
+  color: #FEFAE0; 
   font-weight: bold;
-  font-size: 16px;
+  font-size: 0.8vw;
 }
 
 .espace-client img {
-  height: 50px;
+  height: 5vw;
   width: auto;
   display: block;
 }
 
 .espace-client span {
   display: block;
-  margin-top: 5px;
+  margin-top: 0.3vw;
   text-align: center;
 }
 
 .sous-titre{
-  height: 40px;
-  display: grid;
-  grid-template-columns: 33% 33% 34%;
+  width:100vw;
+  height: 2.5vw;
+  display: flex;
+  margin-top: 0vw;
 }
 
 
 .accueil button{
   background: #1532a0;
-  width: 100%;
-  height: 100%;
+  width: 33vw;
+  height: 2.5vw;
   cursor: pointer;
   border-color: #0e0047;
-  border-width: 2px;
   color: #FEFAE0;
-  font-size: 20px;
+  font-size: 1vw;
 } 
 
 .accueil a{
@@ -74,24 +76,23 @@ body {
   text-decoration: none;
 }
 
-.accueil:hover{
-  background: #102a8c;
-}
-
-
 .sous-accueil{   
   display: none;
   position: absolute;
-  width: 33%;
-  height: 50px;
+  width: 33vw;
+  height: 2.5vw;
 }
 
 .sous-accueil a {
   background-color: #f2eed6;
   color: #606060;
-  padding: 10px;
+  padding: 0.5vw;
+  width: 33vw;
+  height: 2.2vw;
+  font-size: 1vw;
   text-decoration: none;
   display: block;
+  
 }
 
 .sous-accueil a:hover {
@@ -106,32 +107,36 @@ body {
 
 .destination button{
   background: #1532a0;
-  width: 100%;
-  height: 100%;
+  width: 33vw;
+  height: 2.5vw;
   cursor: pointer;
   border-color: #0e0047;
-  border-width: 2px;
   color: #FEFAE0;
-  font-size: 20px;
+  font-size: 1vw;
 } 
 
-.destination:hover{
-  background: #102a8c;
+.destination a{
+  color: #FEFAE0;
+  text-decoration: none;
 }
 
-.sous-destination{
+.sous-destination{   
   display: none;
   position: absolute;
-  width: 33%;
-  height: 50px;
-} 
+  width: 33vw;
+  height: 2.5vw;
+}
 
 .sous-destination a {
   background-color: #f2eed6;
   color: #606060;
-  padding: 10px;
+  padding: 0.5vw;
+  width: 33vw;
+  height: 2.2vw;
+  font-size: 1vw;
   text-decoration: none;
   display: block;
+  
 }
 
 .sous-destination a:hover {
@@ -145,99 +150,75 @@ body {
 
 .film button{
   background: #1532a0;
-  width: 100%;
-  height: 100%;
+  width: 34vw;
+  height: 2.5vw;
   cursor: pointer;
   border-color: #0e0047;
-  border-width: 2px;
   color: #FEFAE0;
-  font-size: 20px;
-}  
+  font-size: 1vw;
+} 
 
-.film:hover{
-  background: #102a8c;
+.film a{
+  color: #FEFAE0;
+  text-decoration: none;
 }
 
-.sous-film{
+.sous-film{   
   display: none;
   position: absolute;
-  width: 34%;
-  height: 50px;
-} 
+  width: 34vw;
+  height: 2.5vw;
+}
 
 .sous-film a {
   background-color: #f2eed6;
   color: #606060;
-  padding: 10px;
+  padding: 0.5vw;
+  width: 34vw;
+  height: 2.2vw;
+  font-size: 1vw;
   text-decoration: none;
   display: block;
+  
 }
 
 .sous-film a:hover {
-  background-color: #f1b410;
+  background-color: #1532a0;
   color: #FEFAE0;
 }
 
 .film:hover .sous-film {
   display: block;
-} 
+}
 
 .fin {
   display: flex;
   bottom: 0;
-  width: 100%;
-  height: 300px;
+  width: 100vw;
+  height: 20vw;
   background-color: #0e0047;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
-  padding: 20px;
 }
 
 .fin h3 {
-  margin-bottom: 15px;
+  margin-bottom: 1.5vw;
   text-align: center;
-  font-size: 30px;
+  font-size: 2vw;
 }
-
-
-
-.info-contact img {
-  width: 30px;
-  height: auto;
-}
-
-.info-contact a{ 
-  margin: 0;
-  color: #FEFAE0;
-  text-decoration: none;
-  font-size: 16px;
-  text-align: center;
-}
-
-.info-contact p {
-  margin: 0;
-  color: #FEFAE0;
-  font-size: 16px;
-  text-align: center;
-}
-
-.info-contact a:hover {
-  color: #b6912d;
-}
-
 
 .info-contact {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 10px;
+  gap: 0.8vw;
+  margin-bottom: 0.6vw;
 }
 
 .info-contact img {
-  width: 30px;
+  width: 2.2vw;
   height: auto;
 }
 
@@ -245,17 +226,21 @@ body {
   margin: 0;
   color: #FEFAE0;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1vw;
 }
 
  
 .info-contact a:hover {
-  color: #b6912d;
+  color: #f1b410;
 }
 
+.fin{
+  margin: 0 auto;
+}  
+
 .fin p {
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 1.5vw;
+  font-size: 0.8vw;
 }
 
 /*cccccff : couleur du crayon*/
