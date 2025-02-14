@@ -4,18 +4,17 @@ body{
 
 .image img{
   position: fixed;
-  top: 20px;
-  left: 0;
-  width: 100%; /* Optionnel selon l'effet voulu */
+  margin-top: 1.7vw;
+  width: 100vw; /* Optionnel selon l'effet voulu */
   z-index: -1; /* Place l'image en arrière-plan */
 }
 
 .fond{
   background: #FEFAE0;
   display: block;
-  width: 100%;
+  width: 100vw;
   z-index: 1;
-  margin-top: 410px;
+  margin-top: 22vw;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -23,9 +22,9 @@ body{
 }
 
 .fond h1{
-  margin-top: 100px;
-  font-size: 50px;
-  letter-spacing: 10px;
+  margin-top: 7vw;
+  font-size: 2.5vw;
+  letter-spacing: 0.6vw;
   margin-bottom: 50px;
 }  
 
@@ -33,13 +32,18 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 1.7vw;
   text-decoration: none;
   color: black;
-  margin-bottom: -10px;
-  width: 20%;
-  margin: 0 auto;
+  width: 20vw;
+  height: 6vw;
+  margin: 0vw auto;
 } 
+
+.fond img{
+  width: 5vw;
+  height: auto;
+}
 
 .fond a:hover{
   color: #f1b410;
@@ -47,7 +51,7 @@ body{
   
 .fond-entete{
   position: fixed;
-  width:100%;
+  width: 100vw;
   z-index: 2;
 }
 
@@ -59,31 +63,31 @@ body{
 
 .bloc-bleu1{
   background-color: #0e0047;
-  height: 500px;
-  width:10%;
+  height: 27vw;
+  width:10vw;
 }  
 
 .bloc1{
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 130px;
-  height:750px;
-  width: 80%;
+  margin: 0vw auto;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  height:40vw;
+  width: 80vw;
   display:flex;
 }
 
 .sous-bloc1{
  display:block;
- width:50%;
- height:100%; 
+ width:50vw;
+ height:40vw; 
 }
 
 .sous-sous-bloc1{
- width:100%;
- height:50%;
+ width:40vw;
+ height:20vw;
 } 
 
 .sous-sous-bloc1 img{
@@ -95,15 +99,14 @@ body{
  display:flex;
  justify-content: center;
  align-items: center;
- margin: 0 auto;
- margin-bottom: 100px;
- width: 60%;
- height:450px;
+ margin: 0vw auto;
+ width: 60vw;
+ height:24vw;
 } 
 
 .bloc-film-affiche{
- width:30%;
- height:100%;
+ width:18vw;
+ height:24vw;
 } 
 
 .bloc-film-affiche img{
@@ -113,32 +116,31 @@ body{
 
 .bloc-film-resume{
  text-align:center;
- width:70%;
- height:100%;
+ width:45vw;
+ height:24vw;
  align-items: center;
  justify-content: center;
- padding-right: 30px;
- padding-left: 30px;
+ padding-right: 1.5vw;
+ padding-left: 1.5vw;
  
 } 
 
 .bloc-film-resume h3{
- font-size: 30px;
- margin-top: 50px;
- letter-spacing: 10px;
+ font-size: 1.7vw;
+ margin-top: 2.7vw;
+ letter-spacing: 0.5vw;
 } 
 
 .bloc-film-resume p{
- font-size: 25px;
- margin-top: 20px;
+ font-size: 1.3vw;
 
 } 
 
 
 
 .activite{
- margin-top: 100px;
- margin-bottom: 100px;
+ margin-top: 5vw;
+ margin-bottom: 5vw;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -147,40 +149,40 @@ body{
 } 
 
 .activite-bandeau{
- height: 20px;
- width: 39%;
+ height: 1vw;
+ width: 39vw;
  background-color: #1532a0;
 }
 
 
 .activite p{
- width: 22%;
- font-size: 40px;
- letter-spacing: 20px;
+ width: 22vw;
+ font-size: 2.2vw;
+ letter-spacing: 1.1vw;
  text-align: center;
- margin-right: 0px;
+ margin-right: 0vw;
  font-weight: bold;
- padding-left: 15px;
- padding-bottom: 8px;
+ padding-left: 0.9vw;
+ padding-bottom: 0.5vw;
 } 
  
 
 .bloc-activite{
  margin: 0 auto;
- width: 70%;
- height: 1200px;
+ width: 70vw;
+ height: 66vw;
  display: block;
 } 
 
 .bloc-activite-detail{
- width:100%;
- height: 400px;
+ width:70vw;
+ height: 22vw;
  display:flex;
 }
 
 .bloc-activite-affiche{
- width:30%;
- height:100%;
+ width:21vw;
+ height:22vw;
 }
 
 .bloc-activite-affiche img{
@@ -189,26 +191,26 @@ body{
 }  
 
 .bloc-activite-description{
- width:70%;
- height:100%;
- padding-top: 50px;
- margin-left: 50px;
- margin-right: 50px;
+ width:49vw;
+ height:22vw;
+ padding-top: 2.7vw;
+ margin-left: 2.7vw;
+ margin-right: 2.7vw;
 }
 
 .bloc-activite-description h3{
- font-size: 40px;
- letter-spacing: 5px;
+ font-size: 2.2vw;
+ letter-spacing: 0.9vw;
 }
 
 .bloc-activite-description p{
- font-size: 25px;
- margin-top: 20px;
+ font-size: 1.4vw;
+ margin-top: 1.1vw;
 }
 
 .prix{
- margin-top: 100px;
- margin-bottom: 50px;
+ margin-top: 5vw;
+ margin-bottom: 5vw;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -217,28 +219,28 @@ body{
 } 
 
 .prix-bandeau{
- height: 20px;
- width: 43%;
+ height: 1vw;
+ width: 43vw;
  background-color: #1532a0;
 }
 
 
 .prix p{
- width: 14%;
- font-size: 40px;
- letter-spacing: 20px;
+ width: 14vw;
+ font-size: 2.2vw;
+ letter-spacing: 1.1vw;
  font-weight: bold;
- padding-left: 15px;
- padding-bottom: 8px;
+ padding-left: 0.9vw;
+ padding-bottom: 0.5vw;
 } 
 
 
 .prix-texte{
  display: block;
- margin: 0 auto;
- width: 50%;
+ margin: 0vw auto;
+ width: 50vw;
  text-align: left;
- margin-left: 650px;
+ margin-left: 33vw;
 } 
 
 .prix-texte p2{
@@ -247,22 +249,19 @@ body{
 
 
 .prix-texte p{
- font-size: 30px;
+ font-size: 1.7vw;
  font-weight: bold;
- margin-bottom: 30px;
+ margin-bottom: 1.7vw;
  text-decoration: none;
 }  
 
 .prix-texte p3{
- font-size: 20px;
- margin-bottom: 30px;
- text-decoration: none;
- padding-left: 35px;
+ font-size: 1.1vw;
+ padding-left: 1.7vw;
 } 
  
 .reservation{
- margin-top: 50px;
- margin-bottom: 0px;
+ margin-top: 4vw;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -271,33 +270,33 @@ body{
 } 
 
 .reservation-bandeau{
- height: 20px;
- width: 35%;
+ height: 1vw;
+ width: 35vw;
  background-color: #1532a0;
 }
 
 
 .reservation p{
- width: 30%;
- font-size: 40px;
- letter-spacing: 20px;
+ width: 30vw;
+ font-size: 2.2vw;
+ letter-spacing: 1.1vw;
  font-weight: bold;
- padding-left: 15px;
- padding-bottom: 8px;
+ padding-left: 0.9vw;
+ padding-bottom: 0.5vw;
 } 
 
 
 .reservation-bloc{
   display: flex; 
-  width: 100%;
-  height: 750px;
+  width: 100vw;
+  height: 40vw;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 1.7vw;
 }
 
 .reservation-bloc-image{
-  width: 28%;
-  height: 500px;
+  width: 28vw;
+  height: 26vw;
 }  
 
 .reservation-bloc-image img{
@@ -306,51 +305,38 @@ body{
 
 }
 .formulaire {
-  margin: 0 auto;
-  width: 50%;
+  margin: 0vw auto;
+  width: 25vw;
 }
 
 .formulaire label {
   font-weight: bold;
-  font-size: 25px;  
+  font-size: 1.4vw;  
 }
-    
-.formulaire select{
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  border-radius: 15px; 
-  border: 3px solid #0e0047;
-  background-color: #e2dec4;
-  color: #0e0047;
-  margin-top: 25px;
-  margin-bottom: 35px;
-       
-}    
    
 .formulaire input{
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  border-radius: 15px;
-  border: 3px solid #0e0047;
+  padding: 0.5vw;
+  font-size: 0.9vw;
+  width: 25vw;
+  border-radius: 0.6vw;
+  border: 0.25vw solid #0e0047;
   background-color: #e2dec4;
   color: #0e0047;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 1.4vw;
+  margin-bottom: 1.4vw;
 }    
 
 .formulaire button {
   background-color: #0e0047;
   color: #FEFAE0;
   border: none;
-  border-radius: 15px;
+  border-radius: 0.6vw;
   cursor: pointer;
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  height: 60px;
-  margin-top: 30px;
+  padding: 0.5vw;
+  font-size: 0.9vw;
+  width: 25vw;
+  height: 3vw;
+  margin-top: 1.7vw;
 }
 
 .formulaire button:hover {
@@ -358,7 +344,7 @@ body{
 }
 
 .option{
-  width: 100%;
+  width: 25vw;
   display: flex;
   text-align: center;
   align-items: center;
@@ -366,8 +352,8 @@ body{
 }
 
 .option p{
-  font-size: 15px;
-  padding-right:15px;
+  font-size: 1vw;
+  padding-right:0.4vw;
 }  
  
   
