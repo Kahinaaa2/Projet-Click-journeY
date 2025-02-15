@@ -27,8 +27,7 @@ margin: 0 auto;
 height: 51vw;
 width: 80vw;
 background-color: #0e0047;
-border-radius: 3vw;
-
+border-radius: 2vw;
 }
 
 .carree2 h2{
@@ -56,12 +55,11 @@ margin-bottom: 4vw;
 }
 
 .image {
-border: 0.5vw solid #1532a0;
-border-radius: 1vw;
 position: absolute;
 width: 30.1vw;
 height: 17.5vw;
 transition: opacity 0.3s ease;
+border-radius:1vw;
 }
 
 .image2 {
