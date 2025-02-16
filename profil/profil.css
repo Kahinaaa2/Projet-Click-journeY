@@ -1,5 +1,6 @@
+
 body {
-  background-color: #fefae0;
+  background-color:  #fefae0;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -17,7 +18,7 @@ body {
 }
 
 .carte-profil {
-  background: white;
+  background: #0e0047;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -27,7 +28,7 @@ body {
 
 .titre-profil {
   font-size: 24px;
-  color: #0e0047;
+  color:  #fefae0;
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -35,6 +36,7 @@ body {
 .infos-profil {
   text-align: left;
   margin-bottom: 20px;
+  color: #0e0047;
 }
 
 .element-info {
@@ -43,20 +45,12 @@ body {
   font-size: 16px;
   margin: 8px 0;
   padding: 10px;
-  background-color: #f5f5f5;
+  background-color:#fefae0;
   border-radius: 8px;
 }
 
-.element-info i {
-  color: #0e0047;
-  margin-right: 10px;
-  font-size: 18px;
-  width: 25px;
-  text-align: center;
-}
-
 .element-info span {
-  color: #2a1a78;
+  color: #0e0047;
   font-weight: bold;
   flex: 1;
 }
@@ -77,34 +71,31 @@ button {
 }
 
 .bouton-modifier {
-  background-color: #0e0047;
-  color: #fefae0;
+    text-decoration: none; 
+    background-color: #1532a0;
+    color: #fefae0;
+ 
 }
 
 .bouton-modifier:hover {
-  background-color: #2a1a78;
+  background-color: #f1b410;
 }
 
 .bouton-mdp {
-  background-color: #6c757d;
+  background-color: #1532a0;
   color: #fefae0;
 }
 
 .bouton-mdp:hover {
-  background-color: #5a6268;
+  background-color: #f1b410;
 }
 
 .bouton-deconnexion {
-  background-color: #d9534f;
-  color: white;
+  background-color: #1532a0;
+  color: #fefae0;
 }
 
 .bouton-deconnexion:hover {
-  background-color: #c9302c;
+  background-color: #f1b410;
 }
 
-@media (max-width: 600px) {
-  .carte-profil {
-    width: 90%;
-  }
-}
