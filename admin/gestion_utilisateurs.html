@@ -15,7 +15,7 @@
         margin: 0;
         color: #0e0047;
       }
-      .conteneur {
+      .bloc {
         background: #fefae0;
         padding: 25px;
         border-radius: 10px;
@@ -38,7 +38,7 @@
         text-align: center;
       }
       th {
-        background: #0e0047;
+        background: #1532a0;
         color: #fefae0;
       }
       .bouton {
@@ -51,15 +51,14 @@
         transition: 0.3s;
       }
       .modifier {
-        background: #2a1a78;
+        background: #1532a0;
       }
       .supprimer {
         background: orange;
       }
       .modifier:hover {
-        background: #4b32a8;
+        background: #1532a0;
       }
-     
       .lien {
         display: block;
         margin-top: 15px;
@@ -73,13 +72,13 @@
     </style>
   </head>
   <body>
-    <div class="conteneur">
-      <h2>Gestion des Utilisateurs</h2>
+    <div class="bloc">
+      <h2>Gestion des utilisateurs</h2>
       <table>
         <thead>
           <tr>
             <th>Nom</th>
-            <th>Email</th>
+            <th>Courriel</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -88,24 +87,16 @@
             <td>Kahina HAMMAD</td>
             <td>kahinahammad@gmail.com</td>
             <td>
-              <button class="bouton modifier">
-                <i class="fas fa-edit"></i> Modifier
-              </button>
-              <button class="bouton supprimer">
-                <i class="fas fa-trash"></i> Supprimer
-              </button>
+              <button class="bouton modifier">Modifier</button>
+              <button class="bouton supprimer">Supprimer</button>
             </td>
           </tr>
           <tr>
             <td>Ashana Maheswaran</td>
             <td>ashanamahes@gmail.com</td>
             <td>
-              <button class="bouton modifier">
-                <i class="fas fa-edit"></i> Modifier
-              </button>
-              <button class="bouton supprimer">
-                <i class="fas fa-trash"></i> Supprimer
-              </button>
+              <button class="bouton modifier">Modifier</button>
+              <button class="bouton supprimer">Supprimer</button>
             </td>
           </tr>
         </tbody>
