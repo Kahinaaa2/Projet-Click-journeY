@@ -20,8 +20,8 @@ width: 100vw;
 
 .image-container {
 position: relative;
-width: 20vw;
-height: 50vh;
+width: 21vw;
+height: 55vh;
 background-color: #0e0047;
 border-radius: 2vw;
 transition: transform 0.3s ease;
@@ -36,18 +36,26 @@ margin: 2vw;
 color: #FEFAE0;
 }
 
+.texte p {
+font-size: 1.2vw;
+}
+
+.droite {
+text-align: right;
+}
+
 .image-container2 {
 position: relative;
-width: 20vw;
-height: 27vh;
+width: 21vw;
+height: 18vw;
 }
 
 .image {
 border-top-left-radius: 2vw; 
 border-top-right-radius: 2vw; 
 position: absolute;
-width: 20vw;
-height: 27vh;
+width: 21vw;
+height: 18vw;
 object-fit: cover;
 transition: opacity 0.3s ease;
 }
