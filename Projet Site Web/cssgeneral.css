@@ -21,6 +21,7 @@ background-color: #0e0047;
 .titre {
   width: 100vw;
   height: 7vw;
+  background-color: #0e0047;
   display: flex;
   align-items: center;
   justify-content: space-between; 
