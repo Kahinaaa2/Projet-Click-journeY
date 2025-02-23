@@ -16,6 +16,7 @@ height: auto;
 display: flex;
 flex-direction: column;
 background-color: #0e0047;
+z-index: 10;
 }
 
 .titre {
