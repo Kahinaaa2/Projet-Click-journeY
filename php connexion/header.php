@@ -35,7 +35,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
 	   <a href="deconnexion.php">Déconnexion</a>
        <?php else: ?>
            <a href="connexion.php">Connexion</a>
-           <a href="inscription.html">Inscription</a>
+           <a href="inscription.php">Inscription</a>
        <?php endif; ?>
      </div>  
    </div>
