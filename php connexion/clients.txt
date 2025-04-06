@@ -1,9 +1,8 @@
-kahina@gmail.com;mdp123;kahina;hammad;client
-melanie@gmail.com;yoyo123;melanie;avel;admin
-ashana@gmail.com;123456;ashana;maheswaran;client
+kahina@gmail.com;mdp123;kahina;hammad;admin;2024-02-27
+melanie@gmail.com;yoyo123;melanie;avel;admin;2025-01-03
+ashana@gmail.com;123456;ashana;maheswaran;client;2025-03-29
 
-ezaezaeza@zaeeza.fr;aze123;zazaez;ezezaza;client
-ezaezaeza@zaeeza.fr;aze123;zazaez;ezezaza;client
-ezaezaeza@zaeeza.fr;aze123;zazaez;ezezaza;client
-juyhgtrf@yhbtgf.fr;aze;uhgd;ujhygvf;client
-juyhgtrf@yhbtgf.fr;aze;uhgd;ujhygvf;client
+mima@coucou.fr;mop;Mi;Ma;client
+lali@lali.fr;mlo;la;lo;client
+kiko@gmail.com;aze;kiko;koki;client;2025-04-06
+

@@ -120,10 +120,18 @@
 
         <p>
             Vous n'avez pas de compte ?
-            <a href="inscription.html">Créer un compte</a>
+            <a href="inscription.php">Créer un compte</a>
         </p>
         
-        <a href="Page-accueil.html" class="btn-retour">← Retour</a>
+<?php
+if (isset($_GET['erreur']) && $_GET['erreur'] == 1) {
+    echo '<p style="color:red"><i>Email ou mot de passe incorrect.</i></p>';
+}
+?>
+
+        <a href="Page-accueil.php" class="btn-retour">← Retour</a>
+
     </div>
+
 </body>
 </html>

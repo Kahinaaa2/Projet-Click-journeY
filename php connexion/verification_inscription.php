@@ -6,6 +6,7 @@
 <body>
 
 <?php
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -18,22 +19,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = strtolower($email); 
     $mdp = trim($_POST['mdp']);
     $mdp2 = trim($_POST['mdp2']);
+    $date = date("Y-m-d");
     
     if($mdp == $mdp2){
+      $_SESSION['email'] = $email;
+      $_SESSION['connect'] = true;
     $fic = fopen("clients.txt", "a");
     
     if ($fic) {
- fwrite($fic, "$email;$mdp;$prenom;$nom;client\n");
+ fwrite($fic, "$email;$mdp;$prenom;$nom;client;$date\n");
  fclose($fic);
- echo "salut";
- header('Location: inscription_réussi.html'); 
+
+ header('Location: inscription_reussi.php'); 
 }
   }else {
-  header('Location: inscription.html'); //message un champ qui est faux
+  header('Location: inscription.php?erreur=1'); //message un champ qui est faux
    }
   
  } else {
-   header('Location: inscription.html'); //message un champ qui est faux
+   header('Location: inscription.php?erreur=2'); //message un champ qui est faux
    }
  
 }    
@@ -43,4 +47,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </body>
 </html>
-
