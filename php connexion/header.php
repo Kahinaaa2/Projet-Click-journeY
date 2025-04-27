@@ -3,6 +3,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+if (isset($_SESSION['role']) && $_SESSION['role'] != client) {
+    header('Location: admin.php');
+    exit();
+}
+
 $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
 ?>
 
@@ -10,6 +15,10 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
 <div class="titre">
     <a href="Page-accueil.php">
         <img src="image/logo.jpg" alt="logo">
+    </a>
+
+     <a href="rechercherapide.php">
+        <p>🔍</p>
     </a>
 
     <?php if ($pageAccueil): ?>
@@ -41,7 +50,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
    </div>
 
        <div class="destination">
-         <a href="presentation.html"><button>Destinations</button></a>
+         <a href="presentation.php"><button>Destinations</button></a>
          <div class="sous-destination">
            <a href="mafabot-interstellar.html">Mafabot (Islande)</a>
            <a href="LA-FastAndFurious.html">Los Angeles (États-Unis)</a>
@@ -55,7 +64,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
            <a href="chambord-la_belle_et_la_bete.html">Chambord (France)</a>
            <a href="sydney-nemo.html">Sydney (Australie)</a>
            <a href="serengeti-le_roi_lion.html">Serengeti (Tanzanie)</a>
-	   <i><a href="presentation.html">Voir toutes les destinations</a></i>
+	   <i><a href="presentation.php">Voir toutes les destinations</a></i>
          </div>   
        </div>
        

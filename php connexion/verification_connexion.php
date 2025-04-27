@@ -28,15 +28,10 @@ for ($i = 0; $i < count($lignes); $i++) {
         $_SESSION['email'] = $email;
         $_SESSION['prenom'] = $mot[2];
         $_SESSION['connect'] = true;
-
-        /*$fic = fopen("clients.txt", "a");
-        if ($fic){
-            fwrite($fic, "$date2");
-        }
-        
-        $_SESSION['date'] = $mot[6];*/
+        $_SESSION['role'] = 'client';
 
         if (isset($mot[4]) && $mot[4] === "admin") {
+            $_SESSION['role'] = 'admin';
             header('Location: admin.php');
             exit();
         }

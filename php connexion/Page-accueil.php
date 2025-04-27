@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -95,7 +96,7 @@ session_start();
 </div>
  
 <div class="voyage"> 
-<a href="presentation.html"><button>Voyagez Maintenant</button></a>
+<a href="presentation.php"><button>Voyagez Maintenant</button></a>
 </div>
     
 <div class="carte">    

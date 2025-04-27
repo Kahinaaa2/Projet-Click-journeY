@@ -1,3 +1,19 @@
+<?php 
+session_start();
+
+if ($_SESSION['role'] == 'client') {
+    header('Location: Page-accueil.php');
+    exit();
+}
+
+if ($_SESSION['role'] == 'admin') {
+    header('Location: admin.php');
+    exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -109,8 +125,14 @@
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
 
+            <label for="nom">Date de naissance :</label>
+            <input type="date" id="dob" name="dob" required>
+
             <label for="email">Adresse e-mail :</label>
             <input type="email" id="email" name="email" required>
+
+            <label for="nom">Adresse :</label>
+            <input type="text" id="adresse" name="adresse" required>
 
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="mdp" required>
@@ -133,6 +155,21 @@ if ($_GET['erreur'] == 1) {
 <?php
 if ($_GET['erreur'] == 2) {
     echo '<p style="color:red"><i>Veuillez remplir tous les champs correctement.</i></p>';
+}
+?>
+<?php
+if ($_GET['erreur'] == 3) {
+    echo '<p style="color:red"><i>Cette adresse e-mail est déjà associée à un compte. Veuillez vous connecter ou utiliser une autre adresse.</i></p>';
+}
+?>
+<?php
+if ($_GET['erreur'] == 4) {
+    echo '<p style="color:red"><i>Une erreur s\'est produite lors de l\'enregistrement. Veuillez réessayer.</i></p>';
+}
+?>
+<?php
+if ($_GET['erreur'] == 5) {
+    echo '<p style="color:red"><i>Vous devez être agé d\'au moins 18 ans pour vous inscrire.</i></p>';
 }
 ?>
 

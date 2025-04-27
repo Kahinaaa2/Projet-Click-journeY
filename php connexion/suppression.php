@@ -1,14 +1,40 @@
-<?php 
+<?php
 session_start();
 
-if (!isset($_SESSION['connect']) || $_SESSION['connect'] != true) {
-    header('Location: connexion.php');
+if (!isset($_SESSION['connect'])) {
+    header("Location: connexion.php");
     exit();
 }
 
-session_unset();
-session_destroy();
+if($_SESSION['role'] !== 'admin') {
+   header("Location: Page-accueil.php");
+    exit(); 
+}
+
+if (isset($_GET['email'])) {
+    $emailASupprimer = $_GET['email'];
+
+    $fichier = "clients.txt";
+    $nouvellesLignes = [];
+
+    if (file_exists($fichier)) {
+        $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+        foreach ($lignes as $ligne) {
+            $infos = explode(";", $ligne);
+            if ($infos[0] !== $emailASupprimer) {
+                $nouvellesLignes[] = $ligne; // On garde les autres
+            }
+        }
+
+        // Réécriture du fichier
+        file_put_contents($fichier, implode("\n", $nouvellesLignes));
+
+   
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -70,7 +96,7 @@ session_destroy();
             background: #0e0047;
             border: none;
             color: white;
-            font-size: 1vw;
+            font-size: 0.9vw;
             cursor: pointer;
             border-radius: 15px;
             margin-top: 10px;
@@ -120,11 +146,12 @@ session_destroy();
 <body>
 
     <div class="bloc">
-<h3> Vous avez été déconnecté avec succès ! </h3>
+<h3>Le compte du client a bien été supprimé. </h3> //mettre le nom du client
 
-<a href="Page-accueil.php"><button>Retournez à la page d'accueil</button></a>
+<a href="gestion_utilisateurs.php"><button>Retournez à la liste d'utilisateurs</button></a>
 
     </div>
 
 </body>
 </html>
+

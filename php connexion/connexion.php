@@ -1,3 +1,18 @@
+<?php 
+session_start();
+
+if ($_SESSION['role'] == 'client') {
+    header('Location: Page-accueil.php');
+    exit();
+}
+
+if ($_SESSION['role'] == 'admin') {
+    header('Location: admin.php');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

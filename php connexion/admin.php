@@ -1,5 +1,18 @@
 <?php 
-session_start(); //faire une session spéciale admin ?
+session_start();
+
+if (!isset($_SESSION['connect']) || $_SESSION['connect'] != true) {
+    header('Location: connexion.php');
+    exit();
+
+}
+
+if ($_SESSION['role'] == 'client') {
+    header('Location: Page-accueil.php');
+    exit();
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +41,7 @@ session_start(); //faire une session spéciale admin ?
             border-radius: 10px;
             text-align: center;
             width: 30vw;
-            height: 15vw;
+            height: 20vw;
             justify-content: center;
             align-items: center;
         }
@@ -114,7 +127,7 @@ session_start(); //faire une session spéciale admin ?
     <div class="bloc">
 
 <?php
-if (isset($_SESSION['connect']) && $_SESSION['connect'] === true) {
+if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
     $prenom = $_SESSION['prenom']; 
     $prenom = strtolower($prenom);
     $prenom[0] = strtoupper($prenom[0]);
@@ -123,9 +136,11 @@ if (isset($_SESSION['connect']) && $_SESSION['connect'] === true) {
 
 <h3> Bienvenue dans la partie administrateur <?php echo $prenom; ?> ! Que souhaitez-vous faire ? </h3>
 
-<a href="gestion_utilisateurs.html"><button>Gérer les utilisateurs</button></a>
-<a href="#"><button>Voir les statistiques</button></a>
-<a href="#"><button>Modifier les paramètres</button></a>
+<a href="gestion_utilisateurs.php"><button>Gérer les utilisateurs</button></a>
+<a href="#"><button>Ajouter un administrateur</button></a>
+<a href="#"><button>Voir les administrateurs</button></a>
+<a href="profil2.php"><button>Voir mon profil</button></a>
+<a href="deconnexion.php"><button>Déconnexion</button></a>
 
 <?php } ?>
 
