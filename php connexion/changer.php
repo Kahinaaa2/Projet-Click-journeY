@@ -1,26 +1,52 @@
-<?php 
+<?php
 session_start();
 
-if (!isset($_SESSION['connect']) || $_SESSION['connect'] != true) {
-    header('Location: connexion.php');
+if (!isset($_SESSION['connect'])) {
+    header("Location: connexion.php");
     exit();
-
 }
 
-if ($_SESSION['role'] == 'client') {
-    header('Location: Page-accueil.php');
+if ($_SESSION['role'] !== 'admin') {
+    header("Location: Page-accueil.php");
     exit();
-
 }
 
+$emailModifie = "";
+
+if (isset($_GET['email'])) {
+    $emailAdmin = $_GET['email'];
+
+    $fichier = "clients.txt";
+    $nouvellesLignes = [];
+
+    if (file_exists($fichier)) {
+        $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+        foreach ($lignes as $ligne) {
+            $infos = explode(";", $ligne);
+
+            if ($infos[0] === $emailAdmin) {
+                $infos[4] = "admin"; // On change son rôle
+                $emailModifie = $infos[0]; // On garde l'email pour affichage
+            }
+
+            $nouvellesLignes[] = implode(";", $infos); // On remet dans le tableau
+        }
+
+        // Écriture du fichier après modification
+        file_put_contents($fichier, implode("\n", $nouvellesLignes));
+    }
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admistrateur</title>
+    <title>Déconnexion</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body {
@@ -34,21 +60,27 @@ if ($_SESSION['role'] == 'client') {
         }
 
         .bloc {
-            display: flex;
-            flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
             background: #fefae0;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            width: 35vw;
-            height: 25vw;
+            width: 30vw;
+            height: 15vw;
             justify-content: center;
             align-items: center;
+        }
+
+        .bloc form {
+            display: flex;
+            flex-direction: column;
         }
 
         .bloc label {
             text-align: left;
             font-size: 18px;
+            margin-bottom: 5px;
             font-weight: bold;
             color: #0e0047;
         }
@@ -56,7 +88,7 @@ if ($_SESSION['role'] == 'client') {
         .bloc input {
             width: 95%;
             height: 35px;
-
+            margin-bottom: 15px;
             border-radius: 15px;
             font-size: 16px;
             border: 3px solid #0e0047;
@@ -69,11 +101,10 @@ if ($_SESSION['role'] == 'client') {
             background: #0e0047;
             border: none;
             color: white;
-            margin: 1vw;
-            font-size: 1vw;
+            font-size: 0.9vw;
             cursor: pointer;
             border-radius: 15px;
-  
+            margin-top: 10px;
         }
 
         .bloc p {
@@ -119,23 +150,19 @@ if ($_SESSION['role'] == 'client') {
 </head>
 <body>
 
-    <div class="bloc">
-
 <?php
 if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
     $prenom = $_SESSION['prenom']; 
-    $prenom = strtolower($prenom);
-    $prenom[0] = strtoupper($prenom[0]);
+    $nom = $_SESSION['nom']; 
+    $prenom = ucfirst(strtolower($prenom));
+    $prenom[0] = ucfirst(strtoupper($prenom[0]));
 ?>
 
 
-<h3> Bienvenue dans la partie administrateur <?php echo $prenom; ?> ! Que souhaitez-vous faire ? </h3>
+    <div class="bloc">
+<h3> L'utilisateur est devenu administrateur ! </h3> 
 
-<a href="gestion_utilisateurs.php"><button>Gérer les utilisateurs</button></a>
-<a href="ajout_admin.php"><button>Ajouter un administrateur</button></a>
-<a href="voir_admin.php"><button>Voir les administrateurs</button></a>
-<a href="profil2.php"><button>Voir mon profil</button></a>
-<a href="deconnexion.php"><button>Déconnexion</button></a>
+<a href="gestion_utilisateurs.php"><button>Voir la liste des administrateurs</button></a>
 
 <?php } ?>
 

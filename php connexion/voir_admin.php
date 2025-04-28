@@ -20,7 +20,7 @@ if (file_exists("clients.txt")) {
     $lignes = file("clients.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lignes as $ligne) {
         $infos = explode(";", $ligne);
-        if (isset($infos[4]) && trim($infos[4]) === "client") {
+        if (isset($infos[4]) && trim($infos[4]) === "admin") {
             $clientsFiltres[] = $infos;
         }
     }

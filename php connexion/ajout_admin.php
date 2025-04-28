@@ -26,6 +26,7 @@ if (file_exists("clients.txt")) {
     }
 }
 
+// Comptage fait ici, comme tu voulais
 $totalClients = count($clientsFiltres);
 $pagesTotales = ceil($totalClients / $parPage);
 $pageActuelle = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
@@ -109,7 +110,7 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
         }
 
         button {
-            width: 6vw;
+            width: 7vw;
             height: 3vw;
             background: #0e0047;
             border: none;
@@ -160,11 +161,8 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
         <p><strong>Inscrit le</strong> <?= $date ?></p><br>
         <div class ="boutons">
         <div class = "b">
-      <a href="profil.php?email=<?= urlencode($email) ?>"><button>Voir le profil</button></a>
+      <a href="changer.php?email=<?= urlencode($email) ?>"><button>Changer en Administrateur</button></a>
   </div>
-      <div class ="a">
-      <span><a href="suppression.php?email=<?= urlencode($email) ?>"><button>Supprimer le compte</button></a></span>
-    </div>
 </div>
 </div>
 <?php endforeach; ?>

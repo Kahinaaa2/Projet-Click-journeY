@@ -26,6 +26,8 @@ if ($_SESSION['role'] != 'admin') {
 
 <body>
 
+ <a href="admin.php"><p>🚪</p></a>
+
     <div class="conteneur-profil">
         <div class="carte-profil">
             <h2 class="titre-profil">Profil Administrateur</h2>

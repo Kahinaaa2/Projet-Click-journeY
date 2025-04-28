@@ -17,7 +17,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
         <img src="image/logo.jpg" alt="logo">
     </a>
 
-     <a href="rechercherapide.php">
+     <a href="recherche.php">
         <p>🔍</p>
     </a>
 
