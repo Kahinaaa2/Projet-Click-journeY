@@ -174,7 +174,7 @@ if (!empty($email)) {
 
 
     <div class="bloc">
-<h3> L'utilisateur est devenu administrateur ! </h3> 
+<h3> <?php echo $prenom $nom; ?> est devenu administrateur ! </h3> 
 
 <a href="gestion_utilisateurs.php"><button>Voir la liste des administrateurs</button></a>
 
