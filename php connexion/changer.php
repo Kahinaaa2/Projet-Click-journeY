@@ -151,11 +151,25 @@ if (isset($_GET['email'])) {
 <body>
 
 <?php
-if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
-    $prenom = $_SESSION['prenom']; 
-    $nom = $_SESSION['nom']; 
-    $prenom = ucfirst(strtolower($prenom));
-    $prenom[0] = ucfirst(strtoupper($prenom[0]));
+
+ $email = urldecode($_GET['email']);
+}
+
+if (!empty($email)) {
+    $lignes = file("clients.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $utilisateur = false;
+
+    foreach ($lignes as $i) {
+        $mot = explode(';', trim($i));
+        if ($mot[0] === $email) {
+            $prenom = ucfirst(strtolower($mot[2] ?? ''));
+            $nom = ucfirst(strtolower($mot[3] ?? ''));
+            
+            $utilisateur = true;
+            break;
+        }
+    }
+
 ?>
 
 
