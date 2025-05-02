@@ -32,6 +32,7 @@ if ($_SESSION['role'] != 'admin') {
         <div class="carte-profil">
             <h2 class="titre-profil">Profil Administrateur</h2>
             <div class="infos-profil">
+
 <?php
 $email = '';
 
@@ -76,16 +77,14 @@ if (!empty($email)) {
 }
 ?>
             </div>
-
+     <?php if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])): ?>
             <a href="#">
                 <button class="bouton-modifier">Modifier le profil</button>
-            </a>
-            <a href="#">
-                <button class="bouton-mdp">Modifier le mot de passe</button>
             </a>
             <a href="deconnexion.php">
                 <button class="bouton-deconnexion">Se déconnecter</button>
             </a>
+    <?php endif; ?>
         </div>
     </div>
 </body>

@@ -2,7 +2,7 @@
 session_start();
 
 // Initialisation
-$mot = strtolower(trim($_POST['recherche'] ?? ''));
+$mot = ucfirst(strtolower(trim($_POST['recherche'] ?? '')));
 $voyage = [];
 $parPage = 8;
 $pageActuelle = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
@@ -136,7 +136,7 @@ $voyagesAffiches = array_slice($voyage, $debut, $parPage);
         $film = ucfirst(strtolower($v[2] ?? ''));
         $prix = $v[3] ?? '';
     ?>
-    <a href="<?= strtolower(urlencode($pays . '-' . $ville)) ?>.html">
+    <a href="<?= ucfirst(strtolower(urlencode($pays . '-' . $ville))) ?>.html">
         <div class="element-info">
             <p><strong>Pays :</strong> <?= htmlspecialchars($pays) ?></p>
             <p><strong>Ville :</strong> <?= htmlspecialchars($ville) ?></p>

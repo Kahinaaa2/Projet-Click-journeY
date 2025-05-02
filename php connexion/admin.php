@@ -131,7 +131,7 @@ if (isset($_SESSION['connect']) && $_SESSION['connect'] == true) {
 
 <h3> Bienvenue dans la partie administrateur <?php echo $prenom; ?> ! Que souhaitez-vous faire ? </h3>
 
-<a href="gestion_utilisateurs.php"><button>Gérer les utilisateurs</button></a>
+<a href="gestion_utilisateurs.php"><button>Gérer les clients</button></a>
 <a href="ajout_admin.php"><button>Ajouter un administrateur</button></a>
 <a href="voir_admin.php"><button>Voir les administrateurs</button></a>
 <a href="profil2.php"><button>Voir mon profil</button></a>

@@ -122,11 +122,7 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
         }
 
         .b button:hover {
-        background: #005e33;
-    }
-
-    .a button:hover{
-        background: #980000;
+        background: #f1b410ff;
     }
 
     .boutons {

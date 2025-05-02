@@ -68,7 +68,7 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
           padding: 10px;
           width: 18vw;
           padding: 15px;
-          height: 10vw;
+          height: 9vw;
 
          }
 
@@ -121,12 +121,9 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
         }
 
         .b button:hover {
-        background: #005e33;
+        background: #f1b410ff;
     }
 
-    .a button:hover{
-        background: #980000;
-    }
 
     .boutons {
     display: flex;
@@ -157,7 +154,6 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
         <p><strong>Nom :</strong> <?= $nom ?></p>
         <p><strong>Prénom :</strong> <?= $prenom ?></p><br>
         <p><strong>Email :</strong> <?= $email ?></p><br>
-        <p><strong>Inscrit le</strong> <?= $date ?></p><br>
         <div class ="boutons">
         <div class = "b">
       <a href="profil2.php?email=<?= urlencode($email) ?>"><button>Voir le profil</button></a>
