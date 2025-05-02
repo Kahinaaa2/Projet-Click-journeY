@@ -11,6 +11,11 @@ if ($_SESSION['role'] !== 'admin') {
     exit();
 }
 
+if (!isset($_GET['email'])) {
+    header("Location: admin.php");
+    exit();
+}
+
 $emailModifie = "";
 
 if (isset($_GET['email'])) {
@@ -46,7 +51,7 @@ if (isset($_GET['email'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Déconnexion</title>
+    <title>Nouveau Administateur !</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body {
@@ -151,8 +156,10 @@ if (isset($_GET['email'])) {
 <body>
 
 <?php
+$email = '';
 
- $email = urldecode($_GET['email']);
+if ($_SESSION['role'] == 'admin' && isset($_GET['email'])) {
+    $email = urldecode($_GET['email']);
 }
 
 if (!empty($email)) {
@@ -172,11 +179,10 @@ if (!empty($email)) {
 
 ?>
 
-
     <div class="bloc">
-<h3> <?php echo $prenom $nom; ?> est devenu administrateur ! </h3> 
+<h3> <?php echo $prenom . ' ' . $nom; ?> est devenu administrateur ! </h3>
 
-<a href="gestion_utilisateurs.php"><button>Voir la liste des administrateurs</button></a>
+<a href="voir_admin.php"><button>Voir la liste des administrateurs</button></a>
 
 <?php } ?>
 

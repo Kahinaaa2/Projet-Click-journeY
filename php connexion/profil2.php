@@ -33,47 +33,46 @@ if ($_SESSION['role'] != 'admin') {
             <h2 class="titre-profil">Profil Administrateur</h2>
             <div class="infos-profil">
 <?php
+$email = '';
 
-if (isset($_SESSION['connect']) && $_SESSION['connect'] === true) {
-    $email = $_SESSION['email']; 
+if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])) {
+    $email = $_SESSION['email'];
+}
 
-    $lignes = file("clients.txt"); 
+elseif ($_SESSION['role'] == 'admin' && isset($_GET['email'])) {
+    $email = urldecode($_GET['email']);
+}
 
-    if ($lignes) {
-        
-        foreach ($lignes as $ligne) {
-            $mot = explode(';', trim($ligne)); 
-            if ($mot[0] === $email) { 
-               $prenom = $mot[2];
-               $nom = $mot[3];
-               $date = $mot[5];
-               $dob = $mot[6];
-               $adresse = $mot[7];
+if (!empty($email)) {
+    $lignes = file("clients.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $utilisateur = false;
 
-                $prenom = strtolower($prenom);
-                $prenom[0] = strtoupper($prenom[0]);
+    foreach ($lignes as $i) {
+        $mot = explode(';', trim($i));
+        if ($mot[0] === $email) {
+            $prenom = ucfirst(strtolower($mot[2] ?? ''));
+            $nom = ucfirst(strtolower($mot[3] ?? ''));
+            $date = $mot[5] ?? '';
+            $dob = $mot[6] ?? '';
+            $adresse = $mot[7] ?? '';
 
-                $nom = strtolower($nom);
-                $nom[0] = strtoupper($nom[0]);
+            echo "<div class='element-info'><span>Nom :</span> <strong>$nom</strong></div>";
+            echo "<div class='element-info'><span>Prénom :</span> <strong>$prenom</strong></div>";
+            echo "<div class='element-info'><span>Date de naissance :</span> <strong>$dob</strong></div>";
+            echo "<div class='element-info'><span>Adresse :</span> <strong>$adresse</strong></div>";
+            echo "<div class='element-info'><span>Email :</span> <strong>$email</strong></div>";
+            echo "<div class='element-info'><span>Date d'inscription :</span> <strong>$date</strong></div>";
 
-                
-                echo "<div class='element-info'><span>Nom :</span> <strong>$nom</strong></div>";
-                echo "<div class='element-info'><span>Prénom :</span> <strong>$prenom</strong></div>";
-                echo "<div class='element-info'><span>Date de naissance :</span> <strong>$dob</strong></div>";
-                echo "<div class='element-info'><span>Adresse :</span> <strong>$adresse</strong></div>";
-                echo "<div class='element-info'><span>Email :</span> <strong>$email</strong></div>";
-                echo "<div class='element-info'><span>Date d'inscription :</span> <strong>$date</strong></div>";
-
-                break; 
-            }
+            $utilisateur = true;
+            break;
         }
-
-    } else {
-        echo "<p>Impossible d'ouvrir le fichier des utilisateurs.</p>";
     }
 
+    if (!$utilisateur) {
+        echo "<p>Utilisateur non trouvé.</p>";
+    }
 } else {
-    echo "<p>Vous devez être connecté pour voir votre profil.</p>";
+    echo "<p>Vous devez être connecté pour voir ce profil.</p>";
 }
 ?>
             </div>

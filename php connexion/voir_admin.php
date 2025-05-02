@@ -68,7 +68,7 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
           padding: 10px;
           width: 18vw;
           padding: 15px;
-          height: 12vw;
+          height: 10vw;
 
          }
 
@@ -160,11 +160,8 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
         <p><strong>Inscrit le</strong> <?= $date ?></p><br>
         <div class ="boutons">
         <div class = "b">
-      <a href="profil.php?email=<?= urlencode($email) ?>"><button>Voir le profil</button></a>
+      <a href="profil2.php?email=<?= urlencode($email) ?>"><button>Voir le profil</button></a>
   </div>
-      <div class ="a">
-      <span><a href="suppression.php?email=<?= urlencode($email) ?>"><button>Supprimer le compte</button></a></span>
-    </div>
 </div>
 </div>
 <?php endforeach; ?>

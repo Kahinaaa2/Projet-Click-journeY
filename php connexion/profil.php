@@ -90,7 +90,7 @@ if (!empty($email)) {
         echo "<p>Utilisateur non trouvé.</p>";
     }
 } else {
-    echo "<p>Vous devez être connecté ou avoir un lien valide pour voir ce profil.</p>";
+    echo "<p>Vous devez être connecté pour voir ce profil.</p>";
 }
 ?>
 

@@ -69,7 +69,7 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
           padding: 10px;
           width: 18vw;
           padding: 15px;
-          height: 12vw;
+          height: 10vw;
 
          }
 
