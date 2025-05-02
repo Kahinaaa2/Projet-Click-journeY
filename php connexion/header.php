@@ -38,7 +38,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
    <div class="accueil">
      <a href="Page-accueil.php"><button>Accueil</button></a>
      <div class="sous-accueil">
-       <a href="recherche.html">Recherche</a>
+       <a href="recherche.php">Recherche</a>
        <?php if ($pageAccueil): ?>
            <a href="profil.php">Mon Compte</a>
 	   <a href="deconnexion.php">Déconnexion</a>
@@ -50,40 +50,52 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
    </div>
 
        <div class="destination">
-         <a href="presentation.php"><button>Destinations</button></a>
+         <form method="POST" action="presentation.php">
+         <button type="submit" name="choix" value="destinations">Destinations</button>
+         </form>
          <div class="sous-destination">
-           <a href="mafabot-interstellar.html">Mafabot (Islande)</a>
-           <a href="LA-FastAndFurious.html">Los Angeles (États-Unis)</a>
-           <a href="hobbiton-hobbit.html">Hobbiton (Nouvelle-Zélande)</a>
-           <a href="kualoa-jurassicpark.html">Kualoa Ranch (Hawaï)</a>
-           <a href="wadirum-dune.html">Wadi Rum (Jordanie)</a>
-           <a href="zhangjiajie-avatar.html">Zhangjiajie (Chine)</a>
-           <a href="machupicchu-indianajones.html">Machu Picchu (Pérou)</a>
-           <a href="southampton-titanic.html">Southampton (Angleterre)</a>
-           <a href="nyc-prada.html">New York (États-Unis)</a>
-           <a href="chambord-la_belle_et_la_bete.html">Chambord (France)</a>
-           <a href="sydney-nemo.html">Sydney (Australie)</a>
-           <a href="serengeti-le_roi_lion.html">Serengeti (Tanzanie)</a>
-	   <i><a href="presentation.php">Voir toutes les destinations</a></i>
+           <form method="POST" action="destination-film.php">
+           <button type="submit" name="choix_destination_film" value="Mafabot-Interstellar">Mafabot (Islande)</button>
+           <button type="submit" name="choix_destination_film" value="LA-FastAndFurious">Los Angeles (États-Unis)</button>
+           <button type="submit" name="choix_destination_film" value="Hobbiton-Hobbit">Hobbiton (Nouvelle-Zélande)</button>           
+           <button type="submit" name="choix_destination_film" value="Kualoa-Jurassicpark">Kualoa Ranch (Hawaï)</button>
+           <button type="submit" name="choix_destination_film" value="Wadirum-Dune">Wadi Rum (Jordanie)</button>
+           <button type="submit" name="choix_destination_film" value="Zhangjiajie-Avatar">Zhangjiajie (Chine)</button>
+           <button type="submit" name="choix_destination_film" value="Machupicchu-Indianajones">Machu Picchu (Pérou)</button>
+           <button type="submit" name="choix_destination_film" value="Southampton-Titanic">Southampton (Angleterre)</button>
+           <button type="submit" name="choix_destination_film" value="Nyc-Prada">New York (États-Unis)</button>
+           <button type="submit" name="choix_destination_film" value="Chambord-Labelleetlabete">Chambord (France)</button>
+           <button type="submit" name="choix_destination_film" value="Sydney-Nemo">Sydney (Australie)</button>
+           <button type="submit" name="choix_destination_film" value="Serengeti-Leroilion">Serengeti (Tanzanie)</button>
+           </form>
+           <form method="POST" action="presentation.php">
+	   <i><button type="submit" name="choix" value="destinations">Voir toutes les destinations</button></i>
+	   </form>
          </div>   
        </div>
        
        <div class="film">
-        <a href="presentation2.html"><button>Films</button></a>
+         <form method="POST" action="presentation.php">
+         <button type="submit" name="choix" value="films">Films</button>
+         </form>
          <div class="sous-film">
-           <a href="mafabot-interstellar.html">Interstellar</a>
-           <a href="LA-FastAndFurious.html">Fast And Furious</a>
-           <a href="hobbiton-hobbit.html">Hobbit</a>
-           <a href="kualoa-jurassicpark.html">Jurassic Park</a>
-           <a href="wadirum-dune.html">Dune</a>
-           <a href="zhangjiajie-avatar.html">Avatar</a>
-           <a href="machupicchu-indianajones.html">Indiana Jones</a>
-           <a href="southampton-titanic.html">Titanic</a>
-           <a href="nyc-prada.html">Le Diable s'habille en Prada</a>
-           <a href="chambord-la_belle_et_la_bete.html">La Belle et La Bête</a>
-           <a href="sydney-nemo.html">Le Monde De Némo</a>
-           <a href="serengeti-le_roi_lion.html">Le Roi Lion</a> 
-           <i><a href="presentation2.html">Voir tous les films</a></i>
+           <form method="POST" action="destination-film.php">
+           <button type="submit" name="choix_destination_film" value="Mafabot-Interstellar">Interstellar</button>
+           <button type="submit" name="choix_destination_film" value="LA-FastAndFurious">Fast And Furious</button>
+           <button type="submit" name="choix_destination_film" value="Hobbiton-Hobbit">Hobbit</button>           
+           <button type="submit" name="choix_destination_film" value="Kualoa-Jurassicpark">Jurassic Park</button>
+           <button type="submit" name="choix_destination_film" value="Wadirum-Dune">Dune</button>
+           <button type="submit" name="choix_destination_film" value="Zhangjiajie-Avatar">Avatar</button>
+           <button type="submit" name="choix_destination_film" value="Machupicchu-Indianajones">Indiana Jones</button>
+           <button type="submit" name="choix_destination_film" value="Southampton-Titanic">Titanic</button>
+           <button type="submit" name="choix_destination_film" value="Nyc-Prada">Le Diable S'Habille En Prada</button>
+           <button type="submit" name="choix_destination_film" value="Chambord-Labelleetlabete">La Belle Et La Bête</button>
+           <button type="submit" name="choix_destination_film" value="Sydney-Nemo">Némo</button>
+           <button type="submit" name="choix_destination_film" value="Serengeti-Leroilion">Le Roi Lion</button>
+           </form>
+           <form method="POST" action="presentation.php">
+	   <i><button type="submit" name="choix" value="films">Voir tous les films</button></i>
+	   </form>
          </div> 
        </div>
     </div>
