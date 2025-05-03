@@ -1,0 +1,90 @@
+.container {
+  min-height: 100vh; /* S'assure que le contenu prend au moins toute la hauteur de l'écran */
+  display: flex;
+  flex-direction: column;
+}
+
+.carree {
+  width: 55vw;
+  height: auto;
+  margin: 0 auto;
+  background-color: #0e0047;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  border-radius: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulaire {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulaire label {
+  font-weight: bold;
+  font-size: 1.4vw;
+  color: #fefbec;
+}
+
+.formulaire input {
+  padding: 0.5vw;
+  font-size: 0.9vw;
+  width: 25vw;
+  border-radius: 0.6vw;
+  border: 0.5vw solid #1532a0;
+  background-color: #fefbec;
+  color: #0e0047;
+  margin-top: 1.4vw;
+  margin-bottom: 1.4vw;
+}
+
+.formulaire select {
+  padding: 0.5vw;
+  font-size: 0.9vw;
+  width: 25vw;
+  border-radius: 0.6vw;
+  border: 0.5vw solid #1532a0;
+  background-color: #fefbec;
+  color: #0e0047;
+  margin-top: 1.4vw;
+  margin-bottom: 1.4vw;
+}
+
+.formulaire button {
+  background-color: #1532a0;
+  color: #fefae0;
+  border: 0.5vw solid #1532a0;
+  border-radius: 0.6vw;
+  cursor: pointer;
+  padding: 0.5vw;
+  font-size: 0.9vw;
+  width: 25vw;
+  height: 3vw;
+  margin-top: 1.7vw;
+}
+
+.formulaire button:hover {
+  background-color: #f1b410;
+  border: 0.5vw solid #f1b410;
+}
+
+.option {
+  width: 25vw;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.option p {
+  font-size: 1.4vw;
+  color: #fefbec;
+  padding-right: 1vw;
+}

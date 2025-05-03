@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paiement - Réservation</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0e0047;
+        color: #333;
+      }
+      h1 {
+        text-align: center;
+        margin: 20px;
+        font-size: 2rem;
+        color: #fefae0;
+      }
+      .formulaire {
+        background-color: white;
+        padding: 20px;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 800px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .formulaire label {
+        font-size: 1rem;
+        margin-bottom: 8px;
+        display: block;
+      }
+      .formulaire input,
+      .formulaire select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      .resume {
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 12px 20px;
+        background-color: #f39c12;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      button:hover {
+        background-color: #e67e22;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Paiement pour la réservation</h1>
+
+    <div class="formulaire">
+      <div class="resume">
+        <p>
+          <strong>Destination :</strong>
+          <?= htmlspecialchars($reservation_data['destination']) ?>
+        </p>
+        <p>
+          <strong>Départ :</strong>
+          <?= htmlspecialchars($reservation_data['depart']) ?>
+        </p>
+        <p>
+          <strong>Retour :</strong>
+          <?= htmlspecialchars($reservation_data['return']) ?>
+        </p>
+
+        <!-- Affichage des personnes et options -->
+        <h2>Détails des personnes :</h2>
+        <?= $details_reservation ?>
+
+        <p>
+          <strong>Total à payer :</strong>
+          <?= $total ?>
+          €
+        </p>
+      </div>
+
+      <form action="verif_bancaire.php" method="post">
+        <label for="cardholder">Nom complet sur la carte :</label>
+        <input type="text" id="cardholder" name="cardholder" required />
+
+        <label for="cardnumber">Numéro de carte (16 chiffres) :</label>
+        <input
+          type="text"
+          id="cardnumber"
+          name="cardnumber"
+          pattern="\d{16}"
+          placeholder="1234567812345678"
+          required
+        />
+
+        <label for="expiry">Date d'expiration (MM/AA) :</label>
+        <input
+          type="text"
+          id="expiry"
+          name="expiry"
+          pattern="\d{2}/\d{2}"
+          placeholder="MM/AA"
+          required
+        />
+
+        <label for="cvv">Code de sécurité (CVV) :</label>
+        <input
+          type="text"
+          id="cvv"
+          name="cvv"
+          pattern="\d{3}"
+          placeholder="123"
+          required
+        />
+
+        <button type="submit">Procéder au paiement</button>
+      </form>
+    </div>
+  </body>
+</html>
