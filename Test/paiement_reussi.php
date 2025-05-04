@@ -1,8 +1,59 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="UTF-8"><title>Paiement réussi</title></head>
-<body>
-    <h1>✅ Merci pour votre réservation !</h1>
-    <p>Votre paiement a bien été enregistré.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paiement Réussi</title>
+    <style>
+      body {
+        background-color: #0e0047;
+        color: #fefae0;
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      .box {
+        background: white;
+        color: #0e0047;
+        max-width: 600px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      a {
+        display: inline-block;
+        margin-top: 30px;
+        background-color: #f39c12;
+        color: white;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+      a:hover {
+        background-color: #e67e22;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>✅ Paiement réussi</h1>
+      <p>
+        Merci pour votre réservation ! Votre paiement a été validé avec succès.
+      </p>
+      <a href="Page-accueil.html">Retour à l’accueil</a>
+    </div>
+  </body>
 </html>
