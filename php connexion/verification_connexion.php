@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $email = strtolower(filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL));
     $mdp = trim($_POST['mdp']);
-    //$date2 = date("Y-m-d"); pour sauvegarder la date de connexion
 
     $lignes = file("clients.txt"); 
 
