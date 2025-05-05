@@ -1,9 +1,14 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['connect']) || $_SESSION['role'] != 'client') {
+if (!isset($_SESSION['connect']))  {
     header('Location: connexion.php');
     exit();
+}
+
+if($_SESSION['role'] == 'admin'){
+   header('Location: admin.php');
+   exit();
 }
 
 $destination = $_POST['destination'];
@@ -53,7 +58,7 @@ $_SESSION['prenom'] = $prenom;
 
 <p> Réservation pour <?php echo $titre ?> </p>
 
-<form action="#" method="POST" class="formulaire">
+<form action="recap.php" method="POST" class="formulaire">
     <label for="adultes">Nombre d'adultes :</label>
     <input type="number" id="adults" name="adults" min="1" required>
 

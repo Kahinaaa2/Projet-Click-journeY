@@ -19,18 +19,22 @@ if (isset($_GET['email'])) {
 
     if (file_exists($fichier)) {
         $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-        foreach ($lignes as $ligne) {
+        
+        
+       foreach ($lignes as $ligne) {
             $infos = explode(";", $ligne);
-            if ($infos[0] !== $emailASupprimer) {
-                $nouvellesLignes[] = $ligne; // On garde les autres
+            if ($infos[0] === $emailASupprimer) {
+                // Récupère les infos du client supprimé
+                $prenom = ucfirst(strtolower($infos[2] ?? ''));
+                $nom = ucfirst(strtolower($infos[3] ?? ''));
+                // Ne pas ajouter cette ligne dans les nouvelles lignes
+                continue;
             }
+            $nouvellesLignes[] = $ligne;
         }
 
         // Réécriture du fichier
         file_put_contents($fichier, implode("\n", $nouvellesLignes));
-
-   
     }
 }
 ?>
@@ -146,7 +150,7 @@ if (isset($_GET['email'])) {
 <body>
 
     <div class="bloc">
-<h3>Le compte du client a bien été supprimé. </h3> //mettre le nom du client
+<h3>Le compte du client : <?php echo $prenom . ' ' . $nom; ?>, a bien été supprimé. </h3> 
 
 <a href="gestion_utilisateurs.php"><button>Retournez à la liste d'utilisateurs</button></a>
 
