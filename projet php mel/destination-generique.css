@@ -301,36 +301,18 @@ body{
 }
 .formulaire {
   margin: 0vw auto;
-  width: 25vw;
-}
-
-.formulaire label {
-  font-weight: bold;
-  font-size: 1.4vw;  
-}
-   
-.formulaire input{
-  padding: 0.5vw;
-  font-size: 0.9vw;
-  width: 25vw;
-  border-radius: 0.6vw;
-  border: 0.25vw solid #0e0047;
-  background-color: #e2dec4;
-  color: #0e0047;
-  margin-top: 1.4vw;
-  margin-bottom: 1.4vw;
-}    
+} 
 
 .formulaire button {
   background-color: #0e0047;
   color: #FEFAE0;
   border: none;
-  border-radius: 0.6vw;
+  border-radius: 1vw;
   cursor: pointer;
-  padding: 0.5vw;
-  font-size: 0.9vw;
-  width: 25vw;
-  height: 3vw;
+  margin: 0 auto;
+  font-size: 1.5vw;
+  width: 30vw;
+  height: 5vw;
   margin-top: 1.7vw;
 }
 

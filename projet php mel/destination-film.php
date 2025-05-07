@@ -17,8 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo "Le fichier n'existe pas.";
         }
     } else {
-        echo "Aucune destination de film sélectionnée.";
+        header("Location: presentation.php");
     }
+}
+else{
+  header("Location: presentation.php");
 }
 ?>
 
@@ -36,63 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body style="background: #FEFAE0">
 
     <div class="fond-entete">
-    <div class="titre">
-        <a href="Page-accueil.html">
-            <img src="image/logo.jpg" alt="logo">
-        </a>
-        <a href="connexion.html" class="espace-client">
-            <img src="image/connexion.jpg" alt="espace client">
-            <span>Espace Client</span>
-        </a>
-      </div>
-      <div class="sous-titre">
-       <div class="accueil">
-         <a href="Page-accueil.html"><button>Accueil</button></a>
-         <div class="sous-accueil">
-           <a href="recherche.html">Recherche</a>
-           <a href="connexion.html">Connexion</a>
-           <a href="inscription.html">Inscription</a>
-           <a href="Tableau_bord.html">Connexion Administration</a>
-         </div>  
-       </div>
-       <div class="destination">
-         <a href="presentation.html"><button>Destinations</button></a>
-         <div class="sous-destination">
-           <a href="mafabot-interstellar.html">Mafabot (Islande)</a>
-           <a href="LA-FastAndFurious.html">Los Angeles (États-Unis)</a>
-           <a href="hobbiton-hobbit.html">Hobbiton (Nouvelle-Zélande)</a>
-           <a href="kualoa-jurassicpark.html">Kualoa Ranch (Hawaï)</a>
-           <a href="wadirum-dune.html">Wadi Rum (Jordanie)</a>
-           <a href="zhangjiajie-avatar.html">Zhangjiajie (Chine)</a>
-           <a href="machupicchu-indianajones.html">Machu Picchu (Pérou)</a>
-           <a href="southampton-titanic.html">Southampton (Angleterre)</a>
-           <a href="nyc-prada.html">New York (États-Unis)</a>
-           <a href="chambord-la_belle_et_la_bete.html">Chambord (France)</a>
-           <a href="sydney-nemo.html">Sydney (Australie)</a>
-           <a href="serengeti-le_roi_lion.html">Serengeti (Tanzanie)</a>
-	   <i><a href="presentation.html">Voir toutes les destinations</a></i>
-         </div>   
-       </div>
-       
-       <div class="film">
-        <a href="presentation2.html"><button>Films</button></a>
-         <div class="sous-film">
-           <a href="mafabot-interstellar.html">Interstellar</a>
-           <a href="LA-FastAndFurious.html">Fast And Furious</a>
-           <a href="hobbiton-hobbit.html">Hobbit</a>
-           <a href="kualoa-jurassicpark.html">Jurassic Park</a>
-           <a href="wadirum-dune.html">Dune</a>
-           <a href="zhangjiajie-avatar.html">Avatar</a>
-           <a href="machupicchu-indianajones.html">Indiana Jones</a>
-           <a href="southampton-titanic.html">Titanic</a>
-           <a href="nyc-prada.html">Le Diable s'habille en Prada</a>
-           <a href="chambord-la_belle_et_la_bete.html">La Belle et La Bête</a>
-           <a href="sydney-nemo.html">Le Monde De Némo</a>
-           <a href="serengeti-le_roi_lion.html">Le Roi Lion</a> 
-           <i><a href="presentation2.html">Voir tous les films</a></i>
-         </div> 
-       </div>
-    </div>
+    <?php include 'header.php';?>
     </div>
     
     
@@ -113,18 +60,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="bloc1">
   <div class="sous-bloc1">
     <div class="sous-sous-bloc1">
-    <?php echo'<img src="image/' . $lignes[2] . '_2.1.1.jpg" alt="mafabot1">';?>
+    <?php echo'<img src="image/' . $lignes[2] . '_2.1.1.jpg" alt="ville1">';?>
     </div>
     <div class="sous-sous-bloc1">
-    <?php echo'<img src="image/' . $lignes[2] . '_2.1.2.jpg" alt="interstellar1">';?>
+    <?php echo'<img src="image/' . $lignes[2] . '_2.1.2.jpg" alt="film1">';?>
     </div>
   </div>
   <div class="sous-bloc1">
     <div class="sous-sous-bloc1">
-    <?php echo'<img src="image/' . $lignes[2] . '_2.2.1.jpg" alt="interstellar2">';?>
+    <?php echo'<img src="image/' . $lignes[2] . '_2.2.1.jpg" alt="film2">';?>
     </div>
     <div class="sous-sous-bloc1">
-    <?php echo '<img src="image/' . $lignes[2] . '_2.2.2.jpg" alt="mafabot2">';?>
+    <?php echo '<img src="image/' . $lignes[2] . '_2.2.2.jpg" alt="ville2">';?>
     </div>
   </div>
 </div> 
@@ -133,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="bloc-film">
  <div class="bloc-film-affiche">
- <?php echo'<img src="image/affiche' . $lignes[2] . '.jpg" alt="afficheinterstellar">';?>
+ <?php echo'<img src="image/affiche' . $lignes[2] . '.jpg" alt="affichefilm">';?>
  </div>
  <div class="bloc-film-resume">
  
@@ -228,72 +175,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="reservation-bloc">
 <div class="reservation-bloc-image">
-<?php echo '<img src="image/' . $lignes[2] . '_3.1.jpg" alt="islande1">';?>
+<?php echo '<img src="image/' . $lignes[2] . '_3.1.jpg" alt="pays1">';?>
 </div>
 
 <div class="formulaire">
 
-<form action="#" method="POST" class="formulaire">
-    <label for="adultes">Nombre d'adultes :</label>
-    <input type="number" id="adults" name="adults" min="1" required>
-
-    <label for="enfant">Nombre d'enfants :</label>
-    <input type="number" id="enfant" name="enfant" min="0">
-
-    <label for="depart">Date de départ :</label>
-    <input type="date" id="depart" name="depart" min="2025-01-01">
-
-    <label for="date">Date de fin :</label>
-    <input type="date" id="return" name="return" max="2027-12-31">
-    
-    
-    
-    <label for="option">Choississez vos options</label>
-    <div class="option">
-    <input type="checkbox" name="options" value="hebergement" > <p>Hébergement</p>
-    <input type="checkbox" name="options" value="restaurant" > <p>Restaurants</p>
-    <input type="checkbox" name="options" value="extra" > <p>Extra</p>
-    </div>
-    
-    <button type="submit">Réserver</button>
+<form action="reservation.php" method="POST" class="formulaire">    
+    <?php echo '<button name="destination" value=' . $lignes[13
+    ] . ' type="submit">Réservez dès maintenant !</button>';?>
 </form>
 </div>
 
 <div class="reservation-bloc-image">
-<?php echo '<img src="image/' . $lignes[2] . '_3.2.jpg" alt="islande2">';?>
+<?php echo '<img src="image/' . $lignes[2] . '_3.2.jpg" alt="pays2">';?>
 </div>
 </div>
+</div>
 
-
-
-
-
-
-</div>  
-    
-    <div class="fin">
-       <h3>Contact</h3>
-   
-        <div class="info-contact">
-            <a href="https://www.google.com/maps/search/?api=1&query=1+Avenue+du+Parc,+95000+Cergy" target="_blank">1 Avenue du Parc, 95000, Cergy</a><img src="image/localisation-contact.jpg" alt="adresse">
-        </div>
-        <div class="info-contact">
-            <a>00 00 00 00 00</a><img src="image/telephone.jpg" alt="téléphone">
-        </div>
-
-    <!-- Colonne 2 : Email et Instagram -->
-        <div class="info-contact">
-            
-            <a href="mailto:movie.explorator@exemple.com">movie.explorator@exemple.com</a><img src="image/mail.jpg" alt="email">
-        </div>
-        <div class="info-contact">
-            
-            <a href="https://www.instagram.com/nom_du_compte/" target="_blank">Suivez-nous sur Instagram</a><img src="image/instagram.jpg" alt="Instagram">
-        </div>
-
-<p>&copy; 2025 Movie Explorer. Tous droits réservés.</p>
-       
-   </div>  
+<?php include 'footer.php';?>  
     
 </body>
 </html>    
