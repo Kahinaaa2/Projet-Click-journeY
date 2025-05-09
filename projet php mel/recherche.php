@@ -93,7 +93,24 @@
      margin-bottom: 2.5vw;
      margin-top: 2.5vw;
      border-radius: 1vw;
-  }
+     display: flex;
+}
+
+  .blocimg{
+   background-color: orange;
+   width: 20vw;
+   height: 20vw;
+   border-top-left-radius: 1vw;
+   border-bottom-left-radius: 1vw;
+}
+
+.blocimg img{
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+
   
 
     </style>
@@ -146,9 +163,9 @@ for($i = 0; $i < count($mot); $i++) {
             
             
             <div class="bloc">
-            
-            
-            
+              <div class="blocimg">
+              <?php echo '<img src="image/' . $mot[$i][1] . '_3.1.jpg">';?>
+              </div>
             </div>
             
             
