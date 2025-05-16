@@ -81,37 +81,35 @@
             font-weight: bold;
         }
 
-       a:hover {
-  transform: scale(1.05); 
-}
-  .bloc{
-     background-color: #0e0047;
-     width: 50vw;
-     height: 20vw;
-     display: flex;
-     margin: 0 auto;
-     margin-bottom: 2.5vw;
-     margin-top: 2.5vw;
-     border-radius: 1vw;
-     display: flex;
-}
+        a:hover {
+        transform: scale(1.05); 
+        }
+        .bloc{
+          height: 35vw;
+          width: 70vw;
+          margin: 0 auto;
+          margin-bottom: 2vw;
+          position: relative;
+        }
+        
+        .bloc video{
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+        }
+        .bloc2{
+        height:15vw;
+        width: 30vw;
+        background-color: rgba(00, 00, 47, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 1;
+        border-radius: 2vw;
+        }
 
-  .blocimg{
-   background-color: orange;
-   width: 20vw;
-   height: 20vw;
-   border-top-left-radius: 1vw;
-   border-bottom-left-radius: 1vw;
-}
-
-.blocimg img{
-  width: 100%;
-  height: 100%;
-  border-top-left-radius: 1vw;
-  border-bottom-left-radius: 1vw;
-}
-
-  
 
     </style>
 </head>
@@ -159,24 +157,37 @@ if (file_exists($nom)) {
 for($i = 0; $i < count($mot); $i++) {
     for($j = 0; $j < count($mot[$i]); $j++) {   
         if($mot[$i][$j] == $recherche) {
-            ?>
-            
-            
-            <div class="bloc">
-              <div class="blocimg">
-              <?php echo '<img src="image/' . $mot[$i][1] . '_3.1.jpg">';?>
-              </div>
-            </div>
-            
-            
-            
+              $nomfichierfilm = "destinations/" . $mot[$i][0] . "-" . $mot[$i][2] . ".csv";
+              if (file_exists($nomfichierfilm)) {
+              $lignes2 = file($nomfichierfilm);
+                if(!$lignes2){
+                  header("Location: recherche.php");
+                exit();
+               }
+              } 
+              else {
+                 echo "Le fichier n'existe pas.";
+              }
+?>
+
+  <div class="bloc">
+  <video autoplay muted loop>
+  <source src="video/Chambord.mov" type="video/mp4">
+</video>
+    <div class="bloc2"></div>
+  </div>              
+                
+              
             
             
             <?php
             break; 
         }
+        
     }
+
 }
+
 
 
 
