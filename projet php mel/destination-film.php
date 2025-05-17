@@ -193,6 +193,6 @@ else{
 </div>
 
 <?php include 'footer.php';?>  
-    
+<?php $_POST = [];?>    
 </body>
 </html>    
