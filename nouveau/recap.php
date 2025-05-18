@@ -1,0 +1,168 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['connect']) || $_SESSION['role'] != 'client') {
+    header('Location: connexion.php');
+    exit();
+}
+
+if (!isset($_POST['destination'])) {
+    header('Location: Page-accueil.php');
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $depart = trim($_POST['depart']);
+    $retour = trim($_POST['return']);
+    $nbAdultes = trim($_POST['adults']);
+    $nbEnfants = trim($_POST['enfant']);
+    $email = $_SESSION['email'];
+    $prenom = $_SESSION['prenom'];
+    $prenom = ucfirst(strtolower($prenom));
+    $destination = trim($_POST['destination']);
+
+    $prixtot = trim($_POST['prix_total']);
+
+    $option1adulte = trim($_POST['adulte_count1']);
+    $option2adulte = trim($_POST['adulte_count2']);
+    $option3adulte = trim($_POST['adulte_count3']);
+
+    $option1enfant = trim($_POST['enfant_count1']);
+    $option2enfant = trim($_POST['enfant_count2']);
+    $option3enfant = trim($_POST['enfant_count3']);
+
+    $nuits = trim($_POST['nuits']);
+ 
+$fic = "destinations/" . $destination . ".csv";
+if (file_exists($fic)) {
+    $lignes = file($fic); 
+} else {
+    die("Le fichier de destination est introuvable.");
+}
+
+$titre = $lignes[0];
+
+$ville = trim($lignes[2]);
+$pays = trim($lignes[22]);
+$film = trim($lignes[3]);
+$film = ucfirst(strtolower($film));
+
+$prix = $lignes[14];
+$prix2 = $lignes[21];
+
+$prix1_1 = $lignes[15];
+$prix1_2 = $lignes[16];
+$prix1_3 = $lignes[17];
+
+$prix2_1 = $lignes[18];
+$prix2_2 = $lignes[19];
+$prix2_3 = $lignes[20];
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Récapitulatif</title>
+    <link rel="stylesheet" type="text/css" href="recap.css"> 
+</head>
+
+<body style="background: #f7f2d3">
+
+<div class="container">
+
+<h1> Réservation pour <?php echo $titre ?> </h1>
+
+    <div class="carree">
+        
+
+<?php
+    $fic = fopen("voyages.txt", "a");
+    if ($fic) {
+        fwrite($fic, "$email;$ville;$pays;$film;$depart;$retour;$nbAdultes;$nbEnfants;$option1adulte;$option2adulte;$option3adulte;$option1enfant;$option2enfant;$option3enfant;$destination;Consulté\n");
+        fclose($fic);
+    } else {
+        echo "<p>Erreur lors de l'enregistrement du voyage.</p>";
+    }
+
+?>
+
+<p> Vous avez effectué une réservation pour <b><?= $ville ?> (<?=$pays?>)</b> sur le thème du film <b><?= $film ?> !</b></p> 
+<p> Voici un <b>récapitulatif</b> de votre réservation.</p>
+<br>
+<u><p>Nom du voyageur :</u> <i><?= $prenom ?></i></p>
+<u><p>E-mail :</u> <i><?= $email ?></i></p>
+<br>
+<u><p>Destination :</u> <i><?= $pays ?> (<?=$ville?>)</i></p>
+<u><p>Film :</u> <i><?= $film ?></i></p>
+<br>
+<u><p>Date de départ :</u> <i><?= $depart ?></i></p>
+<u><p>Date de retour :</u> <i><?= $retour ?></i></p>
+<br>
+<u><p>Nombre de voyageurs :</u></p>
+<ul><p>Adultes : <i><?= $nbAdultes ?></i></p></ul>
+<ul><p>Enfants : <i><?= $nbEnfants ?></i></p></ul>
+<br>
+<u><p>Options :</u></p>
+<ul><p>Hébergement : <i><?= $option1adulte ?></i> Adultes et <i><?= $option1enfant ?></i> Enfants </p></ul>
+<ul><p>Restaurants : <i><?= $option2adulte ?></i> Adultes et <i><?= $option2enfant ?></i> Enfants </p></ul>
+<ul><p>Sortie Extra : <i><?= $option3adulte ?></i> Adultes et <i><?= $option3enfant ?></i> Enfants </p></ul>
+
+<h2>Total : <span id="total">0 €</span> </h2>
+
+<script>
+
+var adultes = <?= intval($nbAdultes) ?>;
+var enfants = <?= intval($nbEnfants) ?>;
+
+var adulte1 = <?= intval($option1adulte) ?>;
+var adulte2 = <?= intval($option2adulte) ?>;
+var adulte3 = <?= intval($option3adulte) ?>;
+
+var enfant1 = <?= intval($option1enfant) ?>;
+var enfant2 = <?= intval($option2enfant) ?>;
+var enfant3 = <?= intval($option3enfant) ?>;
+
+var prixadulte = <?= floatval($prix) ?>;
+var prixenfant = <?= floatval($prix2) ?>;
+
+var prix1 = <?= floatval($prix1_1) ?>;
+var prix2 = <?= floatval($prix1_2) ?>;
+var prix3 = <?= floatval($prix1_3) ?>;
+
+var prix4 = <?= floatval($prix2_1) ?>;
+var prix5 = <?= floatval($prix2_2) ?>;
+var prix6 = <?= floatval($prix2_3) ?>;
+
+var nuits = <?= $nuits ?>;
+
+function calcul_prix(){
+
+let total = (adultes*prixadulte) + (enfants*prixenfant) + (adulte1*prix1)*nuits + (adulte2*prix2) + (adulte3*prix3) + (enfant1*prix4)*nuits + (enfant2*prix5) + (enfant3*prix6);
+document.getElementById('total').innerText = total + ' €';
+
+}
+
+calcul_prix();
+
+</script>
+
+<div class="boutons">
+<form action="reservation.php" method="post">
+<input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+<button type="submit" id="modif">Modifier</button>
+</form>
+<form action="paiement.php" method="post">
+<input type="hidden" name="paiement">
+<button type="submit" id="payer">Passer au paiement</button>
+</form>
+</div>
+
+</div>
+
+</body>
+</html>
