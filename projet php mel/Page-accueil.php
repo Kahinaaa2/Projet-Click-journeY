@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="Page-accueil.css"> 
     <link rel="stylesheet" type="text/css" href="cssgeneral.css"> 
 </head>
-<body style="background: #FEFAE0">
+<body>
 
 <?php include 'header.php'; ?>
     
@@ -39,19 +39,21 @@ session_start();
 
 <div class="carree211">
 
+<form method="GET" action="destination-film.php">
+
 <div class="image-container">
-<a href="mafabot-interstellar.html">
+<button type="submit" name="choix_destination_film" value="Mafabot-Interstellar">
 <img src="image/islande-accueil.jpg" alt="Image 1" class="image image1">
 <img src="image/interstellar.jpg" alt="Image 2" class="image image2">
-</a>
+</button>
 
 </div>
 
 <div class="image-container">
-<a href="sydney-nemo.html">
+<button type="submit" name="choix_destination_film" value="Sydney-Nemo">
 <img src="image/australie-accueil.jpg" width="100%" height="auto" alt="Image 1" class="image image1">
 <img src="image/nemo.jpg" alt="Image 2" class="image image2">
-</a>
+</button>
 </div>
 
 </div>
@@ -59,20 +61,21 @@ session_start();
 <div class="carree212">
 
 <div class="image-container">
-<a href="zhangjiajie-avatar.html">
+<button type="submit" name="choix_destination_film" value="Zhangjiajie-Avatar">
 <img src="image/chine-accueil.jpg" alt="Image 1" class="image image1">
 <img src="https://offactandfantasy.wordpress.com/wp-content/uploads/2020/07/avatar-banner.jpg?w=900" alt="Image 2" class="image image2">
-</a>
+</button>
 </div>
 
 
 <div class="image-container">
-<a href="serengeti-le_roi_lion.html">
+<button type="submit" name="choix_destination_film" value="Serengeti-Leroilion">
 <img src="image/tanzanie-accueil.jpg" alt="Image 1" class="image image1">
 <img src="image/roilion.jpeg" alt="Image 2" class="image image2">
-</a>
+</button>
 </div>
 
+</form>
 
 </div>
 
@@ -99,9 +102,10 @@ session_start();
 <a href="presentation.php"><button>Voyagez Maintenant</button></a>
 </div>
     
-<div class="carte">    
-<img src="image/carte.png" alt="carte" width="70%">    
-</div>   
+<div class="carte"><div class="carte-bloc">    
+<img class="carteclaire" src="image/carte.png" alt="carte">
+<img class="cartesombre" src="image/carte2.png" alt="carte2">    
+</div></div>   
     
 <?php include 'footer.php'; ?>
      

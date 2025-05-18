@@ -1,16 +1,34 @@
 body{
+  --couleurfond: #FEFAE0;
+  --couleurtexte: black;
+  --couleurbande: #1532a0;
+  --couleurreservez: #f1b410;
+  --opaciteimgclaire: 1;
+  --opaciteimgsombre: 0;
+}
+
+body.sombre{
+  --couleurfond: #423a65;
+  --couleurtexte: #FEFAE0;
+  --couleurbande: #0e0047;
+  --couleurreservez: #7265b2;
+  --opaciteimgclaire: 0;
+  --opaciteimgsombre: 1;
+}
+
+body{
   width: 2000px;
 }  
 
 .image img{
   position: fixed;
   margin-top: 1.7vw;
-  width: 100vw; /* Optionnel selon l'effet voulu */
-  z-index: -1; /* Place l'image en arrière-plan */
+  width: 100vw;
+  z-index: -1;
 }
 
 .fond{
-  background: #FEFAE0;
+  background-color: var(--couleurfond);
   display: block;
   width: 100vw;
   z-index: 1;
@@ -25,7 +43,8 @@ body{
   margin-top: 7vw;
   font-size: 2.5vw;
   letter-spacing: 0.6vw;
-  margin-bottom: 50px;
+  margin-bottom: 4vw;
+  color: var(--couleurtexte);
 }  
 
 .fond a{
@@ -38,16 +57,44 @@ body{
   width: 20vw;
   height: 6vw;
   margin: 0vw auto;
+  color: var(--couleurtexte);
 } 
 
-.fond img{
-  width: 5vw;
-  height: auto;
+.fond img:hover{
+  transform: scale(1.05);
 }
 
 .fond a:hover{
   color: #f1b410;
-}   
+}
+
+.lien-bloc {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.image-bloc2{
+  width: 5vw;
+  height: 6vw;
+  position: relative;
+} 
+
+.imgclaire{
+  all:unset;
+  position: absolute;
+  width: 5vw;
+  height: 6vw;;
+  opacity: var(--opaciteimgclaire);
+} 
+
+.imgsombre{
+  all:unset;
+  position: absolute;
+  width: 5vw;
+  height: 6vw;
+  opacity: var(--opaciteimgsombre);
+}  
   
 .fond-entete{
   position: fixed;
@@ -129,11 +176,12 @@ body{
  font-size: 1.7vw;
  margin-top: 2.7vw;
  letter-spacing: 0.5vw;
+ color: var(--couleurtexte);
 } 
 
 .bloc-film-resume p{
  font-size: 1.3vw;
-
+ color: var(--couleurtexte);
 } 
 
 
@@ -151,7 +199,7 @@ body{
 .activite-bandeau{
  height: 1vw;
  width: 39vw;
- background-color: #1532a0;
+ background-color: var(--couleurbande);
 }
 
 
@@ -164,6 +212,7 @@ body{
  font-weight: bold;
  padding-left: 0.9vw;
  padding-bottom: 0.5vw;
+ color: var(--couleurtexte);
 } 
  
 
@@ -201,11 +250,13 @@ body{
 .bloc-activite-description h3{
  font-size: 2.2vw;
  letter-spacing: 0.9vw;
+ color: var(--couleurtexte);
 }
 
 .bloc-activite-description p{
  font-size: 1.4vw;
  margin-top: 1.1vw;
+ color: var(--couleurtexte);
 }
 
 .prix{
@@ -221,7 +272,7 @@ body{
 .prix-bandeau{
  height: 1vw;
  width: 43vw;
- background-color: #1532a0;
+ background-color: var(--couleurbande);
 }
 
 
@@ -232,6 +283,7 @@ body{
  font-weight: bold;
  padding-left: 0.9vw;
  padding-bottom: 0.5vw;
+ color: var(--couleurtexte);
 } 
 
 
@@ -248,11 +300,13 @@ body{
  font-size: 1.7vw;
  margin-bottom: 1.7vw;
  text-decoration: none;
+ color: var(--couleurtexte);
 }  
 
 .prix-texte p3{
  font-size: 1.1vw;
  padding-left: 1.7vw;
+ color: var(--couleurtexte);
 } 
  
 .reservation{
@@ -267,7 +321,7 @@ body{
 .reservation-bandeau{
  height: 1vw;
  width: 35vw;
- background-color: #1532a0;
+ background-color: var(--couleurbande);
 }
 
 
@@ -278,6 +332,7 @@ body{
  font-weight: bold;
  padding-left: 0.9vw;
  padding-bottom: 0.5vw;
+ color: var(--couleurtexte);
 } 
 
 
@@ -317,7 +372,7 @@ body{
 }
 
 .formulaire button:hover {
-  background-color: #f1b410;
+  background-color: var(--couleurreservez);
 }
 
 .option{
@@ -331,6 +386,7 @@ body{
 .option p{
   font-size: 1vw;
   padding-right:0.4vw;
+  color: var(--couleurtexte);
 }  
  
   

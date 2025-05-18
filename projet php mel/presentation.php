@@ -7,27 +7,27 @@
     <link rel="stylesheet" type="text/css" href="presentation.css"> 
     <link rel="stylesheet" type="text/css" href="cssgeneral.css"> 
 </head>
-<body style="background: #FEFAE0">
+<body>
     
     <?php include 'header.php'; ?>
     
     <?php 
-      if($_POST["choix"] == "destinations"){
+      if($_GET["choix"] == "destinations"){
        $clique1 = "1";
        $clique2 = "2" ;
       }
-      else if($_POST["choix"] == "films"){
+      else if($_GET["choix"] == "films"){
        $clique1 = "2";
        $clique2 = "1" ;
       }
       else{
        $clique1 = "1";
        $clique2 = "2" ;
-      }  
+      }
     ?>  
     
 
-<form method="POST" action="destination-film.php">
+<form method="GET" action="destination-film.php">
 
 <div class="carree">
 
@@ -225,8 +225,7 @@
 
 
 
-<?php include 'footer.php';?>
-     
+<?php include 'footer.php';?>    
       
 </body>
 </html>

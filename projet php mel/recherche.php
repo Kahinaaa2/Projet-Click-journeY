@@ -12,6 +12,23 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["recherche"]) && $_GET["
     <title>Recherche Rapide</title>
     <link rel="stylesheet" type="text/css" href="cssgeneral.css">
     <style>
+        body{
+          --couleurfond: #FEFAE0;
+          --couleurtextepage: #0e0047;
+          --couleurcarrepage: #f2eed6;
+        }
+        
+        body.sombre{
+          --couleurfond: #423a65;
+          --couleurtextepage: #FEFAE0;
+          --couleurcarrepage: #0e0047;
+        }
+        
+        body{
+          background-color: var(--couleurfond);
+        }
+        
+        
         input[name="recherche"] {
             width: 50vw; 
             height: 4vw;
@@ -136,11 +153,11 @@ select[name="tri"] option {
             margin: 2px;
             border-radius: 5px;
             text-decoration: none;
-            color: #0e0047;
+            color: var(--couleurtextepage);
         }
 
         .pagination a.active {
-            background: #f2eed6;
+            background-color: var(--couleurcarrepage);
             font-weight: bold;
         }
 
@@ -229,7 +246,7 @@ select[name="tri"] option {
         }
     </style>
 </head>
-<body style="background: #FEFAE0">
+<body>
 
 <?php include 'header.php'; ?>
 
@@ -367,7 +384,7 @@ if ($total_pages > 1) {
 }
 
 // Aucun résultat
-if ($total_resultats === 0) {
+if ($total_resultats === 0 && $recherche!= "") {
     echo '<div class="echec">
             <p>Aucun résultat trouvé pour "<b>' . htmlspecialchars($_SESSION['recherche']) . '</b>".</p>
           </div>';

@@ -1,4 +1,30 @@
+body{
+  --couleurtexte1: #0e0047;
+  --couleurtexte2: black;
+  --couleurfond1: #FEFAE0;
+  --couleurboutonvoyage1: #1532a0;
+  --couleurboutonvoyage2: #f1b410;
+  --opaciteclaire: 1;
+  --opacitesombre: 0;
+}
 
+body.sombre{
+  --couleurtexte1: #FEFAE0;
+  --couleurtexte2: #FEFAE0;
+  --couleurfond1: #423a65;
+  --couleurboutonvoyage1: #0e0047;
+  --couleurboutonvoyage2: #7265b2;
+  --opaciteclaire: 0;
+  --opacitesombre: 1;
+}
+
+body{
+  background-color: var(--couleurfond1);
+}
+
+form{
+  all:unset;
+}
 
 .texte2{
  width: 100vw;
@@ -9,6 +35,7 @@
 text-align: justify;
 text-align-last: center;
 font-size: 1.4vw;
+color: var(--couleurtexte2);
 }
 
 .texte h2 {
@@ -16,7 +43,7 @@ margin-top: 5vw;
 text-align: justify;
 text-align-last: center;
 font-size: 5vw;
-color: #0e0047;
+color: var(--couleurtexte1);
 }
 
 	
@@ -44,6 +71,10 @@ margin-left : 5vw;
 display: flex;
 justify-content: space-between;
 width: 70vw;
+}
+
+.carree21 button{
+  all: unset;
 }
 
 
@@ -83,6 +114,7 @@ opacity: 0;
 
 .slogan h2{
   font-size: 2vw;
+  color: var(--couleurtexte2);
 }
 
 .voyage {
@@ -93,7 +125,7 @@ margin-top: 4vw;
 }
 
 .voyage button{
-  background: #1532a0;
+  background: var(--couleurboutonvoyage1);
   width: 20vw;
   height: 5vw;
   cursor: pointer;
@@ -102,18 +134,35 @@ margin-top: 4vw;
   font-size: 1.5vw;
   font-weight: bold;
   border-radius: 1vw;
+  border:none;
 }
 
 .voyage button:hover{
-  background: #f1b410;
+  background: var(--couleurboutonvoyage2);
 } 
 
 .carte {
-  display: flex;
+  margin: 0 auto;
+  width: 70vw;
+  height: 45vw;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4vw;
   margin-top: 1vw;
+  position:relative;
+}
+
+.carteclaire{
+  width:100%;
+  height: auto;
+  position: absolute;
+  opacity: var(--opaciteclaire);
+} 
+
+.cartesombre{
+  width:100%;
+  height: auto;
+  position: absolute;
+  opacity: var(--opacitesombre);
 }  
   
 

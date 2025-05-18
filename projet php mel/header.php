@@ -17,9 +17,10 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
         <img src="image/logo.jpg" alt="logo">
     </a>
 
-     <a href="recherche.php">
+     <a class="droite1" href="recherche.php">
         <p>🔍</p>
     </a>
+    <button class="droite2" onclick="toggleTheme()"></button>
 
     <?php if ($pageAccueil): ?>
         <a href="profil.php" class="espace-client">
@@ -37,7 +38,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
 <div class="sous-titre">
    <div class="accueil">
      <a href="Page-accueil.php"><button>Accueil</button></a>
-     <div class="sous-accueil">
+     <div id="sous_accueil" class="sous-accueil">
        <a href="recherche.php">Recherche</a>
        <?php if ($pageAccueil): ?>
            <a href="profil.php">Mon Compte</a>
@@ -50,11 +51,11 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
    </div>
 
        <div class="destination">
-         <form method="POST" action="presentation.php">
+         <form method="GET" action="presentation.php">
          <button type="submit" name="choix" value="destinations">Destinations</button>
          </form>
-         <div class="sous-destination">
-           <form method="POST" action="destination-film.php">
+         <div id="sous_destination" class="sous-destination">
+           <form method="GET" action="destination-film.php">
            <button type="submit" name="choix_destination_film" value="Mafabot-Interstellar">Mafabot (Islande)</button>
            <button type="submit" name="choix_destination_film" value="LA-FastAndFurious">Los Angeles (États-Unis)</button>
            <button type="submit" name="choix_destination_film" value="Hobbiton-Hobbit">Hobbiton (Nouvelle-Zélande)</button>           
@@ -68,18 +69,18 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
            <button type="submit" name="choix_destination_film" value="Sydney-Nemo">Sydney (Australie)</button>
            <button type="submit" name="choix_destination_film" value="Serengeti-Leroilion">Serengeti (Tanzanie)</button>
            </form>
-           <form method="POST" action="presentation.php">
+           <form method="GET" action="presentation.php">
 	   <i><button type="submit" name="choix" value="destinations">Voir toutes les destinations</button></i>
 	   </form>
          </div>   
        </div>
        
        <div class="film">
-         <form method="POST" action="presentation.php">
+         <form method="GET" action="presentation.php">
          <button type="submit" name="choix" value="films">Films</button>
          </form>
-         <div class="sous-film">
-           <form method="POST" action="destination-film.php">
+         <div id="sous_film" class="sous-film">
+           <form method="GET" action="destination-film.php">
            <button type="submit" name="choix_destination_film" value="Mafabot-Interstellar">Interstellar</button>
            <button type="submit" name="choix_destination_film" value="LA-FastAndFurious">Fast And Furious</button>
            <button type="submit" name="choix_destination_film" value="Hobbiton-Hobbit">Hobbit</button>           
@@ -93,7 +94,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
            <button type="submit" name="choix_destination_film" value="Sydney-Nemo">Némo</button>
            <button type="submit" name="choix_destination_film" value="Serengeti-Leroilion">Le Roi Lion</button>
            </form>
-           <form method="POST" action="presentation.php">
+           <form method="GET" action="presentation.php">
 	   <i><button type="submit" name="choix" value="films">Voir tous les films</button></i>
 	   </form>
          </div> 
@@ -101,3 +102,5 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
     </div>
     </div>
 </div>
+
+<script src="theme.js"></script>

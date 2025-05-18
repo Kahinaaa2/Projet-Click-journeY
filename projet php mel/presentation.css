@@ -1,3 +1,19 @@
+body{
+  --couleurfondpresentation: #FEFAE0;
+  --couleurrecherche1: #1532a0;
+  --couleurrecherche2: #f1b410;
+}
+
+body.sombre{
+  --couleurfondpresentation: #423a65;
+  --couleurrecherche1: #0e0047;
+  --couleurrecherche2: #7265b2;
+}
+
+body{
+  background-color: var(--couleurfondpresentation);
+}
+
 .bouton {
 width: 100vw;
 display: flex;
@@ -9,7 +25,7 @@ margin: 5vw;
 
 
 .bouton a {
-  background-color: #1532a0;
+  background-color: var(--couleurrecherche1);
   color: #FEFAE0;
   border: none;
   border-radius: 0.6vw;
@@ -24,7 +40,7 @@ margin: 5vw;
 }
 
 .bouton a:hover {
-  background-color: #f1b410;
+  background-color: var(--couleurrecherche2);
 }
 
 .carree{

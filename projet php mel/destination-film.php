@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["choix_destination_film"])) {
-    
-        $nom = "destinations/" . $_POST["choix_destination_film"] . ".csv";
+
+if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["recherche"])) {
+    $_SESSION['destination'] = $_GET["choix_destination_film"];
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["choix_destination_film"])) {
+        $_SESSION['destination'] = $_GET["choix_destination_film"];
+        $nom = "destinations/" . $_GET["choix_destination_film"] . ".csv";
 
         if (file_exists($nom)) {
           $lignes = file($nom);
@@ -16,9 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         else {
           echo "Le fichier n'existe pas.";
         }
-    } else {
-        header("Location: presentation.php");
-    }
 }
 else{
   header("Location: presentation.php");
@@ -36,7 +37,7 @@ else{
     <link rel="stylesheet" type="text/css" href="destination-generique.css"> 
     <link rel="stylesheet" type="text/css" href="cssgeneral.css">
 </head>
-<body style="background: #FEFAE0">
+<body>
 
     <div class="fond-entete">
     <?php include 'header.php';?>
@@ -48,13 +49,15 @@ else{
 ?>
 </div> 
 
-<div class="fond"> 
-
-<?php echo '<h1>' . trim($lignes[0]) . '</h1>
-
-<a href="' . trim($lignes[1]) . '" target="_blank">
-<img src="image/localisation.png" width="70">' . trim($lignes[2]) . '</a>';
-?>
+<div class="fond">
+  <h1><?php echo trim($lignes[0]); ?></h1>
+  <a href="<?php echo trim($lignes[1]); ?>" target="_blank" class="lien-bloc">
+    <?php echo trim($lignes[2]); ?>
+    <div class="image-bloc2">
+      <img class="imgclaire" src="image/localisation.png">
+      <img class="imgsombre" src="image/localisation2.png">
+    </div>
+  </a>
 
 <div class="arriere-bloc1"><div class="bloc-bleu1"></div> 
 <div class="bloc1">
@@ -180,7 +183,7 @@ else{
 
 <div class="formulaire">
 
-<form action="reservation.php" method="POST" class="formulaire">    
+<form action="reservation.php" method="GET" class="formulaire">    
     <?php echo '<button name="destination" value=' . $lignes[13
     ] . ' type="submit">Réservez dès maintenant !</button>';?>
 </form>
@@ -193,6 +196,6 @@ else{
 </div>
 
 <?php include 'footer.php';?>  
-<?php $_POST = [];?>    
+<?php $_GET = [];?>    
 </body>
 </html>    
