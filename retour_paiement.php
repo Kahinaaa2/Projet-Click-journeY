@@ -8,6 +8,13 @@ $montant = isset($_GET['montant']) ? $_GET['montant'] : '';
 $vendeur = isset($_GET['vendeur']) ? $_GET['vendeur'] : '';
 $status = isset($_GET['status']) ? $_GET['status'] : '';
 $control = isset($_GET['control']) ? $_GET['control'] : '';
+$carte = isset($_GET['carte']) ? $_GET['carte'] : '';
+
+// Vérification du format de la carte (doit contenir au moins 3 espaces)
+if (substr_count($carte, ' ') < 3) {
+    echo "Erreur : veuillez saisir le numéro de carte bancaire dans un format correct avec des espaces (ex : 1234 5678 9012 3456).";
+    exit;
+}
 
 // Vérification de la clé API pour vérifier l'intégrité des données
 $api_key = getAPIKey($vendeur);
