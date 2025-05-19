@@ -196,7 +196,7 @@ document.getElementById('option-container2').innerHTML = '';
                 <p>Prix pour les Enfants :</p>
 		<p>Billet d'Avion (inclus) : <?php echo $prix2; ?>€</p>
                 <p>Hébergement : <?php echo $prix2_1; ?>€/nuit</p>
-                <p>Restaurants : <?php echo $prix2_2; ?>€/repas</p>
+                <p>Restaurants : <?php echo $prix2_2; ?>€/jour</p>
                 <p>Sortie Extra : <?php echo $prix2_3; ?>€</p>
 		
 		<div class="int-option3">		
