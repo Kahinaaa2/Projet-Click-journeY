@@ -10,9 +10,9 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
 $control = isset($_GET['control']) ? $_GET['control'] : '';
 $carte = isset($_GET['carte']) ? $_GET['carte'] : '';
 
-// Vérification du format de la carte (doit contenir au moins 3 espaces)
-if (substr_count($carte, ' ') < 3) {
-    echo "Erreur : veuillez saisir le numéro de carte bancaire dans un format correct avec des espaces (ex : 1234 5678 9012 3456).";
+// Vérifie que le format est exactement : 4 chiffres, espace, 4 chiffres, espace, 4 chiffres, espace, 4 chiffres
+if (!preg_match('/^\d{4} \d{4} \d{4} \d{4}$/', $carte)) {
+    echo "Erreur : veuillez saisir un numéro de carte au format correct avec des espaces entre chaque groupe de 4 chiffres (ex : 1234 5678 9012 3456).";
     exit;
 }
 
