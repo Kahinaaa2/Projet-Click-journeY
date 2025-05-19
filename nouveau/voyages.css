@@ -1,0 +1,82 @@
+body {
+  background-color: #fefae0;
+  margin: 0;
+  padding-top: 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.conteneur-blocs {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 2vw;
+  margin-top: 3vw;
+}
+
+
+.voyage-int {
+  width: 75vw;              
+  min-height: 15vw;       
+  padding: 1vw;
+}
+
+.voyage-bouton {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  padding: 1vw;
+  background-color: #0e0047;
+  border-radius: 0.7vw;
+  color: white;
+}
+
+.voyage-bouton:hover {
+  transform: scale(1.03);
+}
+
+
+.image{
+width: 30vw;
+background-color: red;
+display: flex;
+}
+
+.infos{
+width: 70%;
+padding-left: 2vw;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+}
+
+
+.titre{
+font-size: 1.2vw;
+margin-bottom: 1.9vw;
+text-align: center;
+}
+
+.left p{
+margin-top: 1vw;
+text-align: left;
+font-size: 1vw;
+}
+
+.right p{
+text-align: right;
+padding-right: 1vw;
+font-size: 1vw;
+}
+
+
+
+
+
+

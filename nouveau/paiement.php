@@ -13,7 +13,6 @@ if (!isset($_POST['paiement'])) {
 
     $paiement = trim($_POST['paiement']);
 
-}
 
 ?>
 
@@ -21,7 +20,7 @@ if (!isset($_POST['paiement'])) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Récapitulatif</title>
+    <title>Paiement</title>
     <link rel="stylesheet" type="text/css" href="recap.css"> 
 </head>
 
@@ -34,7 +33,7 @@ if (!isset($_POST['paiement'])) {
     <div class="carree">
         
 <form action="paiement.php" method="post">
-<input type="hidden" name="paiement">
+
 <button type="submit">Passer au paiement</button>
 </form>
 

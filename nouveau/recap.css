@@ -63,8 +63,18 @@ font-size: 1.7vw;
 }
 
 #modif:hover{
-background-color: #fcd363;
+background-color: #fffa51;
 }
+
+#enregistrer{
+text-align: center;
+font-size: 1.7vw;
+}
+
+#enregistrer:hover{
+background-color: #51a0ff;
+}
+
 
 #payer{
 text-align: center;

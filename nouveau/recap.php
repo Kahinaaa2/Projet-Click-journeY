@@ -11,6 +11,9 @@ if (!isset($_POST['destination'])) {
     exit();
 }
 
+$consulte = isset($_POST['consulte']);
+$paye = isset($_POST['paye']);
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $depart = trim($_POST['depart']);
@@ -41,7 +44,7 @@ if (file_exists($fic)) {
     die("Le fichier de destination est introuvable.");
 }
 
-$titre = $lignes[0];
+$titre = trim($lignes[0]);
 
 $ville = trim($lignes[2]);
 $pays = trim($lignes[22]);
@@ -81,14 +84,15 @@ $prix2_3 = $lignes[20];
         
 
 <?php
+if (!$paye && !$consulte) {
     $fic = fopen("voyages.txt", "a");
     if ($fic) {
-        fwrite($fic, "$email;$ville;$pays;$film;$depart;$retour;$nbAdultes;$nbEnfants;$option1adulte;$option2adulte;$option3adulte;$option1enfant;$option2enfant;$option3enfant;$destination;Consulté\n");
+        fwrite($fic, "$email;$titre;$ville;$pays;$film;$depart;$retour;$nbAdultes;$nbEnfants;$option1adulte;$option2adulte;$option3adulte;$option1enfant;$option2enfant;$option3enfant;$destination;$prixtot;Consulté\n");
         fclose($fic);
     } else {
         echo "<p>Erreur lors de l'enregistrement du voyage.</p>";
     }
-
+}
 ?>
 
 <p> Vous avez effectué une réservation pour <b><?= $ville ?> (<?=$pays?>)</b> sur le thème du film <b><?= $film ?> !</b></p> 
@@ -112,7 +116,11 @@ $prix2_3 = $lignes[20];
 <ul><p>Restaurants : <i><?= $option2adulte ?></i> Adultes et <i><?= $option2enfant ?></i> Enfants </p></ul>
 <ul><p>Sortie Extra : <i><?= $option3adulte ?></i> Adultes et <i><?= $option3enfant ?></i> Enfants </p></ul>
 
+<?php if (($consulte)||($paye)): ?>
+<h2>Total : <span><?php echo $prixtot ?> €</span> </h2>
+<?php else: ?>
 <h2>Total : <span id="total">0 €</span> </h2>
+<?php endif; ?>
 
 <script>
 
@@ -151,16 +159,53 @@ calcul_prix();
 
 </script>
 
+<?php if ($consulte): ?>
+
 <div class="boutons">
 <form action="reservation.php" method="post">
 <input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
 <button type="submit" id="modif">Modifier</button>
+</form>
+
+<form action="paiement.php" method="post">
+<input type="hidden" name="paiement">
+<button type="submit" id="payer">Passer au paiement</button>
+</form>
+
+<form action="voyages.php" method="post">
+<button type="submit" id="enregistrer">Retour</button>
+</form>
+
+</div>
+
+ <?php elseif ($paye): ?>
+
+<div class="boutons">
+
+<form action="voyages.php" method="post">
+<button type="submit" id="enregistrer">Retour</button>
+</form>
+
+</div>
+
+<?php else: ?>
+
+<div class="boutons">
+<form action="reservation.php" method="post">
+<input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+<button type="submit" id="modif">Modifier</button>
+</form>
+<form action="enregistrement.php" method="post">
+<input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+<button type="submit" id="enregistrer">Enregistrer le voyage</button>
 </form>
 <form action="paiement.php" method="post">
 <input type="hidden" name="paiement">
 <button type="submit" id="payer">Passer au paiement</button>
 </form>
 </div>
+
+<?php endif; ?>
 
 </div>
 

@@ -19,65 +19,7 @@ if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voyages</title>
     <link rel="stylesheet" type="text/css" href="compte.css">
-    <link rel="stylesheet" type="text/css" href="profil.css">
-    <style>
-
-        a {
-            text-decoration: none;
-        }
-
-        button {
-            width: 10vw; 
-            height: 4vw;
-            background-color: #f1b410ff;
-        }
-
-        #recherche {
-            font-size: 1.25vw;
-            text-align: center;
-        }
-
-        .carree {
-            width: 100vw;
-            height: auto;
-            margin: 0 auto;
-            padding: 2vw 0;
-            display: flex;
-            justify-content: center;  
-            align-items: center;
-        }
-
-        .conteneur-blocs {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px;
-        }
-
-        .element-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #0e0047;
-            border-radius: 8px;
-            text-align: center;
-            justify-content: center;
-            padding: 15px;
-            width: 75vw;
-        }
-
-        .element-info p {
-            color: #fefbec;
-            font-weight: bold;
-            margin: 4px 0;
-        }
-
-       a:hover {
-        transform: scale(1.05); 
-      }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="voyages.css">
 </head>
 <body>
 
@@ -114,6 +56,7 @@ $voyage = [];
 
 if (!empty($email) && file_exists("voyages.txt")) {
   $lignes = file("voyages.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+  $lignes = array_reverse($lignes);
     foreach ($lignes as $ligne) {
         $infos = explode(";", trim($ligne));
         if ($infos[0] === $email) {
@@ -127,27 +70,83 @@ if (!empty($email) && file_exists("voyages.txt")) {
 
 <div class="conteneur-blocs">
     <?php foreach ($voyage as $v): 
-        $ville = ucfirst(strtolower($v[1] ?? ''));
-        $pays = ucfirst(strtolower($v[2] ?? ''));
-        $film = ucfirst(strtolower($v[3] ?? ''));
-        $date1 = $v[4] ?? '';
-        $date2 = $v[5] ?? '';
-        $statut = $v[6] ?? '';
-        $prix = $v[7] ?? '';
+	$titre = $v[1];
+        $ville = $v[2];
+        $pays = trim($v[3]);
+        $film = $v[4];
+        $depart = $v[5];
+        $retour = $v[6];
+        $statut = $v[17];
+        $prixtot = $v[16];
+	$destination = $v[15];
+
+	$nbAdultes = $v[7];
+	$nbEnfants = $v[8];
+
+	$option1adulte = $v[9];
+ 	$option2adulte = $v[10];
+	$option3adulte = $v[11];
+
+	$option1enfant = $v[12];
+	$option2enfant = $v[13];
+	$option3enfant = $v[14];
     ?>
-<a href="recap.php">
-        <div class="element-info">
-            <p><strong>Ville :</strong> <?= htmlspecialchars($ville) ?></p>
-            <p><strong>Pays :</strong> <?= htmlspecialchars($pays) ?></p>
-            <p><strong>Film :</strong> <?= htmlspecialchars($film) ?></p>
-            <p><strong>Date de départ :</strong> <?= htmlspecialchars($date1) ?></p>
-            <p><strong>Date de retour :</strong> <?= htmlspecialchars($date2) ?></p>
-            <p><strong>Statut :</strong> <?= htmlspecialchars($statut) ?></p>
-            <p><strong>Prix :</strong> <?= htmlspecialchars($prix) ?></p>
-        </div>
-    </a>
-    <?php endforeach; ?>
+    
+<form action="recap.php" method="POST" class="voyage-int" target="_blank">
+
+<?php if ($statut == "Consulté"): ?>
+        <input type="hidden" name="consulte" value="1">
+<?php elseif ($statut == "Payé"): ?>
+        <input type="hidden" name="paye" value="1">
 <?php endif; ?>
+
+
+    <input type="hidden" name="titre" value="<?= htmlspecialchars($titre) ?>">
+    <input type="hidden" name="ville" value="<?= htmlspecialchars($ville) ?>">
+    <input type="hidden" name="pays" value="<?= htmlspecialchars($pays) ?>">
+    <input type="hidden" name="film" value="<?= htmlspecialchars($film) ?>">
+    <input type="hidden" name="depart" value="<?= htmlspecialchars($depart) ?>">
+    <input type="hidden" name="return" value="<?= htmlspecialchars($retour) ?>">
+    <input type="hidden" name="statut" value="<?= htmlspecialchars($statut) ?>">
+    <input type="hidden" name="prix_total" value="<?= htmlspecialchars($prixtot) ?>">
+    <input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+
+<input type="hidden" name="adults" value="<?= htmlspecialchars($nbAdultes) ?>">
+<input type="hidden" name="enfant" value="<?= htmlspecialchars($nbEnfants) ?>">
+
+<input type="hidden" name="adulte_count1" value="<?= htmlspecialchars($option1adulte) ?>">
+<input type="hidden" name="adulte_count2" value="<?= htmlspecialchars($option2adulte) ?>">
+<input type="hidden" name="adulte_count3" value="<?= htmlspecialchars($option3adulte) ?>">
+
+<input type="hidden" name="enfant_count1" value="<?= htmlspecialchars($option1enfant) ?>">
+<input type="hidden" name="enfant_count2" value="<?= htmlspecialchars($option2enfant) ?>">
+<input type="hidden" name="enfant_count3" value="<?= htmlspecialchars($option3enfant) ?>">
+
+
+    <button type="submit" class="voyage-bouton">
+	<div class = "image">	
+	<p>hey</p>
+	</div>
+	<div class = "infos">
+	<p class = "titre"> Voyage pour <b><?= $titre ?></b></p>
+	<div class ="left">
+        <p><b>Destination :</b> <?= $ville ?> (<?= $pays ?>) </p>
+        <p><b>Film :</b> <?= $film ?></p>
+        <p><b>Date de départ :</b> <?= $depart ?></p>
+        <p><b>Date de retour :</b> <?= $retour ?></p>
+	</div>
+	<div class ="right">
+        <p><b>Statut :</b> <?= $statut?></p>
+        <p><b>Prix :</b> <?= $prixtot?> €</p>
+	</div>
+	</div>
+    </button>
+ </form>
+    <?php endforeach; ?>
+</div>
+
+<?php endif; ?>
+
 
 </body>
 </html>

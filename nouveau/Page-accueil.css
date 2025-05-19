@@ -1,0 +1,121 @@
+
+
+.texte2{
+ width: 100vw;
+ height: 19vw;
+}
+
+.texte p {
+text-align: justify;
+text-align-last: center;
+font-size: 1.4vw;
+}
+
+.texte h2 {
+margin-top: 5vw;
+text-align: justify;
+text-align-last: center;
+font-size: 5vw;
+color: #0e0047;
+}
+
+	
+
+
+.carree2 {
+margin: 0 auto;
+height: 51vw;
+width: 80vw;
+background-color: #0e0047;
+border-radius: 2vw;
+}
+
+.carree2 h2{
+  color: #FEFAE0;
+  font-size: 2.5vw;
+  padding-top: 2.5vw;
+}  
+
+.carree21 {
+height: 50vw;
+display: grid;
+margin-right : 5vw;
+margin-left : 5vw;
+display: flex;
+justify-content: space-between;
+width: 70vw;
+}
+
+
+.image-container {
+position: relative;
+width: 30.1vw;
+height: 17.5vw;
+margin-bottom: 4vw;
+}
+
+.image {
+position: absolute;
+width: 30.1vw;
+height: 17.5vw;
+transition: opacity 0.3s ease;
+border-radius:1vw;
+}
+
+.image2 {
+opacity: 0; 
+}
+
+.image-container:hover .image2 {
+opacity: 1; 
+}
+
+.image-container:hover .image1 {
+opacity: 0;
+}
+
+.slogan{   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vw;
+}
+
+.slogan h2{
+  font-size: 2vw;
+}
+
+.voyage {
+text-align: center;
+margin-bottom: 4vw;
+margin-top: 4vw;
+
+}
+
+.voyage button{
+  background: #1532a0;
+  width: 20vw;
+  height: 5vw;
+  cursor: pointer;
+  border-width: 3px;
+  color: #FEFAE0;
+  font-size: 1.5vw;
+  font-weight: bold;
+  border-radius: 1vw;
+}
+
+.voyage button:hover{
+  background: #f1b410;
+} 
+
+.carte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4vw;
+  margin-top: 1vw;
+}  
+  
+
+
+  
