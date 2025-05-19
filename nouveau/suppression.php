@@ -19,17 +19,19 @@ if (isset($_GET['email'])) {
 
     if (file_exists($fichier)) {
         $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-        foreach ($lignes as $ligne) {
+        
+        
+       foreach ($lignes as $ligne) {
             $infos = explode(";", $ligne);
-            if ($infos[0] !== $emailASupprimer) {
-                $nouvellesLignes[] = $ligne; 
+            if ($infos[0] === $emailASupprimer) {
+                $prenom = ucfirst(strtolower($infos[2] ?? ''));
+                $nom = ucfirst(strtolower($infos[3] ?? ''));
+                continue;
             }
+            $nouvellesLignes[] = $ligne;
         }
 
         file_put_contents($fichier, implode("\n", $nouvellesLignes));
-
-   
     }
 }
 ?>
@@ -39,7 +41,7 @@ if (isset($_GET['email'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Déconnexion</title>
+    <title>Suppression</title>
     <link rel="stylesheet" type="text/css" href="pages.css">
 </head>
 <body>

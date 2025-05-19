@@ -75,7 +75,6 @@ font-size: 1.7vw;
 background-color: #51a0ff;
 }
 
-
 #payer{
 text-align: center;
 font-size: 1.7vw;
@@ -85,6 +84,13 @@ font-size: 1.7vw;
 background-color: #96ff51;
 }
 
+#supp{
+text-align: center;
+font-size: 1.7vw;
+}
 
+#supp:hover{
+background-color: #f44f4f;
+}
 
 

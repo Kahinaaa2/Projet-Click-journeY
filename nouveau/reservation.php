@@ -13,6 +13,41 @@ if (!isset($_POST['destination'])) {
 
 $destination = $_POST['destination'];
 
+$id = trim($_POST['id']);
+$supp = isset($_POST['supp']);
+if ($supp) {
+    $fichier = 'voyages.txt';
+    
+    if (file_exists($fichier)) {
+        $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $nouvellesLignes = [];
+
+        foreach ($lignes as $ligne) {
+            $infos = explode(";", $ligne);
+            $idLigne = trim(end($infos)); 
+
+            if ($idLigne !== $id) {
+                $nouvellesLignes[] = $ligne; 
+            }
+        }
+
+        file_put_contents($fichier, implode(PHP_EOL, $nouvellesLignes) . PHP_EOL);
+    }
+}
+
+$modif = isset($_POST['modifier']);
+if ($modif) {
+    $fichier = 'voyages.txt';
+    if (file_exists($fichier)) {
+        $lignes = file($fichier, FILE_IGNORE_NEW_LINES); 
+        if (count($lignes) > 0) {
+            array_pop($lignes);
+            file_put_contents($fichier, implode(PHP_EOL, $lignes) . PHP_EOL); 
+        }
+    }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -55,7 +90,7 @@ $prix2_3 = $lignes[20];
 <div class="carree">
 
 
-<form action="recap.php" method="POST" class="formulaire" target="_blank">
+<form action="recap.php" method="POST" class="formulaire">
 
     <label for="depart">Date de départ :</label>
     <input type="date" id="depart" name="depart" required onchange="calculerTotal()">
@@ -120,7 +155,7 @@ document.getElementById('option-container').innerHTML = '';
                 <p>Prix pour les Adultes :</p>
 		<p>Billet d'Avion (inclus) : <?php echo $prix; ?>€</p>
                 <p>Hébergement : <?php echo $prix1_1; ?>€/nuit</p>
-                <p>Restaurants : <?php echo $prix1_2; ?>€/repas</p>
+                <p>Restaurants : <?php echo $prix1_2; ?>€/jour</p>
                 <p>Sortie Extra : <?php echo $prix1_3; ?>€</p>
 		
 		<div class="int-option3">			
@@ -246,10 +281,14 @@ function calculerTotal() {
       }
     }
 
-    if (adulte.querySelector(`input[name="options[${i}][restaurant]"]`)?.checked){
-      total += prix.adulte.restaurant;
-      countAdulte[1]++;
-    }
+   if (adulte.querySelector(`input[name="options[${i}][restaurant]"]`)?.checked) {
+  if (!departValue || !retourValue) {
+    erreurDiv.innerHTML = 'Veuillez sélectionner les dates pour les restaurants.';
+  } else {
+    total += prix.adulte.restaurant * (nbNuits + 1);
+    countAdulte[1]++;
+  }
+}
 
     if (adulte.querySelector(`input[name="options[${i}][extra]"]`)?.checked){
       total += prix.adulte.extra;
@@ -274,10 +313,16 @@ function calculerTotal() {
         countEnfant[0]++;
       }
     }
-    if (enfant.querySelector(`input[name="options[${i}][restaurant]"]`)?.checked){
-      total += prix.enfant.restaurant;
-      countEnfant[1]++;
-    }
+
+  if (enfant.querySelector(`input[name="options[${i}][restaurant]"]`)?.checked) {
+  if (!departValue || !retourValue) {
+    erreurDiv.innerHTML = 'Veuillez sélectionner les dates pour les restaurants.';
+  } else {
+    total += prix.enfant.restaurant * (nbNuits + 1);
+    countEnfant[1]++;
+  }
+}
+
 
     if (enfant.querySelector(`input[name="options[${i}][extra]"]`)?.checked){
       total += prix.enfant.extra;

@@ -79,6 +79,7 @@ if (!empty($email) && file_exists("voyages.txt")) {
         $statut = $v[17];
         $prixtot = $v[16];
 	$destination = $v[15];
+	$id = $v[18];
 
 	$nbAdultes = $v[7];
 	$nbEnfants = $v[8];
@@ -110,6 +111,7 @@ if (!empty($email) && file_exists("voyages.txt")) {
     <input type="hidden" name="statut" value="<?= htmlspecialchars($statut) ?>">
     <input type="hidden" name="prix_total" value="<?= htmlspecialchars($prixtot) ?>">
     <input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+    <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
 
 <input type="hidden" name="adults" value="<?= htmlspecialchars($nbAdultes) ?>">
 <input type="hidden" name="enfant" value="<?= htmlspecialchars($nbEnfants) ?>">
@@ -125,7 +127,7 @@ if (!empty($email) && file_exists("voyages.txt")) {
 
     <button type="submit" class="voyage-bouton">
 	<div class = "image">	
-	<p>hey</p>
+	<?php echo'<img src="image/' . $ville . '_3.2.jpg" alt="ville">';?>
 	</div>
 	<div class = "infos">
 	<p class = "titre"> Voyage pour <b><?= $titre ?></b></p>

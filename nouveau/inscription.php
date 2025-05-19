@@ -40,7 +40,7 @@ if ($_SESSION['role'] == 'admin') {
             <input type="email" id="email" name="email" required>
 
             <label for="nom">Adresse :</label>
-            <input type="text" id="adresse" name="adresse" required>
+            <input type="text" id="adresse" name="adresse">
 
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="mdp" required>

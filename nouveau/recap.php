@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $prenom = $_SESSION['prenom'];
     $prenom = ucfirst(strtolower($prenom));
     $destination = trim($_POST['destination']);
+    $id = trim($_POST['id']);
 
     $prixtot = trim($_POST['prix_total']);
 
@@ -61,8 +62,23 @@ $prix1_3 = $lignes[17];
 $prix2_1 = $lignes[18];
 $prix2_2 = $lignes[19];
 $prix2_3 = $lignes[20];
+
 }
 
+if (file_exists("clients.txt")) {
+    $lines = file("clients.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+    foreach ($lines as $line) {
+        $mots = explode(';', trim($line));
+        if ($mots[0] === $email) {
+            $nom = $mots[3]; 
+	    $nom = ucfirst(strtolower($nom));
+            break; 
+        }
+    }
+} else {
+    echo "Le fichier clients.txt n'existe pas.";
+}
 
 ?>
 
@@ -87,7 +103,8 @@ $prix2_3 = $lignes[20];
 if (!$paye && !$consulte) {
     $fic = fopen("voyages.txt", "a");
     if ($fic) {
-        fwrite($fic, "$email;$titre;$ville;$pays;$film;$depart;$retour;$nbAdultes;$nbEnfants;$option1adulte;$option2adulte;$option3adulte;$option1enfant;$option2enfant;$option3enfant;$destination;$prixtot;Consulté\n");
+	$id = uniqid();
+        fwrite($fic, "$email;$titre;$ville;$pays;$film;$depart;$retour;$nbAdultes;$nbEnfants;$option1adulte;$option2adulte;$option3adulte;$option1enfant;$option2enfant;$option3enfant;$destination;$prixtot;Consulté;$id\n");
         fclose($fic);
     } else {
         echo "<p>Erreur lors de l'enregistrement du voyage.</p>";
@@ -98,7 +115,7 @@ if (!$paye && !$consulte) {
 <p> Vous avez effectué une réservation pour <b><?= $ville ?> (<?=$pays?>)</b> sur le thème du film <b><?= $film ?> !</b></p> 
 <p> Voici un <b>récapitulatif</b> de votre réservation.</p>
 <br>
-<u><p>Nom du voyageur :</u> <i><?= $prenom ?></i></p>
+<u><p>Nom du voyageur :</u> <i><?= $prenom .' '. $nom ?></i></p>
 <u><p>E-mail :</u> <i><?= $email ?></i></p>
 <br>
 <u><p>Destination :</u> <i><?= $pays ?> (<?=$ville?>)</i></p>
@@ -150,7 +167,7 @@ var nuits = <?= $nuits ?>;
 
 function calcul_prix(){
 
-let total = (adultes*prixadulte) + (enfants*prixenfant) + (adulte1*prix1)*nuits + (adulte2*prix2) + (adulte3*prix3) + (enfant1*prix4)*nuits + (enfant2*prix5) + (enfant3*prix6);
+let total = (adultes*prixadulte) + (enfants*prixenfant) + (adulte1*prix1)*nuits + (adulte2*prix2)*(nuits+1) + (adulte3*prix3) + (enfant1*prix4)*nuits + (enfant2*prix5)*(nuits+1) + (enfant3*prix6);
 document.getElementById('total').innerText = total + ' €';
 
 }
@@ -164,12 +181,22 @@ calcul_prix();
 <div class="boutons">
 <form action="reservation.php" method="post">
 <input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+<input type="hidden" name="supp">
+<input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
 <button type="submit" id="modif">Modifier</button>
 </form>
 
 <form action="paiement.php" method="post">
 <input type="hidden" name="paiement">
+<input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+<input type="hidden" name="prix_total" id="prix_total">
 <button type="submit" id="payer">Passer au paiement</button>
+</form>
+
+<form action="supprimer_voyage.php" method="post">
+<input type="hidden" name="supp">
+<input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+<button type="submit" id="supp">Supprimer le voyage</button>
 </form>
 
 <form action="voyages.php" method="post">
@@ -193,6 +220,7 @@ calcul_prix();
 <div class="boutons">
 <form action="reservation.php" method="post">
 <input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+<input type="hidden" name="modifier">
 <button type="submit" id="modif">Modifier</button>
 </form>
 <form action="enregistrement.php" method="post">
@@ -200,7 +228,9 @@ calcul_prix();
 <button type="submit" id="enregistrer">Enregistrer le voyage</button>
 </form>
 <form action="paiement.php" method="post">
-<input type="hidden" name="paiement">
+<input type="hidden" name="paiement" value="1">
+<input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+<input type="hidden" name="prix_total" id="prix_total" value="<?= htmlspecialchars($prixtot) ?>">
 <button type="submit" id="payer">Passer au paiement</button>
 </form>
 </div>
