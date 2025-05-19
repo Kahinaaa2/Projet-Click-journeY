@@ -187,9 +187,9 @@ calcul_prix();
 </form>
 
 <form action="paiement.php" method="post">
-<input type="hidden" name="paiement">
+<input type="hidden" name="paiement" value="1">
 <input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
-<input type="hidden" name="prix_total" id="prix_total">
+<input type="hidden" name="prix_total" id="prix_total" value="<?= htmlspecialchars($prixtot) ?>">
 <button type="submit" id="payer">Passer au paiement</button>
 </form>
 
