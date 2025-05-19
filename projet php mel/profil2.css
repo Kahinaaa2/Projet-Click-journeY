@@ -1,3 +1,15 @@
+body{
+  --couleurfondprofil2: #fefbec;
+  --couleursousblocprofil2: #f2eed6;
+  --couleurlettreprofil2: #0e0047;
+}
+
+body.sombre{
+  --couleurfondprofil2: #423a65; /*#2c206b*/
+  --couleursousblocprofil2: #221754;
+  --couleurlettreprofil2:#fefbec;
+}
+
 body {
   background-color: #0e0047;
   margin: 0;
@@ -8,7 +20,6 @@ body {
   flex-direction: column;
 }
 
-
 .conteneur-profil {
   display: flex;
   justify-content: center;
@@ -17,80 +28,58 @@ body {
 }
 
 .carte-profil {
-  background: #fefae0;
+  background-color: var(--couleurfondprofil2);
   border-radius: 2vw;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 2vw;
   text-align: center;
-  width: 400px;
+  width: 20vw;
 }
 
 .titre-profil {
-  font-size: 24px;
-  color:  #0e0047;
-  margin-bottom: 20px;
+  font-size: 1.5vw;
+  color:  var(--couleurlettreprofil2);
+  margin-bottom: 1vw;
   font-weight: bold;
 }
 
 .infos-profil {
   text-align: left;
-  margin-bottom: 20px;
-  color: #0e0047;
+  margin-bottom: 1vw;
+  color: var(--couleurlettreprofil2);
 }
 
 .element-info {
   display: flex;
   align-items: center;
-  font-size: 16px;
-  margin: 8px 0;
-  padding: 10px;
-  background-color:#f2eed6;
-  border-radius: 8px;
+  font-size: 0.9vw;
+  margin: 0.3vw 0;
+  padding: 0.4vw;
+  background-color: var(--couleursousblocprofil2);
+  border-radius:0.4vw;
 }
 
 .element-info span {
-  color: #0e0047;
+  color: var(--couleurlettreprofil2);
   font-weight: bold;
   flex: 1;
 }
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 0.5vw;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.4vw;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 0.9vw;
+  margin-top: 0.5vw;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.bouton-modifier {
-    background-color: #0e0047;
-    color: #fefae0;
-}
-
-.bouton-modifier:hover {
-  background-color: #0a0033;
-}
-
-.bouton-mdp {
   background-color: #0e0047;
-  color: #fefae0;
+  color: white;
 }
 
-.bouton-mdp:hover {
-  background-color: #0a0033;
-}
-
-.bouton-deconnexion {
-  background-color: #0e0047;
-  color: #fefae0;
-}
-
-.bouton-deconnexion:hover {
+button:hover {
   background-color: #0a0033;
 }
 

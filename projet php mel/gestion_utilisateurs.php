@@ -15,7 +15,6 @@ $clients = [];
 $clientsFiltres = [];
 $parPage = 12;
 
-// Lecture depuis clients.txt
 if (file_exists("clients.txt")) {
     $lignes = file("clients.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lignes as $ligne) {
@@ -39,103 +38,7 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
 <head>
     <meta charset="UTF-8">
     <title>Admin - Utilisateurs</title>
-    <style>
-        
-         body {
-            display: flex;
-            flex-direction: column;
-            background-color: #0e0047;
-            margin: 0;
-            justify-content: center;
-            color: #0e0047;
-        }
-
-        .conteneur-blocs {
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: center;
-         gap: 20px;
-        }
-
-        .element-info {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          font-size: 16px;
-          background-color:#fefbec;
-          border-radius: 8px;
-          text-align: center;
-          padding: 10px;
-          width: 18vw;
-          padding: 15px;
-          height: 11vw;
-
-         }
-
-        .element-info p {
-          color: #0e0047;
-          font-weight: bold;
-          margin: 4px 0;
-         }
-
-         a {
-          text-decoration: none;
-         }
-
-        h1 {
-            color: #fefae0;
-            text-align: center;
-            margin-bottom: 2vw;
-        }
-
-        .pagination {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .pagination a {
-            padding: 8px 12px;
-            background: #0e0047;
-            color: white;
-            margin: 2px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .pagination a.active {
-            background: #0a0033;
-            color: white;
-            font-weight: bold;
-        }
-
-        button {
-            width: 6vw;
-            height: 3vw;
-            background: #0e0047;
-            border: none;
-            color: white;
-            font-size: 0.9vw;
-            cursor: pointer;
-            border-radius: 15px;
-            margin-top: 10px;
-        }
-
-        .b button:hover {
-        background: #005e33;
-    }
-
-    .a button:hover{
-        background: #980000;
-    }
-
-    .boutons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="gestion.css">
 </head>
 <body>
 
@@ -177,4 +80,5 @@ $clientsAffiches = array_slice($clientsFiltres, $debut, $parPage);
 </div>
 
 </body>
+<script src="theme.js"></script>
 </html>

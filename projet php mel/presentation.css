@@ -1,5 +1,5 @@
 body{
-  --couleurfondpresentation: #FEFAE0;
+  --couleurfondpresentation: #fefbec;
   --couleurrecherche1: #1532a0;
   --couleurrecherche2: #f1b410;
 }
@@ -26,7 +26,7 @@ margin: 5vw;
 
 .bouton a {
   background-color: var(--couleurrecherche1);
-  color: #FEFAE0;
+  color: #fefbec;
   border: none;
   border-radius: 0.6vw;
   cursor: pointer;
@@ -85,7 +85,7 @@ transition: transform 0.3s ease;
 
 .texte {
 margin: 2vw;
-color: #FEFAE0;
+color: #fefbec;
 }
 
 .texte p {

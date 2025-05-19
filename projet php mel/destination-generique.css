@@ -1,5 +1,5 @@
 body{
-  --couleurfond: #FEFAE0;
+  --couleurfond: #fefbec;
   --couleurtexte: black;
   --couleurbande: #1532a0;
   --couleurreservez: #f1b410;
@@ -8,8 +8,8 @@ body{
 }
 
 body.sombre{
-  --couleurfond: #423a65;
-  --couleurtexte: #FEFAE0;
+  --couleurfond: #423a65; /*#2c206b*/
+  --couleurtexte: #fefbec;
   --couleurbande: #0e0047;
   --couleurreservez: #7265b2;
   --opaciteimgclaire: 0;
@@ -360,7 +360,7 @@ body{
 
 .formulaire button {
   background-color: #0e0047;
-  color: #FEFAE0;
+  color: #fefbec;
   border: none;
   border-radius: 1vw;
   cursor: pointer;

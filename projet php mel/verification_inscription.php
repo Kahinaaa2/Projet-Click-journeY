@@ -69,6 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 fclose($fic);
 
                 $_SESSION['email'] = $email;
+		$_SESSION['prenom'] = $mot[2];
+                $_SESSION['nom'] = $mot[3];
                 $_SESSION['connect'] = true;
                 $_SESSION['role'] = 'inscrit';
 

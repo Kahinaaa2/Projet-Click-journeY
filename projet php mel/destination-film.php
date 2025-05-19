@@ -183,7 +183,7 @@ else{
 
 <div class="formulaire">
 
-<form action="reservation.php" method="GET" class="formulaire">    
+<form action="reservation.php" method="GET" class="formulaire" target="_blank">    
     <?php echo '<button name="destination" value=' . $lignes[13
     ] . ' type="submit">Réservez dès maintenant !</button>';?>
 </form>

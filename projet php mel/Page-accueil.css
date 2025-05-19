@@ -9,14 +9,15 @@ body{
 }
 
 body.sombre{
-  --couleurtexte1: #FEFAE0;
-  --couleurtexte2: #FEFAE0;
-  --couleurfond1: #423a65;
+  --couleurtexte1: #fefbec;
+  --couleurtexte2: #fefbec;
+  --couleurfond1: #2c206b;
   --couleurboutonvoyage1: #0e0047;
   --couleurboutonvoyage2: #7265b2;
   --opaciteclaire: 0;
   --opacitesombre: 1;
 }
+/*423a65 363055 2c206b*/
 
 body{
   background-color: var(--couleurfond1);
@@ -58,7 +59,7 @@ border-radius: 2vw;
 }
 
 .carree2 h2{
-  color: #FEFAE0;
+  color: #fefbec;
   font-size: 2.5vw;
   padding-top: 2.5vw;
 }  
@@ -130,7 +131,7 @@ margin-top: 4vw;
   height: 5vw;
   cursor: pointer;
   border-width: 3px;
-  color: #FEFAE0;
+  color: #fefbec;
   font-size: 1.5vw;
   font-weight: bold;
   border-radius: 1vw;

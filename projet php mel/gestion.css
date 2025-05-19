@@ -1,0 +1,106 @@
+         body{
+          --couleur-bloc-gestion: #fefbec;
+          --couleur-texte-gestion: #0e0047;
+         }
+         
+         body.sombre{
+          --couleur-bloc-gestion: #423a65;
+          --couleur-texte-gestion: #fefbec;
+         }
+         
+         body {
+            display: flex;
+            flex-direction: column;
+            background-color: #0e0047;
+            margin: 0;
+            justify-content: center;
+        }
+
+        .conteneur-blocs {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 1.5vw;
+        }
+
+        .element-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: 0.9vw;
+          background-color: var(--couleur-bloc-gestion);
+          border-radius: 0.6vw;
+          text-align: center;
+          padding: 0.7vw;
+          width: 18vw;
+          height: auto;
+
+         }
+
+        .element-info p {
+          color: var(--couleur-texte-gestion);
+          font-weight: bold;
+          margin: 0.2vw 0;
+         }
+
+         a {
+          text-decoration: none;
+         }
+
+        h1 {
+            color: #fefbec;
+            text-align: center;
+            margin-bottom: 2vw;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 1.5vw;
+        }
+
+        .pagination a {
+            padding: 0.4vw 0.5vw;
+            background: #0e0047;
+            color: white;
+            margin: 0.2vw;
+            border-radius: 0.1vw;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background: #0a0033;
+            color: white;
+            font-weight: bold;
+        }
+
+        button {
+            width: 7vw;
+            height: 3vw;
+            background-color: #0e0047;
+            border: none;
+            color: #fefbec;
+            font-size: 0.9vw;
+            cursor: pointer;
+            border-radius: 0.8vw;
+            margin-top: 0.6vw;
+            margin-bottom: 0.5vw;
+        }
+
+        .b button:hover {
+        background: #005e33;
+    }
+
+	   .c button:hover {
+        background: #002497;
+    }	
+
+    .a button:hover{
+        background: #980000;
+    }
+
+    .boutons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}

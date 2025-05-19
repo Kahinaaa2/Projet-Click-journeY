@@ -1,0 +1,98 @@
+body{
+  --couleurfondvoyage: #fefbec;
+}
+
+body.sombre{
+  --couleurfondvoyage: #423a65; /*#2c206b*/;
+}
+
+body {
+  background-color: var(--couleurfondvoyage);
+  margin: 0;
+  padding-top: 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.conteneur-blocs {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 2vw;
+  margin-top: 3vw;
+}
+
+
+.voyage-int {
+  width: 75vw;              
+  min-height: 15vw;       
+  padding: 1vw;
+}
+
+.voyage-bouton {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  background-color: #0e0047;
+  border-radius: 0.7vw;
+  color: white;
+}
+
+.voyage-bouton:hover {
+  transform: scale(1.03);
+}
+
+
+.image{
+width: 30vw;
+display: flex;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  display: block; 
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0.7vw;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.infos{
+width: 70%;
+padding: 1.5vw;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+
+.titre{
+font-size: 1.2vw;
+margin-bottom: 1.9vw;
+text-align: center;
+}
+
+.left p{
+text-align: left;
+font-size: 1vw;
+}
+
+.right p{
+text-align: right;
+font-size: 1vw;
+}
+
+
+
+
+
+

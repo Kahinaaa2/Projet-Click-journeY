@@ -28,19 +28,15 @@ if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])) {
 
     <div class="profil">
         <?php if ($_SESSION['role'] == 'admin' && isset($_GET['email'])): ?>
-        <a href="profil.php">Informations du client</a> //probleme qd on clique
+        <a href="profil.php?email=<?= urlencode($_GET['email']) ?>">Informations du client</a>
     </div>
     <div class="voyage">
-        <a href="voyagespayes.php">Voyages du client</a>
+        <a href="voyages.php?email=<?= urlencode($_GET['email']) ?>">Voyages du client</a>
         <?php else: ?>
                <a href="profil.php">Mes informations</a>
     </div>
     <div class="voyage">
         <a href="voyages.php">Mes voyages</a>
-        <div class="sous-voyage">
-            <a href="voyagespayes.php">Voyages Payés</a>
-            <a href="voyagesconsultes.php">Voyages Consultés</a>
-        </div>
         <?php endif; ?>
     </div>
 </div>
@@ -96,31 +92,25 @@ if (!empty($email)) {
 
         </div>
 
-     <?php if ((isset($_SESSION['connect']) && $_SESSION['connect'] === true && $_SESSION['role'] == 'client')){ ?>
+     <?php if ((isset($_SESSION['connect']) && $_SESSION['connect'] === true && $_SESSION['role'] == 'client')): ?>
 
         <a href="#">
             <button class="bouton-modifier">Modifier le profil</button>
         </a>
-        <a href="#">
-            <button class="bouton-mdp">Modifier le mot de passe</button>
+        <a href="Page-accueil.php">
+            <button class="bouton-deconnexion">Retour</button>
         </a>
         <a href="deconnexion.php">
             <button class="bouton-deconnexion">Se déconnecter</button>
         </a>
-        <a href="Page-accueil.php">
-           <button class="bouton-deconnexion">Retour Accueil</button>
-        </a> 
         
-        <?php }else if ((isset($_SESSION['connect']) && $_SESSION['connect'] === true && $_SESSION['role'] == 'admin')){ ?> 
-        
+        <?php else: ?>
         <a href="admin.php">
-           <button class="bouton-deconnexion">Retour</button>
-        </a> 
-          
-        <?php }?>
-        
+            <button class="bouton-deconnexion">Retour</button>
+        </a>
+        <?php endif; ?>
     </div>
 </div>
-
+<script src="theme.js"></script>
 </body>
 </html>

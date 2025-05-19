@@ -1,0 +1,59 @@
+        body{
+          --couleurblocpages: #fefbec;
+          --couleur-texte-pages: #0e0047;
+        }
+        
+        body.sombre{
+          --couleurblocpages: #423a65; /*#2c206b*/
+          --couleur-texte-pages: #fefbec;
+        }
+        
+        body {
+            display: flex;
+            background-color: #0e0047;
+            margin: 0;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            color: #0e0047;
+        }
+
+        .bloc {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--couleurblocpages);
+            padding: 3vw;
+            border-radius: 1.5vw;
+            text-align: center;
+            width: 25vw;
+            height: 12vw;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .bloc button {
+            width: 15vw;
+            height: 3vw;
+            background-color: #0e0047;
+            border: none;
+            color: #fefbec;
+            font-size: 1vw;
+            cursor: pointer;
+            border-radius: 0.8vw;
+            margin-top: 1vw;
+        }
+
+        .bloc h3 {
+            color: var(--couleur-texte-pages);
+        }
+
+        .bloc a {
+            text-decoration: none;
+        }
+
+          .bloc button:hover {
+    	background: #0a0033;
+    }
+        
+

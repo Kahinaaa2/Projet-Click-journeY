@@ -13,15 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["recherche"]) && $_GET["
     <link rel="stylesheet" type="text/css" href="cssgeneral.css">
     <style>
         body{
-          --couleurfond: #FEFAE0;
+          --couleurfond: #fefbec;
           --couleurtextepage: #0e0047;
           --couleurcarrepage: #f2eed6;
+          --couleurecherche: #f1b410;
+          --couleurecherchetexte: black;
         }
         
         body.sombre{
-          --couleurfond: #423a65;
-          --couleurtextepage: #FEFAE0;
+          --couleurfond: #423a65; /*#2c206b*/
+          --couleurtextepage: #fefbec;
           --couleurcarrepage: #0e0047;
+          --couleurecherche: #4d4090;
+          --couleurecherchetexte: #fefbec;
         }
         
         body{
@@ -32,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["recherche"]) && $_GET["
         input[name="recherche"] {
             width: 50vw; 
             height: 4vw;
-            border-color: #f1b410ff;
+            border-color: var(--couleurecherche);
             border-width: 0.35vw;
             background-color: #f1f1f1;
         }
@@ -89,13 +93,14 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["recherche"]) && $_GET["
     border-right-color: #e2e2e2;
     border-bottom-color: #e2e2e2;
     background-color: #0e0047;
-    color: #FEFAE0;
+    color: #fefbec;
     cursor: pointer;
 }
 
 .carree select[name="tri"] {
     width: 17vw;
-    background-color: #f1b410ff;
+    background-color: var(--couleurecherche);
+    color: var(--couleurecherchetexte);
 }
 
 select[name="tri"] option {
@@ -104,7 +109,8 @@ select[name="tri"] option {
 
 .carree button {
     width: 10vw;
-    background-color: #f1b410ff;
+    background-color: var(--couleurecherche);
+    color: var(--couleurecherchetexte);
     cursor: pointer;
 }
 
@@ -359,7 +365,7 @@ foreach ($resultats_affiches as $lignes2) {
         </form>
 
         <div class="bloc2">
-            <h4><?= trim($lignes2[21]) ?></h4>
+            <h4><?= trim($lignes2[23]) ?></h4>
             <p>A partir de : <b><?= trim($lignes2[14]) ?>€</b></p>
             <p>Options disponibles :<br>
                 <div class="texte2"><b>Logement - Restaurants - Sortie Extra</b></div>

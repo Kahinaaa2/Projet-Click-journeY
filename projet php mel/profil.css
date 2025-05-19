@@ -1,5 +1,15 @@
+body{
+  --couleurfondprofil: #fefbec;
+  --couleurboutonprofil: #1532a0;
+}
+
+body.sombre{
+  --couleurfondprofil: #423a65; /*#2c206b*/
+  --couleurboutonprofil: #4d4090;
+}
+
 body {
-  background-color: #fefae0;
+  background-color: var(--couleurfondprofil);
   margin: 0;
   padding-top: 3vw;
   display: flex;
@@ -69,7 +79,7 @@ button {
 }
 
 .bouton-modifier {
-    background-color: #1532a0;
+    background-color: var(--couleurboutonprofil);
     color: #fefae0;
 }
 
@@ -78,8 +88,8 @@ button {
 }
 
 .bouton-mdp {
-  background-color: #1532a0;
-  color: #fefae0;
+  background-color: var(--couleurboutonprofil);
+  color: #fefbec;
 }
 
 .bouton-mdp:hover {
@@ -87,8 +97,8 @@ button {
 }
 
 .bouton-deconnexion {
-  background-color: #1532a0;
-  color: #fefae0;
+  background-color: var(--couleurboutonprofil);
+  color: #fefbec;
 }
 
 .bouton-deconnexion:hover {

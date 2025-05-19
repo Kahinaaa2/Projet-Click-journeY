@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $email = strtolower(filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL));
     $mdp = trim($_POST['mdp']);
-    //$date2 = date("Y-m-d"); pour sauvegarder la date de connexion
 
     $lignes = file("clients.txt"); 
 
@@ -27,6 +26,7 @@ for ($i = 0; $i < count($lignes); $i++) {
     if ($email === $mot[0] && $mdp === $mot[1]) {
         $_SESSION['email'] = $email;
         $_SESSION['prenom'] = $mot[2];
+        $_SESSION['nom'] = $mot[3];
         $_SESSION['connect'] = true;
         $_SESSION['role'] = 'client';
 
