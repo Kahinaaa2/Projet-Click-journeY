@@ -42,7 +42,7 @@ $_SESSION['paiement'] = [
             <input type="hidden" name="vendeur" value="<?= $_SESSION['paiement']['vendeur'] ?>">
             <input type="hidden" name="retour" value="<?= $_SESSION['paiement']['retour'] ?>">
             <input type="hidden" name="control" value="<?= $_SESSION['paiement']['control'] ?>">
-            <input type="text" name="carte" placeholder="1234 5678 9012 3456">
+            <input type="text" name="carte" placeholder="5555 1234 5678 9000">
 
             <button type="submit">Valider et payer</button>
         </form>
