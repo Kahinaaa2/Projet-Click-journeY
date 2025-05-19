@@ -18,11 +18,13 @@ body{
 }
 
 body.sombre{
-  --couleur1: #7265b2;
-  --couleur2: #7265b2;
+  --couleur1: #4d4090;
+  --couleur2: #4d4090;
   --couleurfond2: #0e0047;
   --couleurlettre2: #f2eed6;
 }
+
+/*7265b2*/
 
 .entete {
 width: 100vw;
@@ -70,7 +72,7 @@ button.droite2{
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #FEFAE0; 
+  color: #fefbec; 
   font-weight: bold;
   font-size: 0.8vw;
 }
@@ -107,12 +109,12 @@ button.droite2{
   height: 2.5vw;
   cursor: pointer;
   border-color: #0e0047;
-  color: #FEFAE0;
+  color: #fefbec;
   font-size: 1vw;
 } 
 
 .accueil a{
-  color: #FEFAE0;
+  color: #fefbec;
   text-decoration: none;
 }
 
@@ -137,7 +139,7 @@ button.droite2{
 
 .sous-accueil a:hover {
   background-color: var(--couleur2);
-  color: #FEFAE0;
+  color: #fefbec;
   transform: scale(1.03);
 }
 
@@ -156,12 +158,12 @@ button.droite2{
   height: 2.5vw;
   cursor: pointer;
   border-color: #0e0047;
-  color: #FEFAE0;
+  color: #fefbec;
   font-size: 1vw;
 } 
 
 .destination button{
-  color: #FEFAE0;
+  color: #fefbec;
   text-decoration: none;
 }
 
@@ -191,7 +193,7 @@ button.droite2{
 
 .sous-destination button:hover{
   background-color: var(--couleur2);
-  color: #FEFAE0;
+  color: #fefbec;
   cursor: pointer;
   transform: scale(1.03);
 }
@@ -211,7 +213,7 @@ button.droite2{
   height: 2.5vw;
   cursor: pointer;
   border-color: #0e0047;
-  color: #FEFAE0;
+  color: #fefbec;
   font-size: 1vw;
 } 
 
@@ -246,7 +248,7 @@ button.droite2{
 
 .sous-film button:hover{
   background-color: var(--couleur2);
-  color: #FEFAE0; 
+  color: #fefbec; 
   cursor: pointer;
   transform: scale(1.03);
 }
@@ -288,7 +290,7 @@ button.droite2{
 
 .info-contact a{
   margin: 0;
-  color: #FEFAE0;
+  color: #fefbec;
   text-decoration: none;
   font-size: 1vw;
 }
