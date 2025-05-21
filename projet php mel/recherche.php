@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["recherche"]) && $_GET["
         }
         
         body.sombre{
-          --couleurfond: #423a65; /*#2c206b*/
+          --couleurfond: #2c206b;
           --couleurtextepage: #fefbec;
           --couleurcarrepage: #0e0047;
           --couleurecherche: #4d4090;
@@ -360,7 +360,7 @@ foreach ($resultats_affiches as $lignes2) {
             <source src="video/<?= trim($lignes2[2]) ?>.mov" type="video/mp4">
         </video>
 
-        <form method="POST" action="destination-film.php">
+        <form method="GET" action="destination-film.php">
             <button type="submit" name="choix_destination_film" value="<?= trim($lignes2[13]) ?>"></button>
         </form>
 
@@ -370,7 +370,7 @@ foreach ($resultats_affiches as $lignes2) {
             <p>Options disponibles :<br>
                 <div class="texte2"><b>Logement - Restaurants - Sortie Extra</b></div>
             </p>
-            <form method="POST" action="destination-film.php">
+            <form method="GET" action="destination-film.php">
                 <button type="submit" name="choix_destination_film" value="<?= trim($lignes2[13]) ?>"></button>
             </form>
         </div>

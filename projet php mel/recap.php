@@ -13,6 +13,7 @@ if (!isset($_GET['destination'])) {
 
 $consulte = isset($_GET['consulte']);
 $paye = isset($_GET['paye']);
+$panier = isset($_GET['panier']);
 
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
@@ -90,7 +91,7 @@ if (file_exists("clients.txt")) {
     <link rel="stylesheet" type="text/css" href="recap.css"> 
 </head>
 
-<body style="background: #f7f2d3">
+<body>
 
 <div class="container">
 
@@ -100,7 +101,7 @@ if (file_exists("clients.txt")) {
         
 
 <?php
-if (!$paye && !$consulte) {
+if ((!$paye && !$consulte) && (!$panier) ){
     $fic = fopen("voyages.txt", "a");
     if ($fic) {
 	$id = uniqid();
@@ -133,7 +134,7 @@ if (!$paye && !$consulte) {
 <ul><p>Restaurants : <i><?= $option2adulte ?></i> Adultes et <i><?= $option2enfant ?></i> Enfants </p></ul>
 <ul><p>Sortie Extra : <i><?= $option3adulte ?></i> Adultes et <i><?= $option3enfant ?></i> Enfants </p></ul>
 
-<?php if (($consulte)||($paye)): ?>
+<?php if (($consulte)||($paye)||($panier)): ?>
 <h2>Total : <span><?php echo $prixtot ?> €</span> </h2>
 <?php else: ?>
 <h2>Total : <span id="total">0 €</span> </h2>
@@ -186,11 +187,12 @@ calcul_prix();
 <button type="submit" id="modif">Modifier</button>
 </form>
 
-<form action="paiement.php" method="GET">
-<input type="hidden" name="paiement" value="1">
-<input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
-<input type="hidden" name="prix_total" id="prix_total" value="<?= htmlspecialchars($prixtot) ?>">
-<button type="submit" id="payer">Passer au paiement</button>
+<form action="changer_statut.php" method="POST">
+<input type="hidden" name="statut" value="Panier">
+<input type="hidden" name="pageavant" value="recap">
+<input type="hidden" name="email" value="<?= htmlspecialchars($email) ?>">
+<input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+<button type="submit" id="payer">Ajouter au panier</button>
 </form>
 
 <form action="supprimer_voyage.php" method="GET">
@@ -215,6 +217,26 @@ calcul_prix();
 
 </div>
 
+<?php elseif ($panier): ?>
+
+<div class="boutons">
+<form action="reservation.php" method="GET">
+<input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
+<input type="hidden" name="supp">
+<input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+<button type="submit" id="modif">Modifier</button>
+</form>
+
+<form action="panier.php" method="GET">
+<button type="submit" id="payer">Allez au panier</button>
+</form>
+
+<form action="supprimer_voyage.php" method="GET">
+<input type="hidden" name="supp">
+<input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+<button type="submit" id="supp">Supprimer le voyage</button>
+</form>
+
 <?php else: ?>
 
 <div class="boutons">
@@ -238,6 +260,6 @@ calcul_prix();
 <?php endif; ?>
 
 </div>
-
+<script src="theme.js"></script>
 </body>
 </html>

@@ -1,9 +1,13 @@
 body{
   --couleurfondvoyage: #fefbec;
+  --couleurentetevoyage: #1532a0;
+  --couleurentetesourisvoyage: #0e257e;
 }
 
 body.sombre{
-  --couleurfondvoyage: #423a65; /*#2c206b*/;
+  --couleurfondvoyage: #423a65;
+  --couleurentetevoyage: #0e0047;
+  --couleurentetesourisvoyage: #4d4090;
 }
 
 body {
@@ -91,7 +95,26 @@ text-align: right;
 font-size: 1vw;
 }
 
+.retour{
+  text-align: center;
+  background-color: var(--couleurentetevoyage);
+  color: #fefbec;
+  width: 10vw;
+  height: 2vw;
+}
 
+.retour a{
+  display: block;
+  text-decoration: none;
+  color: #fefbec;
+  margin-top: 0.4vw;
+  width: 10vw;
+  height: 2vw;
+}
+
+.retour:hover{
+  background-color: var(--couleurentetesourisvoyage);
+}
 
 
 

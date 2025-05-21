@@ -48,6 +48,6 @@ if ($supp) {
 <a href="Page-accueil.php"><button>Retournez à la page d'accueil</button></a>
 
     </div>
-
+<script src="theme.js"></script>
 </body>
 </html>

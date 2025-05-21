@@ -30,12 +30,12 @@ if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])) {
         <a href="profil.php?email=<?= urlencode($_GET['email']) ?>">Informations du client</a>
     </div>
     <div class="voyage">
-        <a href="voyages.php">Voyages du client</a>
+        <a href="panier.php">Voyages du client</a>
         <?php else: ?>
                <a href="profil.php">Mes informations</a>
     </div>
     <div class="voyage">
-        <a href="voyages.php">Mes voyages</a>
+        <a href="panier.php">Mes voyages</a>
         <?php endif; ?>
     </div>
 </div>
@@ -65,7 +65,9 @@ if (!empty($email) && file_exists("voyages.txt")) {
         }
     }
 ?>
-
+<div class="retour">
+  <a href="profil.php">Retour</a>
+</div>
 <?php if (!empty($voyage)): ?>
 
 <div class="conteneur-blocs">
@@ -93,12 +95,14 @@ if (!empty($email) && file_exists("voyages.txt")) {
 	$option3enfant = $v[14];
     ?>
     
-<form action="recap.php" method="GET" class="voyage-int" target="_blank">
+<form action="recap.php" method="GET" class="voyage-int" >
 
 <?php if ($statut == "Consulté"): ?>
         <input type="hidden" name="consulte" value="1">
 <?php elseif ($statut == "Payé"): ?>
         <input type="hidden" name="paye" value="1">
+<?php elseif ($statut == "Panier"): ?>
+        <input type="hidden" name="panier" value="1">        
 <?php endif; ?>
 
 
