@@ -8,7 +8,7 @@ body{
 }
 
 body.sombre{
-  --couleurfond: #423a65; /*#2c206b*/
+  --couleurfond: #2c206b;
   --couleurtexte: #fefbec;
   --couleurbande: #0e0047;
   --couleurreservez: #7265b2;

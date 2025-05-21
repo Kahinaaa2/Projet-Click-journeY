@@ -7,53 +7,89 @@ if (!isset($_SESSION['connect']) || $_SESSION['role'] != 'client') {
     exit();
 }
 
-if (!isset($_POST['paiement'])) {
-    header('Location: Page-accueil.php');
-    exit();
-}
 
-    $paiement = trim($_POST['paiement']);
-    
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
-    $destination = trim($_POST['destination']);
-    $prixtot = trim($_POST['prix_total']);
-}
-
-
-// Récupération des informations depuis le formulaire
-$ville = isset($_GET['ville']) ? htmlspecialchars($_GET['ville']) : 'erreur';
-$transaction = uniqid(); // Identifiant unique pour la transaction
-$montant = 18000.99; // Montant de la transaction (exemple)
-$vendeur = 'MI-2_B'; // Code vendeur
-$retour = 'http://localhost/retour_paiement.php?session=s'; // URL de retour après paiement
-
-// Obtenir la clé API pour générer la valeur de contrôle
-$api_key = getAPIKey($vendeur);
-$control = md5($api_key . "#" . $transaction . "#" . $prixtot . "#" . $vendeur . "#" . $retour . "#");
+      $prixtot = trim($_GET['prix_total']);
+      $transaction = uniqid(); // Identifiant unique pour la transaction
+      $vendeur = 'MI-2_B'; // Code vendeur
+      $retour = 'http://localhost/retour_paiement.php?session=s'; 
+      $api_key = getAPIKey($vendeur);
+      $control = md5($api_key . "#" . $transaction . "#" . $prixtot . "#" . $vendeur . "#" .$retour . "#");
 
 $_SESSION['paiement'] = [
-    'montant' => $montant,
+    'montant' => $prixtot,
     'transaction' => $transaction,
     'vendeur' => $vendeur,
     'retour' => $retour,
     'control' => $control
 ];
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Paiement pour <?= strtoupper($destination) ?></title>
+    <title>Paiement Movie Explorer</title>
     <style>
-        body { font-family: sans-serif; background-color: #0e0047; color: #333; }
-        h1 { text-align: center; color: #FEFAE0; }
-        button { background-color: #f39c12; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        body{
+          --couleurblocpaiement: #fefbec;
+          --couleurtextepaiement: #0e0047;
+        }
+        
+        body.sombre{
+          --couleurblocpaiement: #423a65;
+          --couleurtextepaiement: #fefbec;
+        }
+        
+        body { 
+          background-color: #0e0047;
+          margin: 0 auto; 
+          max-height: 100vh;
+        }
+        
+        .bloc{
+          background-color: var(--couleurblocpaiement);
+          margin: 0 auto;
+          width: 40vw;
+          height: 25vw;
+          border-radius: 2vw;
+          margin-top: 10vw;
+        }
+        
+        .bloc h1 { 
+          padding-top: 4vw;
+          margin-bottom: 3vw;
+          text-align: center; 
+          color: var(--couleurtextepaiement);
+        }
+        
+        .bloc p{
+          text-align: center; 
+          color: var(--couleurtextepaiement);
+          font-size: 1.2vw;
+        }
+        
+        button { 
+          background-color: #f39c12; 
+          width: 15vw;
+          height: 3vw;
+          color: #fefbec; 
+          border: none; 
+          margin:0 auto;
+          margin-top: 3vw;
+          border-radius: 0.8vw; 
+          cursor: pointer; 
+        }
     </style>
 </head>
 <body>
-    <h1>Paiement pour <?= strtoupper($ville) ?></h1>
+
+<div class="bloc">
+
+<h1>Paiement : Movie Exploreur</h1>
+<p>Bienvenue dans la phase de paiement !</p><p>Votre panier est au prix de : <b><?= $prixtot ?>€</b></p>
     <div style="text-align:center; margin-top: 20px;">
         <form action="https://www.plateforme-smc.fr/cybank/index.php" method="POST">
             <input type="hidden" name="transaction" value="<?= $_SESSION['paiement']['transaction'] ?>">
@@ -61,10 +97,10 @@ $_SESSION['paiement'] = [
             <input type="hidden" name="vendeur" value="<?= $_SESSION['paiement']['vendeur'] ?>">
             <input type="hidden" name="retour" value="<?= $_SESSION['paiement']['retour'] ?>">
             <input type="hidden" name="control" value="<?= $_SESSION['paiement']['control'] ?>">
-            <input type="text" name="carte" placeholder="1234 5678 9012 3456">
 
             <button type="submit">Valider et payer</button>
         </form>
     </div>
-</body>
+</div> 
+<script src="theme.js"></script>   
 </html>

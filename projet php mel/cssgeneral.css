@@ -36,13 +36,15 @@ z-index: 10;
 }
 
 .droite1{
-  margin-left:65vw;
+  margin-left:60vw;
 }
 
 button.droite2{
   height:2vw;
   width: 5vw;
 }
+
+
 
 .titre {
   width: 100vw;
@@ -66,6 +68,28 @@ button.droite2{
 .titre span{
   font-size: 1vw;
 }  
+
+.panier{
+  padding-top:1.4vw;
+  justify-content: center;
+}
+.panier a{
+  text-decoration: none;
+}
+.panier img{
+  width: 3vw;
+  margin-left: 1.4vw;
+}
+
+.panier span{
+  font-size: 1vw;
+  color: #fefbec;
+  margin-top: 1vw;
+}
+
+.panier:hover{
+  transform: scale(1.05);
+}
 
 .espace-client {
   display: flex;

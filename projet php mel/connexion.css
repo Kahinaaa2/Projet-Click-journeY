@@ -6,7 +6,7 @@ body{
 }
 
 body.sombre{
-  --couleurblocconnexion: #423a65; /*#2c206b*/;
+  --couleurblocconnexion: #423a65;
   --couleurtexteconnexion: #fefbec;
   --couleurtextelienconnexion: #fefbec;
   --textenoir: #fefbec;

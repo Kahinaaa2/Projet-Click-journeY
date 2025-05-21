@@ -21,6 +21,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
         <p>🔍</p>
     </a>
     <button class="droite2" onclick="toggleTheme()"></button>
+    <div class="panier"><a href="panier.php"><img src="image/localisation.png"><br><span><b>Mon panier</b></span></a></div>
 
     <?php if ($pageAccueil): ?>
         <a href="profil.php" class="espace-client">
