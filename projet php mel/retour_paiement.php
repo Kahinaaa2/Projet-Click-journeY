@@ -10,6 +10,13 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
 $control = isset($_GET['control']) ? $_GET['control'] : '';
 $carte = isset($_GET['carte']) ? $_GET['carte'] : '';
 
+function afficherMessageErreurFormatCarte() {
+    function afficherMessageErreurFormatCarte() {
+    echo '<p style="color:#f39c12; text-align:center;">Paiement refusé : il est probable que ce soit dû au format du numéro de carte (ex: 1234 5678 9012 3456).</p>';
+    }
+
+}
+
 // Vérification de la clé API pour vérifier l'intégrité des données
 $api_key = getAPIKey($vendeur);
 
@@ -23,6 +30,7 @@ if ($control === $control_verify) {
         echo "Paiement accepté ! Transaction ID: $transaction, Montant: $montant €";
     } else {
         echo "Paiement refusé !";
+        afficherMessageErreurFormatCarte();
     }
 } else {
     // Si la valeur de contrôle est incorrecte, afficher une erreur
