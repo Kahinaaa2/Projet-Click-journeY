@@ -249,11 +249,13 @@ calcul_prix();
 <input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
 <button type="submit" id="enregistrer">Enregistrer le voyage</button>
 </form>
-<form action="paiement.php" method="GET">
-<input type="hidden" name="paiement" value="1">
-<input type="hidden" name="destination" value="<?= htmlspecialchars($destination) ?>">
-<input type="hidden" name="prix_total" id="prix_total" value="<?= htmlspecialchars($prixtot) ?>">
-<button type="submit" id="payer">Passer au paiement</button>
+<form action="changer_statut.php" method="POST">
+<input type="hidden" name="statut" value="Panier">
+<input type="hidden" name="pageavant" value="recap">
+<input type="hidden" name="email" value="<?= htmlspecialchars($email) ?>">
+<input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+<button type="submit" id="payer">Ajouter au panier</button>
+</form>
 </form>
 </div>
 
