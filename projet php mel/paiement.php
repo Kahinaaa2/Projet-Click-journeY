@@ -13,7 +13,7 @@ if (!isset($_SESSION['connect']) || $_SESSION['role'] != 'client') {
       $prixtot = trim($_GET['prix_total']);
       $transaction = uniqid(); // Identifiant unique pour la transaction
       $vendeur = 'MI-2_B'; // Code vendeur
-      $retour = 'http://localhost/retour_paiement.php?session=s'; 
+      $retour = 'http://localhost:1234/retour_paiement.php'; 
       $api_key = getAPIKey($vendeur);
       $control = md5($api_key . "#" . $transaction . "#" . $prixtot . "#" . $vendeur . "#" .$retour . "#");
 
@@ -112,6 +112,7 @@ $_SESSION['paiement'] = [
             <input type="hidden" name="vendeur" value="<?= $_SESSION['paiement']['vendeur'] ?>">
             <input type="hidden" name="retour" value="<?= $_SESSION['paiement']['retour'] ?>">
             <input type="hidden" name="control" value="<?= $_SESSION['paiement']['control'] ?>">
+            <input type="hidden" name="carte" value="5555 1234 5678 9000">
 
             <button type="submit">Valider et payer</button>
             <a href="panier.php">Retour au panier</a>

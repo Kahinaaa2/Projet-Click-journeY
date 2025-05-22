@@ -10,12 +10,6 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
 $control = isset($_GET['control']) ? $_GET['control'] : '';
 $carte = isset($_GET['carte']) ? $_GET['carte'] : '';
 
-// Vérifie que le format est exactement : 4 chiffres, espace, 4 chiffres, espace, 4 chiffres, espace, 4 chiffres
-if (!preg_match('/^\d{4} \d{4} \d{4} \d{4}$/', $carte)) {
-    echo "Erreur : veuillez saisir un numéro de carte au format correct avec des espaces entre chaque groupe de 4 chiffres (ex : 1234 5678 9012 3456).";
-    exit;
-}
-
 // Vérification de la clé API pour vérifier l'intégrité des données
 $api_key = getAPIKey($vendeur);
 
