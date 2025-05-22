@@ -7,6 +7,10 @@ if (!isset($_SESSION['connect']) || $_SESSION['role'] != 'client') {
     exit();
 }
 
+#Fonction qui demande a l'utilisateur de saisir le code sans espace
+function afficherMessageFormatCarte() {
+    echo "Veuillez saisir votre numéro de carte au format : 1234 5678 9012 3456";
+}
 
     if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
@@ -113,6 +117,10 @@ $_SESSION['paiement'] = [
             <input type="hidden" name="retour" value="<?= $_SESSION['paiement']['retour'] ?>">
             <input type="hidden" name="control" value="<?= $_SESSION['paiement']['control'] ?>">
             <input type="hidden" name="carte" value="5555 1234 5678 9000">
+
+             <p style="color:#0e0047; font-size: 1vw;">
+                 <?php afficherMessageFormatCarte(); ?>
+             </p>
 
             <button type="submit">Valider et payer</button>
             <a href="panier.php">Retour au panier</a>
