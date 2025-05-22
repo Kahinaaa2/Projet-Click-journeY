@@ -36,11 +36,13 @@ $_SESSION['paiement'] = [
         body{
           --couleurblocpaiement: #fefbec;
           --couleurtextepaiement: #0e0047;
+          --couleur-bouton-souris: #f39c12;
         }
         
         body.sombre{
           --couleurblocpaiement: #423a65;
           --couleurtextepaiement: #fefbec;
+          --couleur-bouton-souris: #2c206b;
         }
         
         body { 
@@ -71,8 +73,9 @@ $_SESSION['paiement'] = [
           font-size: 1.2vw;
         }
         
-        button { 
-          background-color: #f39c12; 
+        .bloc button,.bloc a { 
+          background-color: #0e0047;
+          text-decoration: none; 
           width: 15vw;
           height: 3vw;
           color: #fefbec; 
@@ -81,6 +84,18 @@ $_SESSION['paiement'] = [
           margin-top: 3vw;
           border-radius: 0.8vw; 
           cursor: pointer; 
+          font-size: 1.2vw;
+        }
+        .bloc a {
+          padding: 0.8vw;
+          padding-left: 2vw;
+          padding-right:2vw;
+          margin-left: 2vw;
+        }
+        
+        .bloc button:hover, a:hover{
+          background-color: var(--couleur-bouton-souris);
+          transform: scale(1.05);
         }
     </style>
 </head>
@@ -99,6 +114,7 @@ $_SESSION['paiement'] = [
             <input type="hidden" name="control" value="<?= $_SESSION['paiement']['control'] ?>">
 
             <button type="submit">Valider et payer</button>
+            <a href="panier.php">Retour au panier</a>
         </form>
     </div>
 </div> 

@@ -1,3 +1,4 @@
 kahina3@gmail.com;JORDANIE (Wadi Rum) - DUNE;Wadi Rum;Jordanie;Dune;2025-05-25;2025-06-07;1;0;1;1;0;0;0;0;Wadirum-Dune;209;Panier;deeszx5z65
-kahina3@gmail.com;PÉROU (Machu Picchu) - INDIANA JONES ET LE ROYAUME DU CRÂNE DE CRISTAL;Machu Picchu;Pérou;Indiana jones et le royaume du crÂne de cristal;2025-06-09;2025-06-16;2;1;2;2;2;1;1;1;Machupicchu-Indianajones;5787;Panier;de59z5s652x6d
-kahina3@gmail.com;JORDANIE (Wadi Rum) - DUNE;Wadi Rum;Jordanie;Dune;2025-05-25;2025-06-07;1;0;1;1;0;0;0;0;Wadirum-Dune;1999;Consulté;682e3d7b803df
+kahina3@gmail.com;JORDANIE (Wadi Rum) - DUNE;Wadi Rum;Jordanie;Dune;2025-05-25;2025-06-07;1;0;1;1;0;0;0;0;Wadirum-Dune;1999;Panier;682e3d7b803df
+kahina3@gmail.com;JORDANIE (Wadi Rum) - DUNE;Wadi Rum;Jordanie;Dune;2025-05-28;2025-05-31;1;1;1;1;1;1;1;1;Wadirum-Dune;2173;Panier;682ef4a575958
+kahina3@gmail.com;TANZANIE (Serengeti) - LE ROI LION;Serengeti;Tanzanie;Le roi lion;2025-07-01;2025-07-14;2;0;2;0;2;0;0;0;Serengeti-Leroilion;4408;Panier;682ef6097fcdb

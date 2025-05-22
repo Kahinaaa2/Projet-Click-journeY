@@ -17,7 +17,7 @@ if ($_SESSION['role'] == 'admin') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages</title>
+    <title>Mon Panier</title>
     <link rel="stylesheet" type="text/css" href="panier.css">
 </head>
 <body>
@@ -229,10 +229,7 @@ if (!empty($email) && file_exists("voyages.txt")) {
  
     <?php }endforeach; ?>
 </div>
-<form method="GET" action="paiement.php">
-  <input type="hidden" name="prix_total" id="prix_total_input" value="0">
-  <button type="submit" id="paiement" class="paiementcss">Passez au paiement</button>
-</form>  
+  
 </div>
 </div>
 <?php endif; ?>
@@ -240,7 +237,30 @@ if (!empty($email) && file_exists("voyages.txt")) {
 <script>
 const source = document.getElementById('source');
 const destination2 = document.getElementById('destination2');
-let total = <?= $globalprix?>;
+let total = <?= $globalprix ?>;
+
+// Création du formulaire de paiement
+const formPaiement = document.createElement('form');
+formPaiement.method = 'GET';
+formPaiement.action = 'paiement.php';
+
+// Champ caché pour le prix total
+const inputTotal = document.createElement('input');
+inputTotal.type = 'hidden';
+inputTotal.name = 'prix_total';
+inputTotal.id = 'prix_total_input';
+inputTotal.value = total.toFixed(2);
+formPaiement.appendChild(inputTotal);
+
+// Bouton de paiement
+const boutonPaiement = document.createElement('button');
+boutonPaiement.type = 'submit';
+boutonPaiement.id = 'paiement';
+boutonPaiement.innerText = 'Passez au paiement';
+boutonPaiement.className = 'paiementcss';
+formPaiement.appendChild(boutonPaiement);
+destination2.appendChild(formPaiement);
+
 updateTotal();
 
 // Met à jour le total affiché dans le panier
@@ -252,21 +272,24 @@ function updateTotal() {
     totalPanier.style.width = '20vw';
     totalPanier.style.backgroundColor = '#0e0047';
     totalPanier.style.fontSize = '1.5vw';
-    totalPanier.style.margin = '0 auto';
+    totalPanier.style.margin = '0 auto 2vw auto';
     totalPanier.style.textAlign = 'center';
     totalPanier.style.color = 'white';
     totalPanier.style.padding = '1vw';
     totalPanier.style.borderRadius = '1vw';
-    totalPanier.style.marginBottom = '2vw';
-    destination2.appendChild(totalPanier);
   }
   totalPanier.innerText = "Total : " + total.toFixed(2) + " €";
 
-  // Mise à jour de la valeur dans le formulaire
-  const prixInput = document.getElementById('prix_total_input');
-  if (prixInput) {
-    prixInput.value = total.toFixed(2);
-  }
+  // Mise à jour du champ caché du formulaire paiement
+  inputTotal.value = total.toFixed(2);
+  
+  if (total <= 0) {
+  boutonPaiement.disabled = true;
+} else {
+  boutonPaiement.disabled = false;
+}
+  destination2.appendChild(totalPanier);
+  destination2.appendChild(formPaiement);
 }
 
 function addToCart(stockage) {
@@ -291,9 +314,6 @@ function addToCart(stockage) {
 
   total += prix;
   updateTotal();
-
-  const totalPanier = document.getElementById('total');
-  if (totalPanier) destination2.appendChild(totalPanier);
 
   // Mise à jour AJAX statut => "Panier"
   const id = voyageForm.querySelector('input[name="id"]').value;
@@ -335,9 +355,6 @@ function removeFromCart(stockage) {
   total -= prix;
   updateTotal();
 
-  const totalPanier = document.getElementById('total');
-  if (totalPanier) destination2.appendChild(totalPanier);
-
   // Mise à jour AJAX statut => "Consulté"
   const id = voyageForm.querySelector('input[name="id"]').value;
   const email = "<?= $email ?>";
@@ -352,7 +369,6 @@ function removeFromCart(stockage) {
   .catch(console.error);
 }
 
-
 document.body.addEventListener('click', (e) => {
   const stockage = e.target.closest('.stockage');
   if (!stockage) {
@@ -360,22 +376,20 @@ document.body.addEventListener('click', (e) => {
     return;
   }
 
-  console.log("Stockage cliqué :", stockage);
-
   const parentForm = stockage.closest('.voyage-int');
 
   if (source.contains(parentForm)) {
-    console.log("Depuis la source");
     e.preventDefault();
     addToCart(stockage);
   } else if (destination2.contains(parentForm)) {
-    console.log("Depuis la destination");
     e.preventDefault();
     removeFromCart(stockage);
   }
 });
 
+
 </script>
+
 
 <script src="theme.js"></script>
 </body>

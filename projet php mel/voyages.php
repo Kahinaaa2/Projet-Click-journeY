@@ -35,7 +35,7 @@ if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])) {
                <a href="profil.php">Mes informations</a>
     </div>
     <div class="voyage">
-        <a href="panier.php">Mes voyages</a>
+        <a href="panier.php">Mon Panier</a>
         <?php endif; ?>
     </div>
 </div>
