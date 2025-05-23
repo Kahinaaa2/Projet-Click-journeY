@@ -13,8 +13,6 @@ if ($_SESSION['role'] != 'admin') {
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -56,14 +54,6 @@ if (!empty($email)) {
             $date = $mot[5] ?? '';
             $dob = $mot[6] ?? '';
             $adresse = $mot[7] ?? '';
-
-            echo "<div class='element-info'><span>Nom :</span> <strong>$nom</strong></div>";
-            echo "<div class='element-info'><span>Prénom :</span> <strong>$prenom</strong></div>";
-            echo "<div class='element-info'><span>Date de naissance :</span> <strong>$dob</strong></div>";
-            echo "<div class='element-info'><span>Adresse :</span> <strong>$adresse</strong></div>";
-            echo "<div class='element-info'><span>Email :</span> <strong>$email</strong></div>";
-            echo "<div class='element-info'><span>Date d'inscription :</span> <strong>$date</strong></div>";
-
             $utilisateur = true;
             break;
         }
@@ -76,17 +66,157 @@ if (!empty($email)) {
     echo "<p>Vous devez être connecté pour voir ce profil.</p>";
 }
 ?>
-            </div>
-     <?php if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])): ?>
-            <a href="#">
-                <button class="bouton-modifier">Modifier le profil</button>
+<?php if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])): ?>
+
+<form method="post" action="verification2_profil.php">
+
+    <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable">
+        <label>Nom :</label>
+        <input type="text" name="nom" value="<?= $nom ?>" readonly>
+    </div>
+        <button type="button" class="modif">✏️</button>
+        <button type="button" class="valider" style="display:none;">✅</button>
+        <button type="button" class="annuler" style="display:none;">❌</button>
+    </div>
+</div>
+	
+  <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable">
+        <label>Prénom :</label>
+        <input type="text" name="prenom" value="<?= $prenom ?>" readonly>
+    </div>
+        <button type="button" class="modif">✏️</button>
+        <button type="button" class="valider" style="display:none;">✅</button>
+        <button type="button" class="annuler" style="display:none;">❌</button>
+    </div>
+    </div>
+
+    <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable">
+        <label>Date de naissance :</label>
+        <input type="date" name="dob" value="<?= $dob ?>" readonly>
+    </div>
+        <button type="button" class="modif">✏️</button>
+        <button type="button" class="valider" style="display:none;">✅</button>
+        <button type="button" class="annuler" style="display:none;">❌</button>
+    </div>
+    </div>
+
+    <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable">
+        <label>Adresse :</label>
+        <input type="text" name="adresse" value="<?= $adresse ?>" readonly>
+    </div>
+        <button type="button" class="modif">✏️</button>
+        <button type="button" class="valider" style="display:none;">✅</button>
+        <button type="button" class="annuler" style="display:none;">❌</button>
+    </div>
+    </div>
+
+   <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable" id="mail">
+        <label>Email :</label>
+        <input type="email"  name="email" value="<?= $email ?>" readonly>
+    </div>
+    </div>
+    </div>
+
+    <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable" id="mail">
+        <label>Date d'inscription :</label>
+        <input type="date" id="date" name="date" value="<?= $date ?>" readonly>
+    </div>
+    </div>
+    </div>
+
+    <input type="hidden" name="profil" id="profil">
+    <button type="submit" id="soumettre" class="bouton" style="display: none;">Soumettre les modifications</button>
+
+<?php else: ?>
+
+
+    <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable" id="mail">
+        <label>Nom :</label>
+        <input type="text" name="nom" value="<?= $nom ?>" readonly>
+    </div>
+    </div>
+</div>
+	
+  <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable" id="mail">
+        <label>Prénom :</label>
+        <input type="text" name="prenom" value="<?= $prenom ?>" readonly>
+    </div>
+    </div>
+    </div>
+
+    <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable" id="mail">
+        <label>Date de naissance :</label>
+        <input type="date" name="dob" value="<?= $dob ?>" readonly>
+    </div>
+    </div>
+    </div>
+
+    <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable" id="mail">
+        <label>Adresse :</label>
+        <input type="text" name="adresse" value="<?= $adresse ?>" readonly>
+    </div>
+    </div>
+    </div>
+
+   <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable" id="mail">
+        <label>Email :</label>
+        <input type="email"  name="email" value="<?= $email ?>" readonly>
+    </div>
+    </div>
+    </div>
+
+    <div class="int">
+    <div class="champ-modifiable">
+     <div class="int-modifiable" id="mail">
+        <label>Date d'inscription :</label>
+        <input type="date" id="date" name="date" value="<?= $date ?>" readonly>
+    </div>
+    </div>
+    </div>
+
+ <?php endif; ?>
+
+</form>
+
+</div>
+<?php if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])): ?>
+            <a href="admin.php">
+                <button class="bouton-modifier">Retour</button>
             </a>
             <a href="deconnexion.php">
                 <button class="bouton-deconnexion">Se déconnecter</button>
             </a>
-    <?php endif; ?>
-        </div>
+      <?php else: ?>
+        <a href="admin.php">
+            <button class="bouton2" id="modif2">Retour</button>
+        </a>
+        <?php endif; ?>
     </div>
-</body>
+</div>
+
+<script src="profil.js"></script>
 <script src="theme.js"></script>
+</body>
 </html>

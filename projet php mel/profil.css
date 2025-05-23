@@ -1,15 +1,5 @@
-body{
-  --couleurfondprofil: #fefbec;
-  --couleurboutonprofil: #1532a0;
-}
-
-body.sombre{
-  --couleurfondprofil: #423a65; /*#2c206b*/
-  --couleurboutonprofil: #4d4090;
-}
-
 body {
-  background-color: var(--couleurfondprofil);
+  background-color: #fefae0;
   margin: 0;
   padding-top: 3vw;
   display: flex;
@@ -30,81 +20,147 @@ body {
 .carte-profil {
   background: #0e0047;
   border-radius: 2vw;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 1.5vw;
   text-align: center;
-  width: 400px;
+  width: 26vw;
 }
 
 .titre-profil {
-  font-size: 24px;
+  font-size: 1.3vw;
   color:  #fefbec;
-  margin-bottom: 20px;
+  margin-bottom: 1vw;
   font-weight: bold;
 }
 
 .infos-profil {
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 0.5vw;
   color: #0e0047;
 }
 
-.element-info {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  margin: 8px 0;
-  padding: 10px;
-  background-color:#fefbec;
-  border-radius: 8px;
-}
-
-.element-info span {
-  color: #0e0047;
-  font-weight: bold;
-  flex: 1;
-}
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 0.7vw;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5vw;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 0.9vw;
+  margin-top: 0.5vw;
   display: flex;
   align-items: center;
   justify-content: center;
+margin-bottom: 0.6vw;
 }
 
-.bouton-modifier {
-    background-color: var(--couleurboutonprofil);
+.bouton2 {
+    background-color: #1532a0;
     color: #fefae0;
 }
 
-.bouton-modifier:hover {
-  background-color: #0e257e;
-}
-
-.bouton-mdp {
-  background-color: var(--couleurboutonprofil);
-  color: #fefbec;
-}
-
-.bouton-mdp:hover {
-  background-color: #0e257e;
-}
-
-.bouton-deconnexion {
-  background-color: var(--couleurboutonprofil);
-  color: #fefbec;
-}
-
-.bouton-deconnexion:hover {
+.bouton2:hover {
   background-color: #0e257e;
 }
 
 a {
 text-decoration: none;
 }
+
+.int{
+display: flex;
+flex-direction: row; 
+align-items: center;
+justify-content: space-between;
+width: 100%;
+}
+
+.champ-modifiable {
+    display: flex;
+    align-items: center;
+    font-size: 0.9vw;
+    margin-top: 0.6vw;
+    padding: 0.5vw;
+    background-color: #fefbec;
+    border-radius: 0.5vw;
+    width: 25vw;
+    height: 2.5vw;
+}
+
+.int-modifiable{
+height: 2vw;
+border-radius: 0.6vw;
+background-color: #ebe8da;
+padding-left: 0.3vw;
+padding-right: 0.1vw;
+padding-top: 0.2vw;
+margin-bottom: 0.1vw;
+display: flex;
+align-items: center;
+width: 23vw;
+}
+
+#mail{
+width: 25vw;
+}
+
+.champ-modifiable button{
+  width: 2vw;
+  height: 2vw;
+  font-size: 1vw;
+  padding: 0;
+  margin-left: 0.3vw;
+  background-color: #fefbec;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.champ-modifiable button:hover {
+background-color: #f9f6e8;
+}
+
+.champ-modifiable label {
+    color: #0e0047;
+    font-weight: bold;
+    flex: 1;
+    padding-right: 2vw;
+}
+
+
+.champ-modifiable input[readonly] {
+    border: none;
+    color: #0e0047;
+    text-align: right;
+}
+
+.champ-modifiable input {
+  width: 10vw;               
+  min-width: 10vw;
+  max-width: 10vw;
+  text-align: right;         
+  box-sizing: border-box;
+  padding: 0.3vw;
+  background-color: transparent;
+  border: none;
+  font-size: 0.9vw;
+  color: #0e0047;
+  font-weight: bold;
+}
+
+.bouton{
+margin-top: 1.5vw;
+background-color: #f1b410;
+color: white;
+}
+
+.bouton:hover{
+margin-top: 1.5vw;
+background-color: #009c3e;
+color: white;
+}
+
+#modif2{
+margin-top: 1.5vw;
+}
+
