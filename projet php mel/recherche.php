@@ -258,7 +258,7 @@ select[name="tri"] option {
 
 <div class="carree">
     <form method="GET" action="">
-        <input type="text" name="recherche" placeholder="Entrez un mot-clé..." id="recherche" required value="<?= isset($_SESSION['recherche']) ? htmlspecialchars($_SESSION['recherche']) : '' ?>">
+        <input type="text" name="recherche" placeholder="Entrez un mot-clé... (ex : aventure, froid)" id="recherche" required value="<?= isset($_SESSION['recherche']) ? htmlspecialchars($_SESSION['recherche']) : '' ?>">
         <select name="tri">
             <option value="">Filtrer</option>
             <option value="prix1croissant" <?= (isset($_GET['tri']) && $_GET['tri'] === 'prix1croissant') ? 'selected' : '' ?>>Prix croissant (Transport)</option>
