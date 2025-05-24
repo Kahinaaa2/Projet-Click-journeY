@@ -1,6 +1,6 @@
 <style>
 body {
-  height: 100vh; /* 100% de la hauteur de la fenêtre */
+  height: 100vh; 
   margin: 0;
 }
 </style>
@@ -155,7 +155,7 @@ document.getElementById('option-container').innerHTML = '';
 		<div class="int-option2">
           
                 <p>Prix pour les Adultes :</p>
-		<p>Billets d'Avions (inclus) : <?php echo $prix; ?>€</p>
+		<p>Billet d'Avion (inclus) : <?php echo $prix; ?>€</p>
                 <p>Hébergement : <?php echo $prix1_1; ?>€/nuit</p>
                 <p>Restaurants : <?php echo $prix1_2; ?>€/jour</p>
                 <p>Sortie Extra : <?php echo $prix1_3; ?>€</p>
@@ -196,7 +196,7 @@ document.getElementById('option-container2').innerHTML = '';
 		<div class="int-option2">
           
                 <p>Prix pour les Enfants :</p>
-		<p>Billets d'Avions (inclus) : <?php echo $prix2; ?>€</p>
+		<p>Billet d'Avion (inclus) : <?php echo $prix2; ?>€</p>
                 <p>Hébergement : <?php echo $prix2_1; ?>€/nuit</p>
                 <p>Restaurants : <?php echo $prix2_2; ?>€/jour</p>
                 <p>Sortie Extra : <?php echo $prix2_3; ?>€</p>
