@@ -1,4 +1,4 @@
-body.sombre{
+body{
   --couleurblocconnexion: #fefbec;
   --couleurtexteconnexion: #0e0047;
   --couleurtextelienconnexion: #1532a0;
@@ -8,7 +8,7 @@ body.sombre{
   --message: black;
 }
 
-body{
+body.sombre{
   --couleurblocconnexion: #423a65;
   --couleurtexteconnexion: #fefbec;
   --couleurtextelienconnexion: #fefbec;
