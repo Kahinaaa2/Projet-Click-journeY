@@ -1,3 +1,25 @@
+body.sombre{
+  --couleurcarte: #0d0337;
+  --couleurprofil: #312857;
+  --couleurprofilsouris: #58507e;
+  --couleurinfos: #423a65;
+  --couleurretour: #1c0e56;
+  --couleurretoursouris: #423776;
+  --ecriture: white;
+  --bouton: #281770;
+}
+
+body{
+  --couleurcarte: #fefae0;
+  --couleurprofil: #fefbec;
+  --couleurprofilsouris: #f9f6e8;
+  --couleurinfos: #ebe8da;
+  --couleurretour: #0e0047;
+  --couleurretoursouris: #0e257e;  
+  --ecriture: #0e0047;
+  --bouton: #281770;
+}
+
 body {
   background-color: #0e0047;
   margin: 0;
@@ -17,7 +39,7 @@ body {
 }
 
 .carte-profil {
-  background: #fefae0;
+  background: var(--couleurcarte);
   border-radius: 2vw;
   padding: 1.5vw;
   width: 26vw;
@@ -25,7 +47,7 @@ body {
 
 .titre-profil {
   font-size: 1.5vw;
-  color:  #0e0047;
+  color: var(--ecriture);
   margin-bottom: 1vw;
   font-weight: bold;
   text-align: center;
@@ -49,12 +71,12 @@ button {
   align-items: center;
   justify-content: center;
  margin-bottom: 0.6vw;
-  background-color: #0e0047;
+  background-color: var(--couleurretour);
   color: white;
 }
 
 button:hover {
-  background-color: #0a0033;
+  background-color: var(--couleurretoursouris);
 }
 
 a {
@@ -76,7 +98,7 @@ width: 100%;
     font-size: 0.9vw;
     margin-top: 0.6vw;
     padding: 0.5vw;
-    background-color: #f8f4db;
+    background-color: var(--couleurprofil);
     border-radius: 0.5vw;
     width: 25vw;
     height: 2.5vw;
@@ -85,7 +107,7 @@ width: 100%;
 .int-modifiable{
 height: 2vw;
 border-radius: 0.6vw;
-background-color: #eae8df;
+background-color: var(--couleurinfos);
 padding-left: 0.3vw;
 padding-right: 0.1vw;
 padding-top: 0.2vw;
@@ -105,7 +127,7 @@ width: 25vw;
   font-size: 1vw;
   padding: 0;
   margin-left: 0.3vw;
-  background-color: #f8f4db;
+  background-color: var(--couleurprofil);
   border: none;
   display: flex;
   align-items: center;
@@ -114,11 +136,11 @@ width: 25vw;
 
 
 .champ-modifiable button:hover {
-background-color: #e4deb6;
+background-color: var(--couleurprofilsouris);
 }
 
 .champ-modifiable label {
-    color: #0e0047;
+    color: var(--ecriture);
     font-weight: bold;
     flex: 1;
     padding-right: 2vw;
@@ -127,7 +149,7 @@ background-color: #e4deb6;
 
 .champ-modifiable input[readonly] {
     border: none;
-    color: #0e0047;
+    color: var(--ecriture);
     text-align: right;
 }
 
@@ -141,7 +163,7 @@ background-color: #e4deb6;
   background-color: transparent;
   border: none;
   font-size: 0.9vw;
-  color: #0e0047;
+  color: var(--ecriture);
   font-weight: bold;
 }
 
