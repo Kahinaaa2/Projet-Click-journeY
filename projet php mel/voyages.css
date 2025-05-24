@@ -28,6 +28,7 @@ body {
   margin-top: 3vw;
 }
 
+
 .voyage-int {
   width: 75vw;              
   min-height: 15vw;       
@@ -49,6 +50,7 @@ body {
 .voyage-bouton:hover {
   transform: scale(1.03);
 }
+
 
 .image{
 width: 30vw;
@@ -114,42 +116,6 @@ font-size: 1vw;
   background-color: var(--couleurentetesourisvoyage);
 }
 
-.image-hover {
-  position: relative;
-  width: 30vw;
-  height: auto;
-  overflow: hidden;
-  border-radius: 0.7vw;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
 
-.image-hover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: opacity 0.3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
-.img1 {
-  opacity: 1;
-  z-index: 1;
-}
-
-.img2 {
-  opacity: 0;
-  z-index: 2;
-}
-
-.voyage-bouton:hover .img1 {
-  opacity: 0;
-}
-
-.voyage-bouton:hover .img2 {
-  opacity: 1;
-}
 

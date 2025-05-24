@@ -131,10 +131,7 @@ if (!empty($email) && file_exists("voyages.txt")) {
 
     <button type="submit" class="voyage-bouton">
 	<div class = "image">	
-	<div class="image-hover">
-    <img class="img1" src="image/<?= $ville ?>_3.2.jpg" alt="<?= $ville ?>">
-    <img class="img2" src="image/<?= $ville ?>_3.1.jpg" alt="<?= $ville ?>">
-</div>
+	<?php echo'<img src="image/' . $ville . '_3.2.jpg" alt="ville">';?>
 	</div>
 	<div class = "infos">
 	<p class = "titre"> Voyage pour <b><?= $titre ?></b></p>
@@ -159,3 +156,5 @@ if (!empty($email) && file_exists("voyages.txt")) {
 <script src="theme.js"></script>
 </body>
 </html>
+
+
