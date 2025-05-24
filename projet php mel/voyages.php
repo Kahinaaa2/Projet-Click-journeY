@@ -30,12 +30,12 @@ if ($_SESSION['role'] == 'admin' && !isset($_GET['email'])) {
         <a href="profil.php?email=<?= urlencode($_GET['email']) ?>">Informations du client</a>
     </div>
     <div class="voyage">
-        <a href="panier.php">Voyages du client</a>
+        <a href="voyages.php">Voyages du client</a>
         <?php else: ?>
                <a href="profil.php">Mes informations</a>
     </div>
     <div class="voyage">
-        <a href="panier.php">Mon Panier</a>
+        <a href="voyages.php">Mes voyages</a>
         <?php endif; ?>
     </div>
 </div>
@@ -66,7 +66,8 @@ if (!empty($email) && file_exists("voyages.txt")) {
     }
 ?>
 <div class="retour">
-  <a href="profil.php">Retour</a>
+  <a href="Page-accueil.php">Retour Accueil</a>
+  <a href="panier.php">Voir mon panier</a>
 </div>
 <?php if (!empty($voyage)): ?>
 
@@ -131,7 +132,10 @@ if (!empty($email) && file_exists("voyages.txt")) {
 
     <button type="submit" class="voyage-bouton">
 	<div class = "image">	
-	<?php echo'<img src="image/' . $ville . '_3.2.jpg" alt="ville">';?>
+	<div class="image-hover">
+    <img class="img1" src="image/<?= $ville ?>_3.2.jpg" alt="<?= $ville ?>">
+    <img class="img2" src="image/<?= $ville ?>_3.1.jpg" alt="<?= $ville ?>">
+</div>
 	</div>
 	<div class = "infos">
 	<p class = "titre"> Voyage pour <b><?= $titre ?></b></p>
@@ -156,5 +160,3 @@ if (!empty($email) && file_exists("voyages.txt")) {
 <script src="theme.js"></script>
 </body>
 </html>
-
-

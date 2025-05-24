@@ -1,5 +1,27 @@
+body.sombre{
+  --couleurfondvoyage: #423a65;
+  --couleurprofil: #312857;
+  --couleurprofilsouris: #58507e;
+  --couleurinfos: #423a65;
+  --couleurretour: #1c0e56;
+  --couleurretoursouris: #423776;
+  --ecriture: white;
+  --bouton: #281770;
+}
+
+body{
+  --couleurfondvoyage: #fefae0;
+  --couleurprofil: #fefbec;
+  --couleurprofilsouris: #f9f6e8;
+  --couleurinfos: #ebe8da;
+  --couleurretour: #1532a0;
+  --couleurretoursouris: #0e257e;  
+  --ecriture: #0e0047;
+  --bouton: #281770;
+}
+
 body {
-  background-color: #fefae0;
+  background-color: var(--couleurfondvoyage);
   margin: 0;
   padding-top: 3vw;
   display: flex;
@@ -54,12 +76,12 @@ margin-bottom: 0.6vw;
 }
 
 .bouton2 {
-    background-color: #1532a0;
+    background-color: var(--couleurretour);
     color: #fefae0;
 }
 
 .bouton2:hover {
-  background-color: #0e257e;
+  background-color: var(--couleurretoursouris);
 }
 
 a {
@@ -80,7 +102,7 @@ width: 100%;
     font-size: 0.9vw;
     margin-top: 0.6vw;
     padding: 0.5vw;
-    background-color: #fefbec;
+    background-color: var(--couleurprofil);
     border-radius: 0.5vw;
     width: 25vw;
     height: 2.5vw;
@@ -89,7 +111,7 @@ width: 100%;
 .int-modifiable{
 height: 2vw;
 border-radius: 0.6vw;
-background-color: #ebe8da;
+background-color:var(--couleurinfos);
 padding-left: 0.3vw;
 padding-right: 0.1vw;
 padding-top: 0.2vw;
@@ -109,7 +131,7 @@ width: 25vw;
   font-size: 1vw;
   padding: 0;
   margin-left: 0.3vw;
-  background-color: #fefbec;
+  background-color: var(--couleurprofil);
   border: none;
   display: flex;
   align-items: center;
@@ -117,11 +139,11 @@ width: 25vw;
 }
 
 .champ-modifiable button:hover {
-background-color: #f9f6e8;
+background-color: var(--couleurprofilsouris);
 }
 
 .champ-modifiable label {
-    color: #0e0047;
+    color: var(--ecriture);
     font-weight: bold;
     flex: 1;
     padding-right: 2vw;
@@ -130,7 +152,7 @@ background-color: #f9f6e8;
 
 .champ-modifiable input[readonly] {
     border: none;
-    color: #0e0047;
+    color: var(--ecriture);
     text-align: right;
 }
 
@@ -144,8 +166,8 @@ background-color: #f9f6e8;
   background-color: transparent;
   border: none;
   font-size: 0.9vw;
-  color: #0e0047;
   font-weight: bold;
+  color: var(--ecriture);
 }
 
 .bouton{
