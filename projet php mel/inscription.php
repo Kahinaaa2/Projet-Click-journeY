@@ -39,7 +39,7 @@ if ($_SESSION['role'] == 'admin') {
             <input type="email" id="email" name="email">
 
             <label for="nom">Adresse :</label>
-            <input type="text" id="adresse" name="adresse" required>
+            <input type="text" id="adresse" name="adresse">
 
             <label for="password">Mot de passe :</label>
 	<div class="mdp">
@@ -99,50 +99,8 @@ if ($_GET['erreur'] == 5) {
 </div>
 
 
-<script>
-function cacher() {
-    const mdp = document.getElementById("password");
-    const confirm = document.getElementById("confirm");
-    const bouton = document.querySelector(".bouton");
-
-    if (mdp.type === "password") {
-        mdp.type = "text";
-        if (confirm) confirm.type = "text";
-        bouton.textContent = "🙈";
-    } else {
-        mdp.type = "password";
-        if (confirm) confirm.type = "password";
-        bouton.textContent = "👁️";
-    }
-}
-
-document.getElementById("password").addEventListener("input", function () {
-    const compteur = document.getElementById("password-counter");
-    const message = document.getElementById("message");
-    const afficher = document.getElementById("afficher");
-    const confirm2 = document.getElementById("confirm-mdp");
-
-    const longueur = this.value.length;
-    compteur.textContent = longueur;
-
-    if (longueur > 0) {
-        afficher.style.display = "inline";
-        confirm2.style.display = "block";
-    } else {
-        afficher.style.display = "none";
-        confirm2.style.display = "none";
-    }
-
-    if (longueur >= 25) {
-        message.style.color = "red";
-    } else {
-        message.style.color = "";
-    }
-});
-</script>
-
-
+<script src="theme.js"></script>
+<script src="inscription.js"></script>
 
 </body>
-<script src="theme.js"></script>
 </html>

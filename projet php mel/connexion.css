@@ -1,19 +1,21 @@
-body{
+body.sombre{
   --couleurblocconnexion: #fefbec;
   --couleurtexteconnexion: #0e0047;
   --couleurtextelienconnexion: #1532a0;
   --textenoir: black;
   --bouton: #fefbec;
   --boutonsouris: #ede9d4;
+  --message: black;
 }
 
-body.sombre{
+body{
   --couleurblocconnexion: #423a65;
   --couleurtexteconnexion: #fefbec;
   --couleurtextelienconnexion: #fefbec;
   --textenoir: #fefbec;
   --bouton: #423a65;
   --boutonsouris: #38305a;
+  --message: white;
 }
 
 body {
@@ -152,6 +154,7 @@ font-style: italic;
 margin-left: 1vw;
 margin-top: 0;
 margin-bottom: 0.8vw;
+color: var(--message);
 }
 
 
@@ -168,9 +171,9 @@ margin-bottom: 0.8vw;
   border-radius: 0.5vw;
   font-size: 1vw;
   cursor: pointer;
-  margin-bottom: 1vw;
+  margin-bottom: 0.8vw;
   margin-left: 0.2vw;
-  margin-right: 0.4vw;
+  margin-right: 0.3vw;
 }
 
 .bouton:hover{
@@ -191,7 +194,7 @@ margin-bottom: 0.8vw;
   cursor: pointer;
   margin-bottom: 0.1vw;
   margin-left: 0.2vw;
-  margin-right: 0.4vw;
+  margin-right: 0.3vw;
 }
 
 .bouton2:hover{

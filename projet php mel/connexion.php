@@ -54,22 +54,8 @@ if (isset($_GET['erreur']) && $_GET['erreur'] == 1) {
 
     </div>
 
-
-<script>
-function cacher() {
-    const voir = document.getElementById("password1");
-    const bouton = document.querySelector(".bouton");
-
-    if (voir.type === "password") {
-        voir.type = "text";
-        bouton.textContent = "🙈"; 
-    } else {
-        voir.type = "password";
-        bouton.textContent = "👁️"; 
-    }
-}
-</script>
+    <script src="theme.js"></script>
+    <script src="connexion.js"></script>
 
 </body>
-<script src="theme.js"></script>
 </html>
