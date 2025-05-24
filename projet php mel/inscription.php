@@ -20,7 +20,6 @@ if ($_SESSION['role'] == 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="connexion.css">
 </head>
 <body>
@@ -43,18 +42,32 @@ if ($_SESSION['role'] == 'admin') {
             <input type="text" id="adresse" name="adresse" required>
 
             <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="mdp" required>
+	<div class="mdp">
+    	    <input type="password" id="password" name="mdp" maxlength="30" required> 
+    	    <button type="button" class="bouton2" onclick="cacher()">👁️</button>
+	</div>
+	<small id="afficher" style="display: none;">
+	<div id="message">
+    	<span id="password-counter">0</span>/30 caractères
+	</div>
+	</small>
 
-            <label for="confirm-password">Confirmez le mot de passe :</label>
-            <input type="password" id="confirm-password" name="mdp2" required>
+	<div id="confirm-mdp" style="display: none;">
+    	   <label for="confirm" id="espace">Confirmez le mot de passe :</label>
+           <input type="password" id="confirm" name="mdp2" maxlength="30" required>
+	</div>
 
-            <button type="submit">S'inscrire</button>
+	<div class="connecter">
+            <button type="submit" id="connect">S'inscrire</button>
+	</div>
+
         </form>
 
         <p>
             Vous avez déjà un compte ?
             <a href="connexion.php">Se connecter</a>
         </p>
+
 <?php
 if ($_GET['erreur'] == 1) {
     echo '<p style="color:red"><i>Les mots de passe ne correspondent pas.</i></p>';
@@ -82,7 +95,54 @@ if ($_GET['erreur'] == 5) {
 ?>
 
         <a href="Page-accueil.php" class="btn-retour">← Retour</a>
-    </div>
+
+</div>
+
+
+<script>
+function cacher() {
+    const mdp = document.getElementById("password");
+    const confirm = document.getElementById("confirm");
+    const bouton = document.querySelector(".bouton");
+
+    if (mdp.type === "password") {
+        mdp.type = "text";
+        if (confirm) confirm.type = "text";
+        bouton.textContent = "🙈";
+    } else {
+        mdp.type = "password";
+        if (confirm) confirm.type = "password";
+        bouton.textContent = "👁️";
+    }
+}
+
+document.getElementById("password").addEventListener("input", function () {
+    const compteur = document.getElementById("password-counter");
+    const message = document.getElementById("message");
+    const afficher = document.getElementById("afficher");
+    const confirm2 = document.getElementById("confirm-mdp");
+
+    const longueur = this.value.length;
+    compteur.textContent = longueur;
+
+    if (longueur > 0) {
+        afficher.style.display = "inline";
+        confirm2.style.display = "block";
+    } else {
+        afficher.style.display = "none";
+        confirm2.style.display = "none";
+    }
+
+    if (longueur >= 25) {
+        message.style.color = "red";
+    } else {
+        message.style.color = "";
+    }
+});
+</script>
+
+
+
 </body>
 <script src="theme.js"></script>
 </html>

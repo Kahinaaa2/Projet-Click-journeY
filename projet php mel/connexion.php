@@ -30,10 +30,13 @@ if ($_SESSION['role'] == 'admin') {
             <label for="email">Adresse e-mail :</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="mdp" required>
 
-            <button type="submit">Se connecter</button>
+            <label for="password">Mot de passe :</label>
+	<div class="mdp">
+            <input type="password" id="password1" name="mdp" maxlenght="30" required> 
+            <button type="button" class="bouton" onclick="cacher()">👁️</button>
+    </div>
+            <button type="submit" id="connect">Se connecter</button>
         </form>
 
         <p>
@@ -50,6 +53,22 @@ if (isset($_GET['erreur']) && $_GET['erreur'] == 1) {
         <a href="Page-accueil.php" class="btn-retour">← Retour</a>
 
     </div>
+
+
+<script>
+function cacher() {
+    const voir = document.getElementById("password1");
+    const bouton = document.querySelector(".bouton");
+
+    if (voir.type === "password") {
+        voir.type = "text";
+        bouton.textContent = "🙈"; 
+    } else {
+        voir.type = "password";
+        bouton.textContent = "👁️"; 
+    }
+}
+</script>
 
 </body>
 <script src="theme.js"></script>
