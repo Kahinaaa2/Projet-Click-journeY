@@ -22,7 +22,7 @@ L’interface du site Web propose un mode clair et un mode sombre, afin de s’a
 
 ## Contenu du projet : 
 
-Dans le projet, vous retrouverez les différents dossiers : image - video - destinations, ainsi que tous les fichiers code du projet. 
+Dans le projet, vous retrouverez les différents dossiers : image - video - destinations - requires, ainsi que tous les fichiers code du projet. 
 Vous retrouverez des fichiers PHP mais également du JAVASCRIPT et du HTML/CSS. 
 
 ## Utilisation de Movie Explorer : 
