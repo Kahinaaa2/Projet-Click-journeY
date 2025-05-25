@@ -1,6 +1,0 @@
-sarah@mail.com;admin01234;Sarah;Perrin;admin;2025-02-27;2001-02-25;12 rue du jour
-leon@mail.com;movieexplorer06;Leon;Martin;admin;2025-01-09;1996-06-06;14 passage des etoiles
-olivia@mail.com;voyager345;Olivia;Durand;client;2025-04-28;2004-08-25;7 avenue des cerisiers
-nathan＠mail.com;client99;Nathan;Martin;client;2025-05-22;1999-04-08;19 rue des touleuses
-oscar@mail.com;film123;Oscar;Martinez;client;2025-03-21;2001-04-12;28 avenue du parc
-
