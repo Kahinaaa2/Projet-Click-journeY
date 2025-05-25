@@ -2,11 +2,11 @@
 
 ## Présentation du projet :
 
-Le but de ce projet est de créer un site Web d'une agnece de voyages qui propose des séjours. Un client pourra ainsi s'inscrire et se connecter au site Web et réserver des voyages selon les différents options proposées. 
+Le but de ce projet est de créer un site Web d'une agence de voyages qui propose des séjours. Un client pourra ainsi s'inscrire et se connecter au site Web et réserver des voyages selon les différentes options proposées. 
 
 ## Présentation de notre site Web - Movie Explorer :
 
-Movie Explorer est une plateforme de réservation de voyages, où chaque destination est liée à un univers cinématographique. Le client peut choisir son voyage en fonction de son film préferé qui est associé à une destination spécifique. Chaque voyage présente trois options différentes : Hébergement - Restaurant - Sortie Extra. Les options sont adpatés selon le film choisi. 
+Movie Explorer est une plateforme de réservation de voyages, où chaque destination est liée à un univers cinématographique. Le client peut choisir son voyage en fonction de son film préferé qui est associé à une destination spécifique. Chaque voyage présente trois options différentes : Hébergement - Restaurant - Sortie Extra. Les options sont adpatées au film choisi. 
 
 ## Fonctions principales :
 
@@ -16,9 +16,9 @@ Un client peut parcourir le site Web sans inscription. Il peut consulter les pag
 Lors de la réservation, le client a la possibilité de choisir le nombre d'adultes et d'enfants ainsi que les dates. Pour chaque participant, il peut chosir les options individuellement. Une fois réservé, le client a le choix entre enregister le voyage dans son profil pour le consulter plus tard ou le mettre dans son panier. 
 Le client peut ajouter le nombre de voyages qu'il souhaite dans son panier et passer au paiement. Il peut retrouver tous ses voyages dans son compte client.
 
-Un administrateur peut gérer tous les utilisateurs de Movie Explorer : clients et administrateurs. Il peut voir le compte client des tous les voyageurs. Il peut supprimer le compte d'un client ou encore le changer en compte administrateur. Un administrateur peut aussi voir son propre profil et celui des autres administrateurs.
+Un administrateur peut gérer tous les utilisateurs de Movie Explorer : clients et administrateurs. Il peut voir le profil des tous les clients. Il peut supprimer le compte d'un client ou encore le changer en compte administrateur. Un administrateur peut aussi voir son propre profil et celui des autres administrateurs.
 
-Vous pouvez choisir entre un mode sombre ou clair du site Web.
+L’interface du site Web propose un mode clair et un mode sombre, afin de s’adapter aux préférences visuelles de chaque utilisateur.
 
 ## Contenu du projet : 
 
@@ -37,9 +37,9 @@ Cette manipulation vous ramènera vers la page d'accueil de Movie Explorer en ta
 Vous pouvez ensuite vous inscrire en tant que client ou alors vous connecter dans la page de connexion selon les identifiants déjà existants dans clients.txt.
 
 Voici les identifiants et leur mots de passe pour vous connecter en tant que :
-  client : oscar@mail.com - film123 
-  administrateur : sarah@mail.com - admin01234
+  - client : oscar@mail.com - film123 
+  - administrateur : sarah@mail.com - admin01234
 
 ## Présentation de l’équipe : 
 
-L’équipe du Projet est constituée de trois étudiantes en Pré-ing 2 à CY Tech. Hammad Kahina, Maheswaran Ashana et Avel Mélanie en MI2.
+L’équipe du Projet est constituée de trois étudiantes en Pré-ing 2 à CY Tech. Avel Mélanie, Hammad Kahina et Maheswaran Ashana en MI2.
