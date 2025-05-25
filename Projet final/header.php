@@ -20,7 +20,7 @@ $pageAccueil = (isset($_SESSION['connect']) && $_SESSION['connect'] === true)
      <a class="droite1" href="recherche.php">
         <img class="rechercheimg" src="image/recherche.jpg">
     </a>
-    <button class="droite2" onclick="toggleTheme()"><img style="height:6vw; width: 8vw; margin-bottom:10vw; " src="image/sombre.jpg"></button>
+    <button class="droite2" ><img onclick="toggleTheme()" style="height:6vw; width: 8vw; margin-bottom:10vw; " src="image/sombre.jpg"></button>
     
 
     <?php if ($pageAccueil): ?>
