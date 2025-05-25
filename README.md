@@ -37,7 +37,7 @@ Cette manipulation vous ramènera vers la page d'accueil de Movie Explorer en ta
 Vous pouvez ensuite vous inscrire en tant que client ou alors vous connecter dans la page de connexion selon les identifiants déjà existants dans clients.txt.
 
 Voici les identifiants et leur mots de passe pour vous connecter en tant que :
-  client : oscar@mail.com - film123
+  client : oscar@mail.com - film123 
   administrateur : sarah@mail.com - admin01234
 
 ## Présentation de l’équipe : 
