@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0vw;
+  padding: 0vw;
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+}
+
+body{
+  --couleur1: #1532a0;
+  --couleur2: #1532a0;
+  --couleurfond2: #f2eed6;
+  --couleurlettre2: #606060;
+}
+
+body.sombre{
+  --couleur1: #4d4090;
+  --couleur2: #4d4090;
+  --couleurfond2: #0e0047;
+  --couleurlettre2: #f2eed6;
+}
+
+/*7265b2*/
+
+.entete {
+width: 100vw;
+height: auto; 
+display: flex;
+flex-direction: column;
+background-color: #0e0047;
+z-index: 10;
+}
+
+.droite1{
+  margin-left:50vw;
+}
+
+.rechercheimg{
+  width: 1vw;
+  height: 2vw;
+}
+
+.droite2{
+  all: unset;
+  cursor: pointer;
+  height: 6vw;
+  width: 7vw;
+  margin-right: 2vw;
+}
+
+
+
+
+
+
+
+.titre {
+  width: 100vw;
+  height: 7vw;
+  background-color: #0e0047;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0vw 2vw; 
+} 
+
+.titre a:hover{
+  transform: scale(1.05);
+}
+
+.titre img {
+  width: 10vw; 
+  height: auto; 
+}
+
+.titre span{
+  font-size: 1vw;
+}  
+
+.panier{
+  margin-right: 2.5vw;
+  padding-top:1.4vw;
+  justify-content: center;
+  margin-bottom: 0.3vw;
+}
+.panier a{
+  text-decoration: none;
+  padding-bottom: 0.5vw;
+}
+.panier img{
+  width: 5vw;
+  margin-left: 1.4vw;
+}
+
+.panier span{
+  font-size: 1vw;
+  color: #fefbec;
+  margin-top: 0.5vw;
+  margin-left: 0.5vw;
+  margin-bottom: 0.5vw;
+}
+
+.panier:hover{
+  transform: scale(1.05);
+}
+
+.espace-client {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fefbec; 
+  font-weight: bold;
+  font-size: 0.8vw;
+}
+
+.espace-client img {
+  height: 5vw;
+  width: auto;
+  display: block;
+}
+
+.espace-client span {
+  display: block;
+  margin-top: 0.3vw;
+  text-align: center;
+}
+
+.sous-titre{
+  width:100vw;
+  height: 2.5vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0vw;
+  position: relative; 
+  flex-direction: row;
+}
+
+.sous-titre form{
+  display: flex;
+}
+
+.accueil button{
+  background-color: var(--couleur1);
+  width: 33vw;
+  height: 2.5vw;
+  cursor: pointer;
+  border-color: #0e0047;
+  color: #fefbec;
+  font-size: 1vw;
+} 
+
+.accueil a{
+  color: #fefbec;
+  text-decoration: none;
+}
+
+.sous-accueil{   
+  display: none;
+  position: absolute;
+  width: 33vw;
+  height: 2.5vw;
+  z-index:2;
+}
+
+.sous-accueil a {
+  background-color: var(--couleurfond2);
+  color: var(--couleurlettre2);
+  padding: 0.5vw;
+  width: 33vw;
+  height: 2.2vw;
+  font-size: 1vw;
+  text-decoration: none;
+  display: block; 
+}
+
+.sous-accueil a:hover {
+  background-color: var(--couleur2);
+  color: #fefbec;
+  transform: scale(1.03);
+}
+
+.accueil:hover .sous-accueil {
+  display: block;
+}
+
+.destination{
+  display: block;
+}  
+
+
+.destination button{
+  background-color: var(--couleur1);
+  width: 33vw;
+  height: 2.5vw;
+  cursor: pointer;
+  border-color: #0e0047;
+  color: #fefbec;
+  font-size: 1vw;
+} 
+
+.destination button{
+  color: #fefbec;
+  text-decoration: none;
+}
+
+.sous-destination{   
+  display: none;
+  position: absolute;
+  width: 33vw;
+  height: 2.5vw;
+  z-index:2;
+}
+
+.sous-destination form{
+  display: block;
+}
+
+.sous-destination button{
+  all: unset; 
+  background-color: var(--couleurfond2);
+  color: var(--couleurlettre2);
+  padding-left: 0.5vw;
+  width: 32.5vw;
+  height: 2.2vw;
+  font-size: 1vw;
+  text-decoration: none;
+  display: block;
+}
+
+.sous-destination button:hover{
+  background-color: var(--couleur2);
+  color: #fefbec;
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.destination:hover .sous-destination {
+  display: block;
+}
+
+.film{
+  display: block;
+}  
+
+
+.film button{
+  background-color: var(--couleur1);
+  width: 34vw;
+  height: 2.5vw;
+  cursor: pointer;
+  border-color: #0e0047;
+  color: #fefbec;
+  font-size: 1vw;
+} 
+
+.film button{
+  color: #FEFAE0;
+  text-decoration: none;
+}
+
+.sous-film{   
+  display: none;
+  position: absolute;
+  width: 34vw;
+  height: 2.5vw;
+  z-index:2;
+}
+
+.sous-film form{
+  display: block;
+}
+
+.sous-film button{
+  all: unset; 
+  background-color: var(--couleurfond2);
+  color: var(--couleurlettre2);
+  padding-left: 0.5vw;
+  width: 34vw;
+  height: 2.2vw;
+  font-size: 1vw;
+  text-decoration: none;
+  display: block;
+}
+
+.sous-film button:hover{
+  background-color: var(--couleur2);
+  color: #fefbec; 
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.film:hover .sous-film {
+  display: block;
+}
+
+.fin {
+  display: flex;
+  bottom: 0;
+  width: 100vw;
+  height: 20vw;
+  background-color: #0e0047;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.fin h3 {
+  margin-bottom: 1.5vw;
+  text-align: center;
+  font-size: 2vw;
+}
+
+.info-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  margin-bottom: 0.6vw;
+}
+
+.info-contact img {
+  width: 2.2vw;
+  height: auto;
+}
+
+.info-contact a{
+  margin: 0;
+  color: #fefbec;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+ 
+.info-contact a:hover {
+  color: #f1b410;
+}
+
+.fin{
+  margin: 0 auto;
+}  
+
+.fin p {
+  margin-top: 1.5vw;
+  font-size: 0.8vw;
+}
+

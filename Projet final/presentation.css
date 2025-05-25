@@ -1,0 +1,139 @@
+body{
+  --couleurfondpresentation: #fefbec;
+  --couleurrecherche1: #1532a0;
+  --couleurrecherche2: #f1b410;
+}
+
+body.sombre{
+  --couleurfondpresentation: #2c206b;
+  --couleurrecherche1: #0e0047;
+  --couleurrecherche2: #7265b2;
+}
+
+body{
+  background-color: var(--couleurfondpresentation);
+}
+
+.bouton {
+width: 100vw;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 5vw;
+}
+
+
+.bouton a {
+  background-color: var(--couleurrecherche1);
+  color: #fefbec;
+  border: none;
+  border-radius: 0.6vw;
+  cursor: pointer;
+  padding: 0.9vw;
+  font-size: 0.9vw;
+  width: 25vw;
+  height: 3vw;
+  margin-top: 1.7vw;
+  text-align: center;
+  font-size: 1.1vw;
+}
+
+.bouton a:hover {
+  background-color: var(--couleurrecherche2);
+}
+
+.carree{
+height: auto; 
+margin-top: 7vw;
+margin-right: 5vw;
+margin-left: 5vw; 
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.sous-carree {
+height: 33vw;
+display: flex;
+justify-content: space-between;
+width: 100vw;
+}
+
+.sous-carree button{
+  all: unset;  
+  background: none;  /* Enlève l'arrière-plan */
+  border: none;  /* Enlève la bordure */
+  padding: 0;  /* Enlève l'espacement interne (optionnel) */
+  font: inherit;
+  z-index: 1;  /* Le met en arrière-plan */
+}
+
+
+.image-container {
+position: relative;
+width: 21vw;
+height: 27vw;
+background-color: #0e0047;
+border-radius: 2vw;
+transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.05); 
+}
+
+.texte {
+margin: 2vw;
+color: #fefbec;
+}
+
+.texte p {
+font-size: 1.2vw;
+}
+
+.droite {
+text-align: right;
+}
+
+.image-container2 {
+position: relative;
+width: 21vw;
+height: 18vw;
+}
+
+.image {
+border-top-left-radius: 2vw; 
+border-top-right-radius: 2vw; 
+position: absolute;
+width: 21vw;
+height: 18vw;
+object-fit: cover;
+transition: opacity 0.3s ease;
+}
+
+.image2 {
+opacity: 0; 
+}
+
+.image-container:hover .image2 {
+opacity: 1; 
+}
+
+.image-container:hover .image1 {
+opacity: 0;
+}
+
+
+.texte-container {
+width: 18vw;
+height: 19vh;
+background-color: #1532a0;
+border-radius: 2vw;
+ margin: 0 auto;
+}
+
+
+a {
+text-decoration: none;
+}

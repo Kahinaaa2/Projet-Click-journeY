@@ -1,0 +1,187 @@
+body.sombre{
+  --couleurfondvoyage: #423a65;
+  --couleurprofil: #312857;
+  --couleurprofilsouris: #58507e;
+  --couleurinfos: #423a65;
+  --couleurretour: #1c0e56;
+  --couleurretoursouris: #423776;
+  --ecriture: white;
+  --bouton: #281770;
+}
+
+body{
+  --couleurfondvoyage: #fefae0;
+  --couleurprofil: #fefbec;
+  --couleurprofilsouris: #f9f6e8;
+  --couleurinfos: #ebe8da;
+  --couleurretour: #1532a0;
+  --couleurretoursouris: #0e257e;  
+  --ecriture: #0e0047;
+  --bouton: #281770;
+}
+
+body {
+  background-color: var(--couleurfondvoyage);
+  margin: 0;
+  padding-top: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+.conteneur-profil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.carte-profil {
+  background: #0e0047;
+  border-radius: 2vw;
+  padding: 1.5vw;
+  text-align: center;
+  width: 26vw;
+}
+
+.titre-profil {
+  font-size: 1.3vw;
+  color:  #fefbec;
+  margin-bottom: 1vw;
+  font-weight: bold;
+}
+
+.infos-profil {
+  text-align: left;
+  margin-bottom: 0.5vw;
+  color: #0e0047;
+}
+
+
+button {
+  width: 100%;
+  padding: 0.7vw;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  font-size: 0.9vw;
+  margin-top: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+margin-bottom: 0.6vw;
+}
+
+.bouton2 {
+    background-color: var(--couleurretour);
+    color: #fefae0;
+}
+
+.bouton2:hover {
+  background-color: var(--couleurretoursouris);
+}
+
+a {
+text-decoration: none;
+}
+
+.int{
+display: flex;
+flex-direction: row; 
+align-items: center;
+justify-content: space-between;
+width: 100%;
+}
+
+.champ-modifiable {
+    display: flex;
+    align-items: center;
+    font-size: 0.9vw;
+    margin-top: 0.6vw;
+    padding: 0.5vw;
+    background-color: var(--couleurprofil);
+    border-radius: 0.5vw;
+    width: 25vw;
+    height: 2.5vw;
+}
+
+.int-modifiable{
+height: 2vw;
+border-radius: 0.6vw;
+background-color:var(--couleurinfos);
+padding-left: 0.3vw;
+padding-right: 0.1vw;
+padding-top: 0.2vw;
+margin-bottom: 0.1vw;
+display: flex;
+align-items: center;
+width: 23vw;
+}
+
+#mail{
+width: 25vw;
+}
+
+.champ-modifiable button{
+  width: 2vw;
+  height: 2vw;
+  font-size: 1vw;
+  padding: 0;
+  margin-left: 0.3vw;
+  background-color: var(--couleurprofil);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.champ-modifiable button:hover {
+background-color: var(--couleurprofilsouris);
+}
+
+.champ-modifiable label {
+    color: var(--ecriture);
+    font-weight: bold;
+    flex: 1;
+    padding-right: 2vw;
+}
+
+
+.champ-modifiable input[readonly] {
+    border: none;
+    color: var(--ecriture);
+    text-align: right;
+}
+
+.champ-modifiable input {
+  width: 10vw;               
+  min-width: 10vw;
+  max-width: 10vw;
+  text-align: right;         
+  box-sizing: border-box;
+  padding: 0.3vw;
+  background-color: transparent;
+  border: none;
+  font-size: 0.9vw;
+  font-weight: bold;
+  color: var(--ecriture);
+}
+
+.bouton{
+margin-top: 1.5vw;
+background-color: #f1b410;
+color: white;
+}
+
+.bouton:hover{
+margin-top: 1.5vw;
+background-color: #009c3e;
+color: white;
+}
+
+#modif2{
+margin-top: 1.5vw;
+}

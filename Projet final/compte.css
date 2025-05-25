@@ -1,0 +1,83 @@
+body{
+  --couleurentete: #1532a0;
+  --couleurentetesouris: #0e257e;
+}
+
+body.sombre{
+  --couleurentete: #0e0047;
+  --couleurentetesouris: #4d4090;
+}
+.navigation-profil {
+  width: 100vw;
+  height: 2vw;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.profil a {
+  flex: 1;
+  background-color: var(--couleurentete);
+  color: #fefbec;
+  text-align: center;
+  font-size: 1vw;
+  padding: 0.5vw;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+}
+
+.profil a:hover {
+  background-color: var(--couleurentetesouris);
+}
+
+.voyage a {
+  flex: 1;
+  background-color: var(--couleurentete);
+  color: #fefbec;
+  text-align: center;
+  font-size: 1vw;
+  padding: 0.5vw;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+}
+
+.voyage a:hover {
+  background-color: var(--couleurentetesouris);
+}
+
+
+.sous-voyage{   
+  display: none;
+  position: absolute;
+  width: 50vw;
+  height: 2vw;
+}
+
+.sous-voyage a {
+  background-color: #f2eed6;
+  color: #606060;
+  padding: 0.5vw;
+  width: 50vw;
+  height: 1.8vw;
+  font-size: 1vw;
+  text-decoration: none;
+  display: block;
+  
+}
+
+.sous-voyage a:hover {
+  background-color: #d8d6c7;
+  color: #585858;
+}
+
+.voyage:hover .sous-voyage {
+  display: block;
+}

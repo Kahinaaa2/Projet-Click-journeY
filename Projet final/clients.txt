@@ -1,0 +1,4 @@
+kahina@gmail.com;mdp123;kahina;hammad;admin;2024-02-27
+kahina2@gmail.com;mdp123;kahina;hammad;client;2024-02-27
+kahina3@gmail.com;mdp123;kahina;hammad;client;2024-02-27
+momo.av@gmail.com;momo2006;Morgane;AVEL;client;2025-05-21;2006-06-01;24 avenue des momos
