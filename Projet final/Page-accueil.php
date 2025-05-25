@@ -104,7 +104,7 @@ session_start();
     
 <div class="carte"><div class="carte-bloc">    
 <img class="carteclaire" src="image/carte.png" alt="carte">
-<img class="cartesombre" src="image/carte2.png" alt="carte2">    
+<img class="cartesombre" src="image/carte.png" alt="carte2">    
 </div></div>   
     
 <?php include 'footer.php'; ?>
